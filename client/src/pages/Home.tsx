@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Menu, X, Globe, Download, Send, Shield, Sun, Building, Zap, Leaf } from "lucide-react";
+import { Menu, X, Globe, Download, Send, Shield, Sun, Building, Zap, Leaf, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 /**
@@ -12,11 +12,15 @@ import { toast } from "sonner";
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState("ES");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     organization: "",
   });
+
+  // Reemplaza esto con tu Access Key de Web3Forms
+  const WEB3FORMS_ACCESS_KEY = 9a2b2243-8881-47ff-ac55-9ab592ccb0ee;
 
   const handleLanguageToggle = () => {
     setLanguage(language === "ES" ? "EN" : "ES");
@@ -30,15 +34,45 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.organization) {
-      toast.success("¡Registro exitoso! Descargando brochure técnico...");
+      setIsSubmitting(true);
       
-// El nuevo enlace profesional (sin Drive, carga instantánea)
-window.open("/brochure.pdf", "_blank");
+      try {
+        // Enviar datos a Web3Forms
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            subject: `Nueva Descarga Brochure - ${formData.organization}`,
+            from_name: "HD Fotovoltaica Web",
+            Nombre: formData.name,
+            Email: formData.email,
+            Organizacion: formData.organization,
+          }),
+        });
 
-      setFormData({ name: "", email: "", organization: "" });
+        const result = await response.json();
+
+        if (result.success) {
+          toast.success("¡Registro exitoso! Descargando brochure técnico...");
+          // Iniciar la descarga del PDF
+          window.open("/brochure.pdf", "_blank");
+          // Limpiar formulario
+          setFormData({ name: "", email: "", organization: "" });
+        } else {
+          toast.error("Hubo un error al procesar la solicitud. Por favor intenta de nuevo.");
+        }
+      } catch (error) {
+        toast.error("Error de conexión. Revisa tu internet e intenta de nuevo.");
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       toast.error("Por favor, completa todos los campos obligatorios.");
     }
@@ -402,6 +436,7 @@ window.open("/brochure.pdf", "_blank");
                     onChange={handleFormChange}
                     className="w-full bg-secondary/50 border-transparent focus:border-accent focus:ring-accent"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -418,6 +453,7 @@ window.open("/brochure.pdf", "_blank");
                     onChange={handleFormChange}
                     className="w-full bg-secondary/50 border-transparent focus:border-accent focus:ring-accent"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -433,15 +469,26 @@ window.open("/brochure.pdf", "_blank");
                     onChange={handleFormChange}
                     className="w-full bg-secondary/50 border-transparent focus:border-accent focus:ring-accent"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
 
                 <Button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-6 rounded-xl transition-smooth flex items-center justify-center gap-2 mt-2 shadow-lg shadow-accent/20"
                 >
-                  <Download className="w-5 h-5" />
-                  Descargar Brochure PDF
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Procesando...
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-5 h-5" />
+                      Descargar Brochure PDF
+                    </>
+                  )}
                 </Button>
                 <p className="text-xs text-center text-muted-foreground mt-4">
                   Al descargar, aceptas nuestra política de privacidad.
