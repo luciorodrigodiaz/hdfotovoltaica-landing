@@ -35,10 +35,8 @@ export default function Home() {
     if (formData.name && formData.email && formData.organization) {
       toast.success("¡Registro exitoso! Descargando brochure técnico...");
       
-      // Lógica de redirección al PDF
-      setTimeout(() => {
-        window.open("https://drive.google.com/uc?export=view&id=1RSyXzkWGxOD9j6UPBhbAe3eiZyo1lQOw", "_blank");
-      }, 1500);
+// El nuevo enlace profesional (sin Drive, carga instantánea)
+window.open("/brochure.pdf", "_blank");
 
       setFormData({ name: "", email: "", organization: "" });
     } else {
