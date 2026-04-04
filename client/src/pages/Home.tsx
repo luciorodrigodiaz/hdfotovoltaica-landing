@@ -20,7 +20,7 @@ export default function Home() {
   });
 
   // Reemplaza esto con tu Access Key de Web3Forms
-  const WEB3FORMS_ACCESS_KEY = "9a2b2243-8881-47ff-ac55-9ab592ccb0ee";
+  const WEB3FORMS_ACCESS_KEY = "7d4a77ef-c085-48f6-9845-9fd4c85ee9b5";
 
   const handleLanguageToggle = () => {
     setLanguage(language === "ES" ? "EN" : "ES");
