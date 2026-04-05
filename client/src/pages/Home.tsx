@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 /**
  * HD Fotovoltaica - UN STI Forum 2026 Edition
- * Internationalization Engine - FULL CLEANTECH COLOR MAPPING & METRICS OPTIMIZATION
+ * Internationalization Engine - COMPONENT UNIFICATION & SPACING OPTIMIZATION
  */
 
 // Hook personalizado para detectar visibilidad (Intersection Observer)
@@ -58,11 +58,13 @@ export default function Home() {
         nav: ["El Problema", "Innovación", "Aplicaciones", "Contacto"],
         heroTag: "Foro CTI de la ONU - Nueva York 2026",
         heroTitle: "INFRAESTRUCTURAS INTELIGENTES",
-        heroTitleAccent: "", // No usamos acento de color aquí, el título es todo un bloque
+        heroTitleAccent: "",
         heroSubtitle: "Transformando la industria y el agro en nodos de generación eléctrica rentable y eficiente.",
         heroBtnTech: "Acceder a la Documentación Técnica",
         heroBtnLearn: "Conocer la Tecnología",
         
+        trustBar: ["ODS 7: Energía Asequible", "ODS 9: Industria e Infraestructura", "ODS 11: Ciudades Sostenibles"],
+
         awardsTitle: "Reconocimiento Global e Impacto",
         metric1: "Unidades Instaladas",
         metric2: "Capacidad Instalada",
@@ -127,6 +129,8 @@ export default function Home() {
         heroBtnTech: "Access Technical Documentation",
         heroBtnLearn: "Discover the Technology",
         
+        trustBar: ["SDG 7: Affordable Energy", "SDG 9: Industry & Infrastructure", "SDG 11: Sustainable Cities"],
+
         awardsTitle: "Global Recognition & Impact",
         metric1: "Units Installed",
         metric2: "Capacity Installed",
@@ -305,7 +309,7 @@ export default function Home() {
 
       {/* ===== GLOBAL RECOGNITION & METRICS (IMPACT & OFFICIAL LOGOS) ===== */}
       {/* Mapeo de Spacing: py-24 mb-12 para dar aire corporativo */}
-      <section ref={logosRef} className="bg-white py-24 mb-12 border-b border-border">
+      <section ref={logosRef} className="bg-white py-24 mb-12 border-b border-border relative z-10">
         <div className="container">
           <div className="text-center mb-10">
             <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-8">
@@ -384,7 +388,7 @@ export default function Home() {
       </section>
 
       {/* ===== PROBLEM ===== */}
-      <section id="problem" className="py-16 md:py-24 bg-white">
+      <section id="problem" className="py-16 md:py-24 bg-white relative z-10">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -409,9 +413,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SOLUTION / INNOVATION ===== */}
-      <section id="solution" className="py-16 md:py-24 bg-secondary/30">
+      {/* ===== SOLUTION / INNOVATION UNIFICADA & OPTIMIZADA (Adiós a Trust Bar separada) ===== */}
+      {/* Mapeo Spacing: Unificación + py-24 para dar aire corporativo */}
+      <section id="solution" className="py-24 bg-secondary/30 relative z-0">
         <div className="container">
+          
+          {/* ODS UNIFICADOS (Prefacio de la innovación) */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 opacity-80grayscale hover:grayscale-0 transition-smooth duration-500 mb-16 border-b border-gray-200/50 pb-16">
+            <div className="flex items-center gap-3"><Leaf className="w-6 h-6 text-green-600" /><span className="font-semibold text-sm">{t.trustBar[0]}</span></div>
+            <div className="flex items-center gap-3"><Building className="w-6 h-6 text-blue-600" /><span className="font-semibold text-sm">{t.trustBar[1]}</span></div>
+            <div className="flex items-center gap-3"><Globe className="w-6 h-6 text-orange-500" /><span className="font-semibold text-sm">{t.trustBar[2]}</span></div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Texto */}
             <div>
@@ -441,7 +454,7 @@ export default function Home() {
       </section>
 
       {/* ===== APPLICATIONS ===== */}
-      <section id="applications" className="py-16 md:py-24 bg-white">
+      <section id="applications" className="py-16 md:py-24 bg-white relative z-10">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -467,7 +480,7 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT / DOWNLOAD ===== */}
-      <section id="contact" className="py-16 md:py-24 bg-emerald-950 text-white border-t border-emerald-900">
+      <section id="contact" className="py-16 md:py-24 bg-emerald-950 text-white border-t border-emerald-900 relative z-10">
         <div className="container max-w-4xl grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900 text-emerald-300 font-semibold text-xs mb-6 border border-emerald-800">
@@ -505,7 +518,7 @@ export default function Home() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className="bg-black text-white py-12">
+      <footer className="bg-black text-white py-12 relative z-10">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8 mb-8 border-b border-gray-800 pb-8">
             <div>
