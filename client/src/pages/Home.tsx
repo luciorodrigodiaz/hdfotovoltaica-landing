@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2 } from "lucide-react";
@@ -6,13 +6,38 @@ import { toast } from "sonner";
 
 /**
  * HD Fotovoltaica - UN STI Forum 2026 Edition
- * Internationalization Engine - CONTENT INJECTION (Metrics & Global Recognition)
+ * Internationalization Engine - AUTO-ACTIVATING LOGOS (Intersection Observer)
  */
+
+// Hook personalizado para detectar visibilidad (Intersection Observer)
+const useOnScreen = (ref: React.RefObject<Element>, rootMargin = "0px") => {
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // threshold de 0.5 significa que debe estar 50% visible para activarse
+        setIntersecting(entry.isIntersecting);
+      },
+      { rootMargin, threshold: 0.5 } 
+    );
+    observer.observe(ref.current);
+    return () => { observer.disconnect(); };
+  }, [ref, rootMargin]);
+
+  return isIntersecting;
+};
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", organization: "" });
+
+  // Referencia para la sección de logos
+  const logosRef = useRef<HTMLDivElement>(null);
+  // Detectar si la sección está en pantalla
+  const logosOnScreen = useOnScreen(logosRef, "-10% 0px"); // Margen de error para mobiles
 
   // Detección automática de idioma
   const [language, setLanguage] = useState(() => {
@@ -68,7 +93,7 @@ export default function Home() {
 
         contactTag: "Descarga Inmediata",
         contactTitle: "Accede a la Documentación Técnica",
-        contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre las especificaciones técnicas, métricas de rendimiento y detalles de integración de nuestra tecnología.",
+        contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre las especificaciones técnicas, métricas de rendimiento y detalles de integración de nuestra tecnología presentado en el Foro CTI de la ONU.",
         contactList1: "Fichas técnicas de rendimiento",
         contactList2: "Certificaciones de resistencia",
         contactList3: "Guía de integración arquitectónica",
@@ -132,7 +157,7 @@ export default function Home() {
 
         contactTag: "Instant Download",
         contactTitle: "Access Technical Documentation",
-        contactDesc: "Complete the form to download our official brochure. Discover the technical specifications, performance metrics, and integration details of our technology.",
+        contactDesc: "Complete the form to download our official brochure. Discover the technical specifications, performance metrics, and integration details of our technology presented at the UN STI Forum.",
         contactList1: "Performance data sheets",
         contactList2: "Resistance certifications",
         contactList3: "Architectural integration guide",
@@ -214,7 +239,6 @@ export default function Home() {
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
             <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hd-logo_ac146515.png" alt="HD" className="h-8 w-auto" />
-            {/* Branding Dinámico */}
             <span className="font-bold text-lg hidden sm:inline">{t.brandName}</span>
           </div>
 
@@ -260,7 +284,7 @@ export default function Home() {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-semibold text-sm">
             {t.heroTag}
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight selection:bg-accent/10">
             {t.heroTitle} <span className="text-accent">{t.heroTitleAccent}</span>.
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-800 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -277,75 +301,75 @@ export default function Home() {
         </div>
       </section>
 
-{/* ===== GLOBAL RECOGNITION & METRICS (IMPACT & OFFICIAL LOGOS) ===== */}
-      <section className="bg-white py-12 border-b border-border">
+      {/* ===== GLOBAL RECOGNITION & METRICS (IMPACT & OFFICIAL LOGOS) ===== */}
+      <section ref={logosRef} className="bg-white py-12 border-b border-border">
         <div className="container">
           <div className="text-center mb-10">
             <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-8">
               {t.awardsTitle}
             </h3>
             
-            {/* Logos Oficiales SVGs - Reemplazo de íconos genéricos */}
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-90 grayscale hover:grayscale-0 transition-smooth duration-500 max-w-5xl mx-auto">
+            {/* Logos Oficiales con Lógica de Auto-activación (Intersection Observer) */}
+            <div className={`flex flex-wrap justify-center items-center gap-x-12 gap-y-8 max-w-5xl mx-auto transition-all duration-1000 ${logosOnScreen ? "grayscale-0 opacity-100" : "grayscale opacity-80"}`}>
               
-              {/* Logo UNIDO - Altura controlada, carga optimizada */}
+              {/* Logo UNIDO */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/6/6f/UNIDO_Logo.svg" 
                 alt="UNIDO Global Call Winner" 
-                className="h-12 md:h-14 w-auto object-contain"
+                className="h-12 md:h-14 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
               
-              {/* Logo IRENA - Mapeado desde fuentes oficiales */}
+              {/* Logo IRENA */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/f6/International_Renewable_Energy_Agency_Logo.png" 
                 alt="IRENA NewGen COP28 Award" 
-                className="h-10 md:h-12 w-auto object-contain"
+                className="h-10 md:h-12 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
               
-              {/* Logo COP28 UAE - Sello de validación climática */}
+              {/* Logo COP28 UAE (Mapeado a archivo local: client/public/logo-cop28.png) */}
               <img 
-                src="https://unece.org/sites/default/files/styles/max_650x650/public/2023-10/cop28%20logo.png" 
+                src="/logo-cop28.png" 
                 alt="COP28 Technology Presentation" 
-                className="h-12 md:h-14 w-auto object-contain"
+                className="h-12 md:h-14 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
 
-              {/* Logo Enel Foundation - Respaldo corporativo global */}
+              {/* Logo Enel Foundation */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/2/22/Enel_Group_logo.svg" 
                 alt="Enel Foundation Supported" 
-                className="h-8 md:h-10 w-auto object-contain"
+                className="h-8 md:h-10 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
 
-              {/* Logo IUCN - Validación de impacto ambiental */}
+              {/* Logo IUCN */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/IUCN_logo.svg" 
                 alt="IUCN Member / Partner" 
-                className="h-10 md:h-12 w-auto object-contain"
+                className="h-10 md:h-12 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
             </div>
           </div>
           
-          {/* Contadores de Impacto (Quedan idénticos a los de ayer) */}
+          {/* Contadores de Impacto */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-border/50 pt-8 mt-4">
             <div>
-              <div className="text-3xl md:text-4xl font-black text-accent mb-1">254</div>
+              <div className="text-3xl md:text-4xl font-black text-accent mb-1 hover:scale-110 transition-transform">254</div>
               <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric1}</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-black text-accent mb-1">48.7<span className="text-2xl">kW</span></div>
+              <div className="text-3xl md:text-4xl font-black text-accent mb-1 hover:scale-110 transition-transform">48.7<span className="text-2xl">kW</span></div>
               <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric2}</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-black text-accent mb-1">+115<span className="text-2xl">k</span></div>
+              <div className="text-3xl md:text-4xl font-black text-accent mb-1 hover:scale-110 transition-transform">+115<span className="text-2xl">k</span></div>
               <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric3}</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-black text-accent mb-1">+25</div>
+              <div className="text-3xl md:text-4xl font-black text-accent mb-1 hover:scale-110 transition-transform">+25</div>
               <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric4}</div>
             </div>
           </div>
@@ -357,7 +381,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">{t.problemTitle}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.problemTitle}</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.problemDesc}</p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-secondary/20 transition-smooth">
@@ -370,9 +394,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* Visual: Render Profesional del Producto */}
             <div className="flex justify-center">
-              <img src="/product-problem.jpg" alt="Chapa Solar Fotovoltaica Integrada" className="w-full max-w-md h-auto rounded-3xl shadow-xl border border-border" />
+              <img src="/product-problem.jpg" alt="Chapa Solar Fotovoltaica Integrada" className="w-full max-w-md h-auto rounded-3xl shadow-xl border border-border transition-all hover:-translate-y-2 hover:shadow-2xl" />
             </div>
           </div>
         </div>
@@ -385,24 +408,24 @@ export default function Home() {
             {/* Left: Texto */}
             <div>
               <div className="text-center md:text-left max-w-3xl mx-auto mb-10 md:mb-0">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">{t.solutionTitle}<span className="text-accent">{t.solutionTitleAccent}</span></h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.solutionTitle}<span className="text-accent">{t.solutionTitleAccent}</span></h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.solutionDesc}</p>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><Sun className="w-5 h-5 text-accent" /></div>
-                    <div><h3 className="font-bold mb-1">{t.sol1Title}</h3><p className="text-sm text-muted-foreground">{t.sol1Desc}</p></div>
+                    <div><h3 className="font-bold mb-1 tracking-tight">{t.sol1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol1Desc}</p></div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><Shield className="w-5 h-5 text-accent" /></div>
-                    <div><h3 className="font-bold mb-1">{t.sol2Title}</h3><p className="text-sm text-muted-foreground">{t.sol2Desc}</p></div>
+                    <div><h3 className="font-bold mb-1 tracking-tight">{t.sol2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol2Desc}</p></div>
                   </div>
                 </div>
               </div>
             </div>
             {/* Right: Imagen "Wow" de Ligereza y Transparencia */}
             <div className="flex justify-center order-first md:order-none">
-              <img src="/product-innovation.jpg" alt="Innovación en Policarbonato Solar Ligero" className="w-full max-w-md h-auto rounded-3xl shadow-2xl border border-accent/20 p-2 bg-white" />
+              <img src="/product-innovation.jpg" alt="Innovación en Policarbonato Solar Ligero" className="w-full max-w-md h-auto rounded-3xl shadow-2xl border border-accent/20 p-2 bg-white transition-all hover:scale-105" />
             </div>
           </div>
         </div>
@@ -414,7 +437,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="order-2 md:order-1">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t.appTitle}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">{t.appTitle}</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.appDesc}</p>
               <ul className="space-y-4">
                 {[t.app1, t.app2, t.app3, t.app4].map((app, index) => (
@@ -427,20 +450,20 @@ export default function Home() {
             </div>
             {/* Right Visual: Vista Angular Profesional */}
             <div className="flex justify-center order-1 md:order-2">
-              <img src="/product-applications.jpg" alt="Aplicación de Chapa Solar Profesional" className="w-full max-w-md rounded-2xl shadow-xl border border-border" />
+              <img src="/product-applications.jpg" alt="Aplicación de Chapa Solar Profesional" className="w-full max-w-md rounded-2xl shadow-xl border border-border transition-all hover:-translate-x-2 hover:shadow-2xl" />
             </div>
           </div>
         </div>
       </section>
 
       {/* ===== CONTACT / DOWNLOAD ===== */}
-      <section id="contact" className="py-16 md:py-24 bg-foreground text-white">
+      <section id="contact" className="py-16 md:py-24 bg-foreground text-white border-t border-white/5">
         <div className="container max-w-4xl grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent font-semibold text-xs mb-6 border border-accent/30">
               <Download className="w-3 h-3" /> {t.contactTag}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.contactTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">{t.contactTitle}</h2>
             <p className="text-gray-400 mb-8 leading-relaxed">{t.contactDesc}</p>
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-sm text-gray-300"><Zap className="w-5 h-5 text-accent" /> {t.contactList1}</div>
@@ -480,7 +503,7 @@ export default function Home() {
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hd-logo_ac146515.png" alt="HD" className="h-8 w-auto opacity-90" />
                 <span className="font-bold text-xl tracking-tight">{t.brandName}</span>
               </div>
-              <p className="text-sm text-gray-400 max-w-xs">{t.footerCompanyDesc}</p>
+              <p className="text-sm text-gray-400 max-w-xs leading-relaxed">{t.footerCompanyDesc}</p>
             </div>
             <div>
               <h4 className="font-semibold text-gray-200 mb-4">{t.footerHQTitle}</h4>
