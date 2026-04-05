@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 /**
  * HD Fotovoltaica - UN STI Forum 2026 Edition
- * Internationalization Engine - FULL VERSION WITH MEDIA OPTIMIZATION
+ * Internationalization Engine - CONTENT INJECTION (Metrics & Global Recognition)
  */
 
 export default function Home() {
@@ -22,13 +22,14 @@ export default function Home() {
     return "ES";
   });
 
-  // Tu nueva llave oficial para hdfotovoltaica@gmail.com
+  // Tu llave oficial para hdfotovoltaica@gmail.com
   const WEB3FORMS_ACCESS_KEY = "7d4a77ef-c085-48f6-9845-9fd4c85ee9b5";
 
-  // Diccionario Completo de Traducciones
+  // Diccionario Completo de Traducciones con Métricas
   const t = useMemo(() => {
     const translations = {
       ES: {
+        brandName: "Fotovoltaica",
         nav: ["El Problema", "Innovación", "Aplicaciones", "Contacto"],
         heroTag: "Foro CTI de la ONU - Nueva York 2026",
         heroTitle: "Transformando infraestructuras pasivas en ",
@@ -37,7 +38,11 @@ export default function Home() {
         heroBtnTech: "Acceder a la Documentación Técnica",
         heroBtnLearn: "Conocer la Tecnología",
         
-        trustBar: ["ODS 7: Energía Asequible", "ODS 9: Industria e Infraestructura", "ODS 11: Ciudades Sostenibles"],
+        awardsTitle: "Reconocimiento Global e Impacto",
+        metric1: "Unidades Instaladas",
+        metric2: "Capacidad Instalada",
+        metric3: "kg CO₂eq Evitados",
+        metric4: "Familias & Empresas",
         
         problemTitle: "El Desafío de la Infraestructura Urbana",
         problemDesc: "Millones de metros cuadrados de superficies industriales y urbanas están desaprovechados. Los paneles solares tradicionales de vidrio no son viables en todos los escenarios debido a sus limitaciones físicas y arquitectónicas.",
@@ -48,7 +53,11 @@ export default function Home() {
         
         solutionTitle: "La Innovación: ",
         solutionTitleAccent: "Policarbonato Solar Semitransparente",
-        solutionDesc: "Hemos desarrollado una lámina multipropósito que reemplaza a los materiales de construcción convencionales, integrando celdas fotovoltaicas directamente en el policarbonato.",
+        solutionDesc: "Hemos desarrollado una lámina multipropósito patentada que reemplaza a los materiales de construcción convencionales, integrando celdas fotovoltaicas directamente en el policarbonato.",
+        sol1Title: "Generación Semitransparente",
+        sol1Desc: "Permite hasta un 80% de transmisión de luz natural mientras captura la radiación solar para generar electricidad limpia.",
+        sol2Title: "Ligereza y Resistencia",
+        sol2Desc: "Extremadamente ligero (solo 3.5 kg/m²) y flexible. Resiste altos impactos y clima severo, superando ampliamente al vidrio tradicional.",
         
         appTitle: "Aplicaciones Estratégicas",
         appDesc: "Nuestra tecnología está diseñada para adaptarse a los sectores que más requieren eficiencia espacial y energética.",
@@ -59,7 +68,7 @@ export default function Home() {
 
         contactTag: "Descarga Inmediata",
         contactTitle: "Accede a la Documentación Técnica",
-        contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre las especificaciones técnicas, métricas de rendimiento y detalles de integración de nuestra tecnología presentada en el Foro CTI de la ONU.",
+        contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre las especificaciones técnicas, métricas de rendimiento y detalles de integración de nuestra tecnología.",
         contactList1: "Fichas técnicas de rendimiento",
         contactList2: "Certificaciones de resistencia",
         contactList3: "Guía de integración arquitectónica",
@@ -84,6 +93,7 @@ export default function Home() {
         brochurePath: "/brochure-es.pdf"
       },
       EN: {
+        brandName: "Photovoltaics",
         nav: ["The Problem", "Innovation", "Applications", "Contact"],
         heroTag: "UN STI Forum - New York 2026",
         heroTitle: "Transforming passive infrastructures into ",
@@ -92,7 +102,11 @@ export default function Home() {
         heroBtnTech: "Access Technical Documentation",
         heroBtnLearn: "Discover the Technology",
         
-        trustBar: ["SDG 7: Affordable Energy", "SDG 9: Industry & Infrastructure", "SDG 11: Sustainable Cities"],
+        awardsTitle: "Global Recognition & Impact",
+        metric1: "Units Installed",
+        metric2: "Capacity Installed",
+        metric3: "kg CO₂eq Avoided",
+        metric4: "Families & Businesses",
 
         problemTitle: "The Urban Infrastructure Challenge",
         problemDesc: "Millions of square meters of industrial and urban surfaces are wasted. Traditional glass solar panels are not viable in all scenarios due to their physical and architectural limitations.",
@@ -103,7 +117,11 @@ export default function Home() {
         
         solutionTitle: "The Innovation: ",
         solutionTitleAccent: "Semi-transparent Solar Polycarbonate",
-        solutionDesc: "We have developed a multipurpose sheet that replaces conventional building materials, integrating photovoltaic cells directly into the polycarbonate.",
+        solutionDesc: "We have developed a proprietary, custom-designed BIPV solution that simplifies installation by eliminating traditional mounting infrastructure.",
+        sol1Title: "Semi-transparent Generation",
+        sol1Desc: "Allows up to 80% of natural light transmission while capturing solar radiation to generate clean electricity.",
+        sol2Title: "Lightness and Resistance",
+        sol2Desc: "Extremely lightweight (only 3.5 kg/m²) and flexible. Resists high impacts and severe weather, vastly outperforming traditional glass.",
         
         appTitle: "Strategic Applications",
         appDesc: "Our technology is designed to adapt to the sectors that most require spatial and energetic efficiency.",
@@ -114,7 +132,7 @@ export default function Home() {
 
         contactTag: "Instant Download",
         contactTitle: "Access Technical Documentation",
-        contactDesc: "Complete the form to download our official brochure. Discover the technical specifications, performance metrics, and integration details of our technology presented at the UN STI Forum.",
+        contactDesc: "Complete the form to download our official brochure. Discover the technical specifications, performance metrics, and integration details of our technology.",
         contactList1: "Performance data sheets",
         contactList2: "Resistance certifications",
         contactList3: "Architectural integration guide",
@@ -130,7 +148,7 @@ export default function Home() {
         footerCompanyDesc: "Transforming urban infrastructure with semi-transparent solar innovation.",
         footerHQTitle: "Headquarters",
         footerHQDesc: "Designed and driven from Buenos Aires (CABA), Argentina to the world.",
-        footerRights: "© 2026 HD Fotovoltaica. All rights reserved.",
+        footerRights: "© 2026 HD Photovoltaics. All rights reserved.",
         
         toastLang: "Language changed to Spanish",
         toastSuccess: "Successful registration! Downloading brochure...",
@@ -196,7 +214,8 @@ export default function Home() {
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
             <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hd-logo_ac146515.png" alt="HD" className="h-8 w-auto" />
-            <span className="font-bold text-lg hidden sm:inline">Fotovoltaica</span>
+            {/* Branding Dinámico */}
+            <span className="font-bold text-lg hidden sm:inline">{t.brandName}</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -241,7 +260,7 @@ export default function Home() {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-semibold text-sm">
             {t.heroTag}
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight selection:bg-accent/10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
             {t.heroTitle} <span className="text-accent">{t.heroTitleAccent}</span>.
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-800 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -258,13 +277,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== TRUST BAR ===== */}
-      <section className="bg-white py-10 border-b border-border">
+      {/* ===== GLOBAL RECOGNITION & METRICS (NUEVA SECCIÓN DE IMPACTO) ===== */}
+      <section className="bg-white py-12 border-b border-border">
         <div className="container">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition-smooth duration-500">
-            <div className="flex items-center gap-3"><Leaf className="w-6 h-6 text-green-600" /><span className="font-semibold text-sm">{t.trustBar[0]}</span></div>
-            <div className="flex items-center gap-3"><Building className="w-6 h-6 text-blue-600" /><span className="font-semibold text-sm">{t.trustBar[1]}</span></div>
-            <div className="flex items-center gap-3"><Globe className="w-6 h-6 text-orange-500" /><span className="font-semibold text-sm">{t.trustBar[2]}</span></div>
+          <div className="text-center mb-8">
+            <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-6">
+              {t.awardsTitle}
+            </h3>
+            {/* Logos / Nombres de reconocimiento */}
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-70 font-semibold text-sm md:text-base text-gray-800">
+              <span className="flex items-center gap-2"><Globe className="w-5 h-5"/> IRENA NewGen COP28</span>
+              <span className="flex items-center gap-2"><Building className="w-5 h-5"/> UNIDO Global Call</span>
+              <span className="flex items-center gap-2"><Sun className="w-5 h-5"/> SolarX LATAM</span>
+              <span className="flex items-center gap-2"><Zap className="w-5 h-5"/> Enel Foundation</span>
+              <span className="flex items-center gap-2"><Leaf className="w-5 h-5"/> IUCN</span>
+            </div>
+          </div>
+          
+          {/* Contadores de Impacto */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-border/50 pt-8 mt-4">
+            <div>
+              <div className="text-3xl md:text-4xl font-black text-accent mb-1">254</div>
+              <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric1}</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-black text-accent mb-1">48.7<span className="text-2xl">kW</span></div>
+              <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric2}</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-black text-accent mb-1">+115<span className="text-2xl">k</span></div>
+              <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric3}</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-black text-accent mb-1">+25</div>
+              <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric4}</div>
+            </div>
           </div>
         </div>
       </section>
@@ -295,7 +342,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SOLUTION / INNOVATION (Refactorizado con Imagen de la Mano) ===== */}
+      {/* ===== SOLUTION / INNOVATION ===== */}
       <section id="solution" className="py-16 md:py-24 bg-secondary/30">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -303,7 +350,18 @@ export default function Home() {
             <div>
               <div className="text-center md:text-left max-w-3xl mx-auto mb-10 md:mb-0">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">{t.solutionTitle}<span className="text-accent">{t.solutionTitleAccent}</span></h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">{t.solutionDesc}</p>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.solutionDesc}</p>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><Sun className="w-5 h-5 text-accent" /></div>
+                    <div><h3 className="font-bold mb-1">{t.sol1Title}</h3><p className="text-sm text-muted-foreground">{t.sol1Desc}</p></div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><Shield className="w-5 h-5 text-accent" /></div>
+                    <div><h3 className="font-bold mb-1">{t.sol2Title}</h3><p className="text-sm text-muted-foreground">{t.sol2Desc}</p></div>
+                  </div>
+                </div>
               </div>
             </div>
             {/* Right: Imagen "Wow" de Ligereza y Transparencia */}
@@ -384,7 +442,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hd-logo_ac146515.png" alt="HD" className="h-8 w-auto opacity-90" />
-                <span className="font-bold text-xl tracking-tight">Fotovoltaica</span>
+                <span className="font-bold text-xl tracking-tight">{t.brandName}</span>
               </div>
               <p className="text-sm text-gray-400 max-w-xs">{t.footerCompanyDesc}</p>
             </div>
