@@ -281,7 +281,10 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center bg-white" style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hero-brushstrokes-arcs-UusSkKShgANrGwL4KjVLTM.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="relative z-10 container text-center max-w-4xl px-4 mt-[-5vh]">
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-semibold text-sm">
+          {/* Mapeo de Color del Hero: Adiós al Rojo.
+              accent/10 -> bg-emerald-50 text-emerald-700 
+              Reemplazo del color semántico por un verde CleanTech para la ONU */}
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm">
             {t.heroTag}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight selection:bg-accent/10">
