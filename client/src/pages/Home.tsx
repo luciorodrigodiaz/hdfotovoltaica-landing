@@ -57,9 +57,9 @@ export default function Home() {
         brandName: "Fotovoltaica",
         nav: ["El Problema", "Innovación", "Aplicaciones", "Contacto"],
         heroTag: "Foro CTI de la ONU - Nueva York 2026",
-        heroTitle: "Transformando infraestructuras pasivas en ",
-        heroTitleAccent: "generadoras activas",
-        heroSubtitle: "La intersección perfecta entre energías renovables y arquitectura inteligente para ciudades sostenibles.",
+        heroTitle: "INFRAESTRUCTURAS INTELIGENTES",
+        heroTitleAccent: "", // No usamos acento de color aquí, el título es todo un bloque
+        heroSubtitle: "Transformando la industria y el agro en nodos de generación eléctrica rentable y eficiente.",
         heroBtnTech: "Acceder a la Documentación Técnica",
         heroBtnLearn: "Conocer la Tecnología",
         
@@ -121,9 +121,9 @@ export default function Home() {
         brandName: "Photovoltaics",
         nav: ["The Problem", "Innovation", "Applications", "Contact"],
         heroTag: "UN STI Forum - New York 2026",
-        heroTitle: "Transforming passive infrastructures into ",
-        heroTitleAccent: "active generators",
-        heroSubtitle: "The perfect intersection between renewable energy and smart architecture for sustainable cities.",
+        heroTitle: "SMART INFRASTRUCTURES",
+        heroTitleAccent: "", 
+        heroSubtitle: "Transforming industry and agriculture into profitable and efficient nodes of power generation.",
         heroBtnTech: "Access Technical Documentation",
         heroBtnLearn: "Discover the Technology",
         
