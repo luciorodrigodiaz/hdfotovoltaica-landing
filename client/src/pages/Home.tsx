@@ -70,7 +70,7 @@ export default function Home() {
         metric4: "Familias & Empresas",
         
         problemTitle: "El Desafío de la Infraestructura Urbana",
-        problemDesc: "Millones de metros cuadrados de superficies industriales y urbanas están desaprovechados. Los paneles solares tradicionales de vidrio no son viables en todos los escenarios debido a sus limitaciones físicas y arquitectónicas.",
+        problemDesc: "Millones de metros cuadrados de superficies industriales y urbanas están desaprovechados. Las soluciones convencionales de generación energética no son viables en todos los escenarios debido a su peso, rigidez y limitaciones arquitectónicas.",
         prob1Title: "Peso y Rigidez (Vidrio)",
         prob1Desc: "Pesan entre 15-20 kg/m², requiriendo refuerzos estructurales costosos que muchos techos no pueden soportar.",
         prob2Title: "Oscurecimiento del Espacio",
@@ -134,7 +134,7 @@ export default function Home() {
         metric4: "Families & Businesses",
 
         problemTitle: "The Urban Infrastructure Challenge",
-        problemDesc: "Millions of square meters of industrial and urban surfaces are wasted. Traditional glass solar panels are not viable in all scenarios due to their physical and architectural limitations.",
+        problemDesc: "Millions of square meters of industrial and urban surfaces are wasted. Conventional energy generation solutions are not viable in all scenarios due to their weight, rigidity, and architectural limitations.",
         prob1Title: "Weight and Rigidity (Glass)",
         prob1Desc: "Weighing between 15-20 kg/m², they require costly structural reinforcements that many roofs cannot support.",
         prob2Title: "Space Darkening",
