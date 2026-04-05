@@ -277,24 +277,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== GLOBAL RECOGNITION & METRICS (NUEVA SECCIÓN DE IMPACTO) ===== */}
+{/* ===== GLOBAL RECOGNITION & METRICS (IMPACT & OFFICIAL LOGOS) ===== */}
       <section className="bg-white py-12 border-b border-border">
         <div className="container">
-          <div className="text-center mb-8">
-            <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-6">
+          <div className="text-center mb-10">
+            <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-8">
               {t.awardsTitle}
             </h3>
-            {/* Logos / Nombres de reconocimiento */}
-            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-70 font-semibold text-sm md:text-base text-gray-800">
-              <span className="flex items-center gap-2"><Globe className="w-5 h-5"/> IRENA NewGen COP28</span>
-              <span className="flex items-center gap-2"><Building className="w-5 h-5"/> UNIDO Global Call</span>
-              <span className="flex items-center gap-2"><Sun className="w-5 h-5"/> SolarX LATAM</span>
-              <span className="flex items-center gap-2"><Zap className="w-5 h-5"/> Enel Foundation</span>
-              <span className="flex items-center gap-2"><Leaf className="w-5 h-5"/> IUCN</span>
+            
+            {/* Logos Oficiales SVGs - Reemplazo de íconos genéricos */}
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-90 grayscale hover:grayscale-0 transition-smooth duration-500 max-w-5xl mx-auto">
+              
+              {/* Logo UNIDO - Altura controlada, carga optimizada */}
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6f/UNIDO_Logo.svg" 
+                alt="UNIDO Global Call Winner" 
+                className="h-12 md:h-14 w-auto object-contain"
+                loading="lazy"
+              />
+              
+              {/* Logo IRENA - Mapeado desde fuentes oficiales */}
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/f/f6/International_Renewable_Energy_Agency_Logo.png" 
+                alt="IRENA NewGen COP28 Award" 
+                className="h-10 md:h-12 w-auto object-contain"
+                loading="lazy"
+              />
+              
+              {/* Logo COP28 UAE - Sello de validación climática */}
+              <img 
+                src="https://unece.org/sites/default/files/styles/max_650x650/public/2023-10/cop28%20logo.png" 
+                alt="COP28 Technology Presentation" 
+                className="h-12 md:h-14 w-auto object-contain"
+                loading="lazy"
+              />
+
+              {/* Logo Enel Foundation - Respaldo corporativo global */}
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/2/22/Enel_Group_logo.svg" 
+                alt="Enel Foundation Supported" 
+                className="h-8 md:h-10 w-auto object-contain"
+                loading="lazy"
+              />
+
+              {/* Logo IUCN - Validación de impacto ambiental */}
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/f/fa/IUCN_logo.svg" 
+                alt="IUCN Member / Partner" 
+                className="h-10 md:h-12 w-auto object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
           
-          {/* Contadores de Impacto */}
+          {/* Contadores de Impacto (Quedan idénticos a los de ayer) */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-border/50 pt-8 mt-4">
             <div>
               <div className="text-3xl md:text-4xl font-black text-accent mb-1">254</div>
