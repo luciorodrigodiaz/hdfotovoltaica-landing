@@ -394,7 +394,7 @@ export default function Home() {
             </div>
             <div>
               <h4 className="font-semibold text-gray-200 mb-4">Contacto</h4>
-              <p className="text-sm text-gray-400 mb-2">contacto@hdfotovoltaica.com</p>
+              <p className="text-sm text-gray-400 mb-2">hdfotovoltaica@gmail.com</p>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
