@@ -447,22 +447,22 @@ export default function Home() {
       <section id="solution" className="py-24 bg-secondary/30 relative z-0">
         <div className="container">
           
-          {/* ODS UNIFICADOS (Logos Oficiales con Efecto Revelado) */}
+          {/* ODS UNIFICADOS (Logos Oficiales desde servidores de la ONU) */}
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-16 border-b border-gray-200/50 pb-16">
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/1/13/Sustainable_Development_Goal_07Affordable_and_clean_energy.svg" 
-              alt="SDG 7" 
-              className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-500 cursor-default" 
+              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" 
+              alt="SDG 7: Affordable and Clean Energy" 
+              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
             />
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Sustainable_Development_Goal_09Industry%2C_Innovation_and_Infrastructure.svg" 
-              alt="SDG 9" 
-              className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-500 cursor-default" 
+              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" 
+              alt="SDG 9: Industry, Innovation and Infrastructure" 
+              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
             />
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/9/91/Sustainable_Development_Goal_11Sustainable_cities_and_communities.svg" 
-              alt="SDG 11" 
-              className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 transition-all duration-500 cursor-default" 
+              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" 
+              alt="SDG 11: Sustainable Cities and Communities" 
+              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
             />
           </div>
 
