@@ -290,14 +290,18 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-32 md:h-56 bg-gradient-to-t from-white to-transparent z-0 pointer-events-none"></div>
 
         <div className="relative z-10 container text-center max-w-4xl px-4 mt-[-5vh]">
-          {/* Mapeo de Color Hero: accent -> Emerald CleanTech */}
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm">
+          {/* Mapeo de Color Hero: Burbuja con borde más grueso (border-2) */}
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-emerald-50 border-2 border-emerald-300 text-emerald-800 font-bold text-sm shadow-sm">
             {t.heroTag}
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight selection:bg-accent/10">
-            {t.heroTitle} <span className="text-emerald-600">{t.heroTitleAccent}</span>.
+          
+          {/* Título en Verde Inglés Profundo (emerald-950) en lugar de negro puro */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight text-emerald-950 selection:bg-emerald-200">
+            {t.heroTitle}
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-gray-800 max-w-2xl mx-auto font-medium leading-relaxed">
+          
+          {/* Subtítulo en un tono corporativo suavizado */}
+          <p className="text-lg md:text-xl mb-8 text-emerald-900/80 max-w-2xl mx-auto font-medium leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
