@@ -236,48 +236,77 @@ export default function Home() {
 
   const scrollToContact = () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMobileMenuOpen(false); // Cierra el menú en móviles automáticamente al hacer clic
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-white text-foreground selection:bg-accent/30">
       {/* ===== HEADER ===== */}
       <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-border shadow-soft">
         <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-2">
+          
+          {/* LOGO CLICKABLE: Te lleva al inicio de forma suave */}
+          <button onClick={scrollToTop} className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
             <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hd-logo_ac146515.png" alt="HD" className="h-8 w-auto" />
-            <span className="font-bold text-lg hidden sm:inline tracking-wide">{t.brandName}</span>
-          </div>
+            <span className="font-bold text-lg hidden sm:inline tracking-wide text-gray-900">{t.brandName}</span>
+          </button>
 
+          {/* NAVEGACIÓN DESKTOP: Deslizamiento suave y color CleanTech */}
           <nav className="hidden md:flex items-center gap-8">
-            {t.nav.map((item, i) => (
-              <a key={i} href={`#${["problem", "solution", "applications", "contact"][i]}`} className="text-sm hover:text-accent transition-smooth font-medium">
-                {item}
-              </a>
-            ))}
+            {t.nav.map((item, i) => {
+              const sectionId = ["problem", "solution", "applications", "contact"][i];
+              return (
+                <a 
+                  key={i} 
+                  href={`#${sectionId}`} 
+                  onClick={(e) => scrollToSection(e, sectionId)}
+                  className="text-sm hover:text-emerald-600 transition-smooth font-medium text-gray-700"
+                >
+                  {item}
+                </a>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
-            {/* Mapeo de Color Nav: accent -> Neutral Corporate */}
             <button onClick={handleLanguageToggle} className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full border border-border hover:bg-emerald-50 transition-smooth">
               <Globe className="w-4 h-4 text-emerald-600" />
               <span className="text-gray-700">{language}</span>
             </button>
-            <Button onClick={scrollToContact} className="hidden sm:flex bg-emerald-600 hover:bg-emerald-700 text-white" size="sm">
+            <Button onClick={scrollToContact} className="hidden sm:flex bg-emerald-600 hover:bg-emerald-700 text-white shadow-md" size="sm">
               <Download className="w-4 h-4" />
               <span>{language === "ES" ? "Brochure" : "Brochure"}</span>
             </Button>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 hover:bg-secondary rounded transition-smooth">
-              {mobileMenuOpen ? <X className="w-5 h-5 text-gray-700" /> : <Menu className="w-5 h-5 text-gray-700" />}
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 hover:bg-emerald-50 rounded transition-smooth">
+              {mobileMenuOpen ? <X className="w-5 h-5 text-emerald-700" /> : <Menu className="w-5 h-5 text-emerald-700" />}
             </button>
           </div>
         </div>
 
+        {/* NAVEGACIÓN MÓVIL: Cierre automático y deslizamiento suave */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t border-border bg-white">
+          <nav className="md:hidden border-t border-border bg-white shadow-lg absolute w-full left-0">
             <div className="container py-4 flex flex-col gap-4">
-               {t.nav.map((item, i) => (
-                <a key={i} href={`#${["problem", "solution", "applications", "contact"][i]}`} onClick={() => setMobileMenuOpen(false)} className="text-sm hover:text-accent font-medium">
-                  {item}
-                </a>
-              ))}
+               {t.nav.map((item, i) => {
+                 const sectionId = ["problem", "solution", "applications", "contact"][i];
+                 return (
+                  <a 
+                    key={i} 
+                    href={`#${sectionId}`} 
+                    onClick={(e) => scrollToSection(e, sectionId)} 
+                    className="text-sm hover:text-emerald-600 font-medium text-gray-700 py-2"
+                  >
+                    {item}
+                  </a>
+                 );
+               })}
             </div>
           </nav>
         )}
