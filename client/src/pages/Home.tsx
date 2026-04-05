@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 /**
  * HD Fotovoltaica - UN STI Forum 2026 Edition
- * Internationalization Engine - FULL VERSION
+ * Internationalization Engine - FULL VERSION WITH MEDIA OPTIMIZATION
  */
 
 export default function Home() {
@@ -45,21 +45,11 @@ export default function Home() {
         prob1Desc: "Pesan entre 15-20 kg/m², requiriendo refuerzos estructurales costosos que muchos techos no pueden soportar.",
         prob2Title: "Oscurecimiento del Espacio",
         prob2Desc: "Su opacidad bloquea la luz natural, forzando a las industrias a aumentar el consumo de iluminación artificial diurna.",
-        probCardTitle: "Infraestructura Pasiva",
-        probCardDesc: "Superficies que reciben luz solar pero no generan valor energético sin comprometer su estructura.",
-
+        
         solutionTitle: "La Innovación: ",
         solutionTitleAccent: "Policarbonato Solar Semitransparente",
         solutionDesc: "Hemos desarrollado una lámina multipropósito que reemplaza a los materiales de construcción convencionales, integrando celdas fotovoltaicas directamente en el policarbonato.",
-        sol1Title: "Generación Semitransparente",
-        sol1Desc: "Filtra el paso de la luz natural de forma controlada mientras captura la radiación solar para generar electricidad limpia.",
-        sol2Title: "Ligereza y Resistencia",
-        sol2Desc: "Extremadamente ligero y flexible. Resiste altos impactos y clima severo, superando ampliamente al vidrio tradicional.",
-        sol3Title: "Versatilidad Arquitectónica",
-        sol3Desc: "Integración estética y sin fricciones en claraboyas, fachadas comerciales y grandes techos industriales.",
-        sol4Title: "Efecto Cruzado (Doble Eficiencia)",
-        sol4Desc: "Inyecta energía renovable a la red mientras reduce drásticamente el consumo de iluminación artificial diurna.",
-
+        
         appTitle: "Aplicaciones Estratégicas",
         appDesc: "Nuestra tecnología está diseñada para adaptarse a los sectores que más requieren eficiencia espacial y energética.",
         app1: "Claraboyas y Techos de Fábricas / Puertos",
@@ -110,21 +100,11 @@ export default function Home() {
         prob1Desc: "Weighing between 15-20 kg/m², they require costly structural reinforcements that many roofs cannot support.",
         prob2Title: "Space Darkening",
         prob2Desc: "Their opacity blocks natural light, forcing industries to increase the consumption of daytime artificial lighting.",
-        probCardTitle: "Passive Infrastructure",
-        probCardDesc: "Surfaces that receive sunlight but generate no energetic value without compromising their structure.",
-
+        
         solutionTitle: "The Innovation: ",
         solutionTitleAccent: "Semi-transparent Solar Polycarbonate",
         solutionDesc: "We have developed a multipurpose sheet that replaces conventional building materials, integrating photovoltaic cells directly into the polycarbonate.",
-        sol1Title: "Semi-transparent Generation",
-        sol1Desc: "Filters natural light in a controlled manner while capturing solar radiation to generate clean electricity.",
-        sol2Title: "Lightness and Resistance",
-        sol2Desc: "Extremely lightweight and flexible. Resists high impacts and severe weather, vastly outperforming traditional glass.",
-        sol3Title: "Architectural Versatility",
-        sol3Desc: "Aesthetic and seamless integration in skylights, commercial facades, and large industrial roofs.",
-        sol4Title: "Cross Effect (Double Efficiency)",
-        sol4Desc: "Injects renewable energy into the grid while drastically reducing the consumption of daytime artificial lighting.",
-
+        
         appTitle: "Strategic Applications",
         appDesc: "Our technology is designed to adapt to the sectors that most require spatial and energetic efficiency.",
         app1: "Skylights and Factory / Port Roofs",
@@ -261,17 +241,17 @@ export default function Home() {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-semibold text-sm">
             {t.heroTag}
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight selection:bg-accent/10">
             {t.heroTitle} <span className="text-accent">{t.heroTitleAccent}</span>.
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-gray-800 max-w-2xl mx-auto font-medium">
+          <p className="text-lg md:text-xl mb-8 text-gray-800 max-w-2xl mx-auto font-medium leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button onClick={scrollToContact} className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-6 rounded-lg shadow-lg">
               {t.heroBtnTech}
             </Button>
-            <Button onClick={() => document.getElementById("solution")?.scrollIntoView({ behavior: "smooth" })} variant="outline" className="border-black text-black hover:bg-black/5 font-semibold px-8 py-6 rounded-lg">
+            <Button onClick={() => document.getElementById("solution")?.scrollIntoView({ behavior: "smooth" })} variant="outline" className="border-black text-black hover:bg-black/5 font-semibold px-8 py-6 rounded-lg transition-smooth">
               {t.heroBtnLearn}
             </Button>
           </div>
@@ -294,42 +274,42 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t.problemTitle}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">{t.problemTitle}</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.problemDesc}</p>
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0"><Shield className="w-6 h-6 text-red-600" /></div>
-                  <div><h3 className="font-semibold mb-1 text-lg">{t.prob1Title}</h3><p className="text-sm text-muted-foreground">{t.prob1Desc}</p></div>
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-secondary/20 transition-smooth">
+                  <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0 border border-red-200"><Shield className="w-6 h-6 text-red-600" /></div>
+                  <div><h3 className="font-semibold mb-1 text-lg">{t.prob1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.prob1Desc}</p></div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0"><Sun className="w-6 h-6 text-gray-600" /></div>
-                  <div><h3 className="font-semibold mb-1 text-lg">{t.prob2Title}</h3><p className="text-sm text-muted-foreground">{t.prob2Desc}</p></div>
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-secondary/20 transition-smooth">
+                  <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 border border-gray-200"><Sun className="w-6 h-6 text-gray-600" /></div>
+                  <div><h3 className="font-semibold mb-1 text-lg">{t.prob2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.prob2Desc}</p></div>
                 </div>
               </div>
             </div>
+            {/* Visual: Render Profesional del Producto */}
             <div className="flex justify-center">
-              <div className="w-full max-w-md h-80 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex flex-col items-center justify-center border border-border p-8 text-center shadow-inner">
-                <Building className="w-20 h-20 text-gray-400 mb-4" />
-                <h4 className="font-bold text-gray-500 mb-2">{t.probCardTitle}</h4>
-                <p className="text-sm text-gray-500">{t.probCardDesc}</p>
-              </div>
+              <img src="/product-problem.jpg" alt="Chapa Solar Fotovoltaica Integrada" className="w-full max-w-md h-auto rounded-3xl shadow-xl border border-border" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== SOLUTION ===== */}
+      {/* ===== SOLUTION / INNOVATION (Refactorizado con Imagen de la Mano) ===== */}
       <section id="solution" className="py-16 md:py-24 bg-secondary/30">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t.solutionTitle}<span className="text-accent">{t.solutionTitleAccent}</span></h2>
-            <p className="text-lg text-muted-foreground">{t.solutionDesc}</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-border hover:-translate-y-1 transition-all"><div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4"><Sun className="w-6 h-6 text-accent" /></div><h3 className="font-bold mb-2">{t.sol1Title}</h3><p className="text-sm text-muted-foreground">{t.sol1Desc}</p></div>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-border hover:-translate-y-1 transition-all"><div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4"><Shield className="w-6 h-6 text-accent" /></div><h3 className="font-bold mb-2">{t.sol2Title}</h3><p className="text-sm text-muted-foreground">{t.sol2Desc}</p></div>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-border hover:-translate-y-1 transition-all"><div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4"><Building className="w-6 h-6 text-accent" /></div><h3 className="font-bold mb-2">{t.sol3Title}</h3><p className="text-sm text-muted-foreground">{t.sol3Desc}</p></div>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-border hover:-translate-y-1 transition-all"><div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4"><Zap className="w-6 h-6 text-accent" /></div><h3 className="font-bold mb-2">{t.sol4Title}</h3><p className="text-sm text-muted-foreground">{t.sol4Desc}</p></div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: Texto */}
+            <div>
+              <div className="text-center md:text-left max-w-3xl mx-auto mb-10 md:mb-0">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">{t.solutionTitle}<span className="text-accent">{t.solutionTitleAccent}</span></h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">{t.solutionDesc}</p>
+              </div>
+            </div>
+            {/* Right: Imagen "Wow" de Ligereza y Transparencia */}
+            <div className="flex justify-center order-first md:order-none">
+              <img src="/product-innovation.jpg" alt="Innovación en Policarbonato Solar Ligero" className="w-full max-w-md h-auto rounded-3xl shadow-2xl border border-accent/20 p-2 bg-white" />
+            </div>
           </div>
         </div>
       </section>
@@ -338,26 +318,28 @@ export default function Home() {
       <section id="applications" className="py-16 md:py-24 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
             <div className="order-2 md:order-1">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">{t.appTitle}</h2>
-              <p className="text-lg text-muted-foreground mb-8">{t.appDesc}</p>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.appDesc}</p>
               <ul className="space-y-4">
                 {[t.app1, t.app2, t.app3, t.app4].map((app, index) => (
-                  <li key={index} className="flex items-center gap-3 p-3 bg-secondary/20 rounded-lg border border-border">
-                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">{index + 1}</div>
+                  <li key={index} className="flex items-center gap-3 p-3 bg-white rounded-lg border border-border hover:shadow-soft transition-smooth">
+                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">{index + 1}</div>
                     <span className="font-medium">{app}</span>
                   </li>
                 ))}
               </ul>
             </div>
+            {/* Right Visual: Vista Angular Profesional */}
             <div className="flex justify-center order-1 md:order-2">
-              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/product-chapa-solar-NK8dYpVbWUMwVrbMAzFyYu.webp" alt="HD Fotovoltaica" className="w-full max-w-md rounded-xl shadow-lg border border-border" />
+              <img src="/product-applications.jpg" alt="Aplicación de Chapa Solar Profesional" className="w-full max-w-md rounded-2xl shadow-xl border border-border" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== CONTACT ===== */}
+      {/* ===== CONTACT / DOWNLOAD ===== */}
       <section id="contact" className="py-16 md:py-24 bg-foreground text-white">
         <div className="container max-w-4xl grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -365,31 +347,31 @@ export default function Home() {
               <Download className="w-3 h-3" /> {t.contactTag}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.contactTitle}</h2>
-            <p className="text-gray-400 mb-8">{t.contactDesc}</p>
+            <p className="text-gray-400 mb-8 leading-relaxed">{t.contactDesc}</p>
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-sm text-gray-300"><Zap className="w-5 h-5 text-accent" /> {t.contactList1}</div>
               <div className="flex items-center gap-3 text-sm text-gray-300"><Shield className="w-5 h-5 text-accent" /> {t.contactList2}</div>
               <div className="flex items-center gap-3 text-sm text-gray-300"><Building className="w-5 h-5 text-accent" /> {t.contactList3}</div>
             </div>
           </div>
-          <div className="bg-white text-foreground p-8 rounded-2xl shadow-xl">
+          <div className="bg-white text-foreground p-8 rounded-2xl shadow-xl border border-white/10">
             <form onSubmit={handleFormSubmit} className="space-y-5">
               <div>
                 <label className="block text-sm font-semibold mb-1.5">{t.formLabelName}</label>
-                <Input name="name" placeholder={t.formPlaceholderName} value={formData.name} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50" />
+                <Input name="name" placeholder={t.formPlaceholderName} value={formData.name} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-accent" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1.5">Email</label>
-                <Input name="email" type="email" placeholder="email@empresa.com" value={formData.email} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50" />
+                <Input name="email" type="email" placeholder="email@empresa.com" value={formData.email} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-accent" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1.5">{t.formLabelOrg}</label>
-                <Input name="organization" placeholder={t.formPlaceholderOrg} value={formData.organization} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50" />
+                <Input name="organization" placeholder={t.formPlaceholderOrg} value={formData.organization} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-accent" />
               </div>
-              <Button type="submit" disabled={isSubmitting} className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-6 rounded-xl shadow-lg">
+              <Button type="submit" disabled={isSubmitting} className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-6 rounded-xl shadow-lg shadow-accent/20 transition-smooth">
                 {isSubmitting ? <><Loader2 className="w-5 h-5 animate-spin mr-2" />{t.formProcessing}</> : <><Download className="w-5 h-5 mr-2" />{t.formBtn}</>}
               </Button>
-              <p className="text-xs text-center text-muted-foreground mt-4">{t.formDisclaimer}</p>
+              <p className="text-xs text-center text-muted-foreground mt-4 leading-relaxed">{t.formDisclaimer}</p>
             </form>
           </div>
         </div>
@@ -398,7 +380,7 @@ export default function Home() {
       {/* ===== FOOTER ===== */}
       <footer className="bg-black text-white py-12">
         <div className="container">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8 border-b border-gray-800 pb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hd-logo_ac146515.png" alt="HD" className="h-8 w-auto opacity-90" />
@@ -408,14 +390,14 @@ export default function Home() {
             </div>
             <div>
               <h4 className="font-semibold text-gray-200 mb-4">{t.footerHQTitle}</h4>
-              <p className="text-sm text-gray-400">{t.footerHQDesc}</p>
+              <p className="text-sm text-gray-400 leading-relaxed">{t.footerHQDesc}</p>
             </div>
             <div>
               <h4 className="font-semibold text-gray-200 mb-4">Contacto</h4>
               <p className="text-sm text-gray-400 mb-2">contacto@hdfotovoltaica.com</p>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 flex justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">{t.footerRights}</p>
           </div>
         </div>
