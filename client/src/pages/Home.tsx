@@ -500,10 +500,10 @@ export default function Home() {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.appDesc}</p>
               <ul className="space-y-4">
                 {[t.app1, t.app2, t.app3, t.app4].map((app, index) => (
-                  <li key={index} className="flex items-center gap-3 p-3 bg-white rounded-lg border border-border hover:shadow-soft transition-smooth">
-                    {/* Mapeo de Color Applications Check: accent -> CleanTech */}
-                    <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">{index + 1}</div>
-                    <span className="font-medium text-gray-900">{app}</span>
+                  <li key={index} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-border hover:bg-emerald-50 hover:border-emerald-200 hover:shadow-soft transition-smooth cursor-default">
+                    {/* Mapeo de Color Applications Check: CleanTech + Hover Effect unificado */}
+                    <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold flex-shrink-0">{index + 1}</div>
+                    <span className="font-medium text-gray-900 text-lg">{app}</span>
                   </li>
                 ))}
               </ul>
