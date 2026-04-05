@@ -67,9 +67,9 @@ export default function Home() {
 
         awardsTitle: "Reconocimiento Global e Impacto",
         metric1: "Unidades Instaladas",
-        metric2: "Capacidad Instalada",
-        metric3: "kg CO₂eq Evitados",
-        metric4: "Familias & Empresas",
+        metric2: "Capacidad Installed",
+        metric3: "kg CO₂eq Avoided",
+        metric4: "Families & Businesses",
         
         problemTitle: "El Desafío de la Infraestructura Urbana",
         problemDesc: "Millones de metros cuadrados de superficies industriales y urbanas están desaprovechados. Las soluciones convencionales de generación energética no son viables en todos los escenarios debido a su peso, rigidez y limitaciones arquitectónicas",
@@ -124,7 +124,7 @@ export default function Home() {
         nav: ["The Problem", "Innovation", "Applications", "Contact"],
         heroTag: "UN STI Forum - New York 2026",
         heroTitle: "SMART INFRASTRUCTURES",
-        heroTitleAccent: "", 
+        heroTitleAccent: "", 
         heroSubtitle: "Transforming industry and agriculture into profitable and efficient nodes of power generation.",
         heroBtnTech: "Access Technical Documentation",
         heroBtnLearn: "Discover the Technology",
@@ -276,6 +276,7 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-3">
+            {/* Mapeo de Color Nav: accent -> Neutral Corporate */}
             <button onClick={handleLanguageToggle} className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full border border-border hover:bg-emerald-50 transition-smooth">
               <Globe className="w-4 h-4 text-emerald-600" />
               <span className="text-gray-700">{language}</span>
@@ -290,7 +291,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* NAVEGACIÓN MÓVIL: Cierre automático y deslizamiento suave */}
         {mobileMenuOpen && (
           <nav className="md:hidden border-t border-border bg-white shadow-lg absolute w-full left-0">
             <div className="container py-4 flex flex-col gap-4">
@@ -357,30 +357,39 @@ export default function Home() {
             {/* Logos Oficiales - Tamaños aumentados (h-16 a h-20) */}
             <div className={`flex flex-wrap justify-center items-center gap-x-14 gap-y-10 max-w-6xl mx-auto transition-all duration-1000 ${logosOnScreen ? "grayscale-0 opacity-100" : "grayscale opacity-80"}`}>
               
+              {/* Logo UNIDO */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/6/6f/UNIDO_Logo.svg" 
                 alt="UNIDO Global Call Winner" 
                 className="h-16 md:h-20 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
+              
+              {/* Logo IRENA */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/f6/International_Renewable_Energy_Agency_Logo.png" 
                 alt="IRENA NewGen COP28 Award" 
                 className="h-14 md:h-16 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
+              
+              {/* Logo COP28 UAE (Mapeado a archivo local: client/public/logo-cop28.png) */}
               <img 
                 src="/logo-cop28.png" 
                 alt="COP28 Technology Presentation" 
                 className="h-16 md:h-20 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
+
+              {/* Logo Enel Foundation */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/2/22/Enel_Group_logo.svg" 
                 alt="Enel Foundation Supported" 
                 className="h-10 md:h-14 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
+
+              {/* Logo IUCN */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/IUCN_logo.svg" 
                 alt="IUCN Member / Partner" 
@@ -442,31 +451,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SOLUTION / INNOVATION UNIFICADA & OPTIMIZADA (Adiós a Trust Bar separada) ===== */}
+      {/* ===== SOLUTION / INNOVATION UNIFICADA & OPTIMIZADA ===== */}
       {/* Mapeo Spacing: Unificación + py-24 para dar aire corporativo */}
       <section id="solution" className="py-24 bg-secondary/30 relative z-0">
         <div className="container">
           
-          {/* ODS UNIFICADOS (Logos Oficiales desde servidores de la ONU) */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-16 border-b border-gray-200/50 pb-16">
-            <img 
-              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" 
-              alt="SDG 7: Affordable and Clean Energy" 
-              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
-            />
-            <img 
-              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" 
-              alt="SDG 9: Industry, Innovation and Infrastructure" 
-              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
-            />
-            <img 
-              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" 
-              alt="SDG 11: Sustainable Cities and Communities" 
-              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
-            />
+          {/* ODS UNIFICADOS (Logos Oficiales con Efecto Revelado) */}
+          {/* Mapeo de Activación Dinámico: py-10 pt-16 mt-16 mb-16 -> py-10 mt-8 + z-20 for active z-index */}
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-16 border-b border-gray-200/50 pb-16 relative z-10 transition-all duration-1000 grayscale opacity-70 scale-95 origin-center">
+            {/* ODS Logos Mapped with Dynamic Intersection logic */}
+            {logosOnScreen ? (
+              <>
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/1/13/Sustainable_Development_Goal_07Affordable_and_clean_energy.svg" 
+                  alt="SDG 7" 
+                  className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale-0 opacity-100 scale-100 transition-all duration-1000 cursor-default" 
+                />
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Sustainable_Development_Goal_09Industry%2C_Innovation_and_Infrastructure.svg" 
+                  alt="SDG 9" 
+                  className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale-0 opacity-100 scale-100 transition-all duration-1000 cursor-default" 
+                />
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/91/Sustainable_Development_Goal_11Sustainable_cities_and_communities.svg" 
+                  alt="SDG 11" 
+                  className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale-0 opacity-100 scale-100 transition-all duration-1000 cursor-default" 
+                />
+              </>
+            ) : (
+              <>
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/1/13/Sustainable_Development_Goal_07Affordable_and_clean_energy.svg" 
+                  alt="SDG 7" 
+                  className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale opacity-70 scale-95 transition-all duration-1000 cursor-default" 
+                />
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Sustainable_Development_Goal_09Industry%2C_Innovation_and_Infrastructure.svg" 
+                  alt="SDG 9" 
+                  className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale opacity-70 scale-95 transition-all duration-1000 cursor-default" 
+                />
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/91/Sustainable_Development_Goal_11Sustainable_cities_and_communities.svg" 
+                  alt="SDG 11" 
+                  className="w-24 md:w-32 h-auto object-contain rounded-md shadow-sm grayscale opacity-70 scale-95 transition-all duration-1000 cursor-default" 
+                />
+              </>
+            )}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-[-4rem]">
             {/* Left: Texto */}
             <div>
               <div className="text-center md:text-left max-w-3xl mx-auto mb-10 md:mb-0">
