@@ -348,51 +348,43 @@ export default function Home() {
       {/* Mapeo de Spacing: py-24 mb-12 para dar aire corporativo */}
       <section ref={logosRef} className="bg-white py-24 mb-12 border-b border-border relative z-10">
         <div className="container">
-          <div className="text-center mb-10">
-            <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-8">
+          <div className="text-center mb-16">
+            {/* Título más grande y en tono Emerald */}
+            <h3 className="text-base md:text-lg font-bold text-emerald-900/80 uppercase tracking-widest mb-12">
               {t.awardsTitle}
             </h3>
             
-            {/* Logos Oficiales con Lógica de Auto-activación (Intersection Observer) */}
-            <div className={`flex flex-wrap justify-center items-center gap-x-12 gap-y-8 max-w-5xl mx-auto transition-all duration-1000 ${logosOnScreen ? "grayscale-0 opacity-100" : "grayscale opacity-80"}`}>
+            {/* Logos Oficiales - Tamaños aumentados (h-16 a h-20) */}
+            <div className={`flex flex-wrap justify-center items-center gap-x-14 gap-y-10 max-w-6xl mx-auto transition-all duration-1000 ${logosOnScreen ? "grayscale-0 opacity-100" : "grayscale opacity-80"}`}>
               
-              {/* Logo UNIDO */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/6/6f/UNIDO_Logo.svg" 
                 alt="UNIDO Global Call Winner" 
-                className="h-12 md:h-14 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-16 md:h-20 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
-              
-              {/* Logo IRENA */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/f6/International_Renewable_Energy_Agency_Logo.png" 
                 alt="IRENA NewGen COP28 Award" 
-                className="h-10 md:h-12 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-14 md:h-16 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
-              
-              {/* Logo COP28 UAE (Mapeado a archivo local: client/public/logo-cop28.png) */}
               <img 
                 src="/logo-cop28.png" 
                 alt="COP28 Technology Presentation" 
-                className="h-12 md:h-14 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-16 md:h-20 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
-
-              {/* Logo Enel Foundation */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/2/22/Enel_Group_logo.svg" 
                 alt="Enel Foundation Supported" 
-                className="h-8 md:h-10 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-10 md:h-14 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
-
-              {/* Logo IUCN */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/IUCN_logo.svg" 
                 alt="IUCN Member / Partner" 
-                className="h-10 md:h-12 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-14 md:h-16 w-auto object-contain hover:scale-110 transition-transform"
                 loading="lazy"
               />
             </div>
