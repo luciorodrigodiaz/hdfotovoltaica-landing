@@ -469,15 +469,15 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.solutionTitle}<span className="text-emerald-600">{t.solutionTitleAccent}</span></h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.solutionDesc}</p>
                 
-                <div className="space-y-6">
-                  {/* Mapeo de Color Solution Icons: accent -> CleanTech */}
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Sun className="w-5 h-5 text-emerald-700" /></div>
-                    <div><h3 className="font-bold mb-1 tracking-tight">{t.sol1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol1Desc}</p></div>
+                <div className="space-y-4">
+                  {/* Mapeo de Color Solution Icons: CleanTech + Hover Effect unificado */}
+                  <div className="flex items-start gap-4 text-left p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
+                    <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Sun className="w-6 h-6 text-emerald-700" /></div>
+                    <div><h3 className="font-bold mb-1 text-lg tracking-tight">{t.sol1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol1Desc}</p></div>
                   </div>
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Shield className="w-5 h-5 text-emerald-700" /></div>
-                    <div><h3 className="font-bold mb-1 tracking-tight">{t.sol2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol2Desc}</p></div>
+                  <div className="flex items-start gap-4 text-left p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
+                    <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Shield className="w-6 h-6 text-emerald-700" /></div>
+                    <div><h3 className="font-bold mb-1 text-lg tracking-tight">{t.sol2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol2Desc}</p></div>
                   </div>
                 </div>
               </div>
