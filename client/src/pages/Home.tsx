@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 /**
  * HD Fotovoltaica - UN STI Forum 2026 Edition
- * Internationalization Engine - AUTO-ACTIVATING LOGOS (Intersection Observer)
+ * Internationalization Engine - FULL CLEANTECH COLOR MAPPING & METRICS OPTIMIZATION
  */
 
 // Hook personalizado para detectar visibilidad (Intersection Observer)
@@ -70,7 +70,7 @@ export default function Home() {
         metric4: "Familias & Empresas",
         
         problemTitle: "El Desafío de la Infraestructura Urbana",
-        problemDesc: "Millones de metros cuadrados de superficies industriales y urbanas están desaprovechados. Las soluciones convencionales de generación energética no son viables en todos los escenarios debido a su peso, rigidez y limitaciones arquitectónicas.",
+        problemDesc: "Millones de metros cuadrados de superficies industriales y urbanas están desaprovechados. Las soluciones convencionales de generación energética no son viables en todos los escenarios debido a su peso, rigidez y limitaciones arquitectónicas",
         prob1Title: "Peso y Rigidez (Vidrio)",
         prob1Desc: "Pesan entre 15-20 kg/m², requiriendo refuerzos estructurales costosos que muchos techos no pueden soportar.",
         prob2Title: "Oscurecimiento del Espacio",
@@ -239,7 +239,7 @@ export default function Home() {
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
             <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hd-logo_ac146515.png" alt="HD" className="h-8 w-auto" />
-            <span className="font-bold text-lg hidden sm:inline">{t.brandName}</span>
+            <span className="font-bold text-lg hidden sm:inline tracking-wide">{t.brandName}</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -251,16 +251,17 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button onClick={handleLanguageToggle} className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full border border-border hover:bg-secondary transition-smooth">
-              <Globe className="w-4 h-4 text-accent" />
-              <span>{language}</span>
+            {/* Mapeo de Color Nav: accent -> Neutral Corporate */}
+            <button onClick={handleLanguageToggle} className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full border border-border hover:bg-emerald-50 transition-smooth">
+              <Globe className="w-4 h-4 text-emerald-600" />
+              <span className="text-gray-700">{language}</span>
             </button>
-            <Button onClick={scrollToContact} className="hidden sm:flex bg-accent hover:bg-accent/90 text-white" size="sm">
+            <Button onClick={scrollToContact} className="hidden sm:flex bg-emerald-600 hover:bg-emerald-700 text-white" size="sm">
               <Download className="w-4 h-4" />
               <span>{language === "ES" ? "Brochure" : "Brochure"}</span>
             </Button>
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 hover:bg-secondary rounded transition-smooth">
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-gray-700" /> : <Menu className="w-5 h-5 text-gray-700" />}
             </button>
           </div>
         </div>
@@ -281,20 +282,18 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center bg-white" style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hero-brushstrokes-arcs-UusSkKShgANrGwL4KjVLTM.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="relative z-10 container text-center max-w-4xl px-4 mt-[-5vh]">
-          {/* Mapeo de Color del Hero: Adiós al Rojo.
-              accent/10 -> bg-emerald-50 text-emerald-700 
-              Reemplazo del color semántico por un verde CleanTech para la ONU */}
+          {/* Mapeo de Color Hero: accent -> Emerald CleanTech */}
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm">
             {t.heroTag}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight selection:bg-accent/10">
-            {t.heroTitle} <span className="text-accent">{t.heroTitleAccent}</span>.
+            {t.heroTitle} <span className="text-emerald-600">{t.heroTitleAccent}</span>.
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-800 max-w-2xl mx-auto font-medium leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button onClick={scrollToContact} className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-6 rounded-lg shadow-lg">
+            <Button onClick={scrollToContact} className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-6 rounded-lg shadow-lg">
               {t.heroBtnTech}
             </Button>
             <Button onClick={() => document.getElementById("solution")?.scrollIntoView({ behavior: "smooth" })} variant="outline" className="border-black text-black hover:bg-black/5 font-semibold px-8 py-6 rounded-lg transition-smooth">
@@ -305,7 +304,7 @@ export default function Home() {
       </section>
 
       {/* ===== GLOBAL RECOGNITION & METRICS (IMPACT & OFFICIAL LOGOS) ===== */}
-      {/* Mapeo de Spacing: py-12 -> py-24 + mb-12 para dar aire corporativo */}
+      {/* Mapeo de Spacing: py-24 mb-12 para dar aire corporativo */}
       <section ref={logosRef} className="bg-white py-24 mb-12 border-b border-border">
         <div className="container">
           <div className="text-center mb-10">
@@ -359,7 +358,7 @@ export default function Home() {
           </div>
           
           {/* Contadores de Impacto con Íconos Mapeados a Color */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-border/50 pt-8 mt-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-border/50 pt-10 mt-8">
             <div className="flex flex-col items-center justify-center">
               <Layers className="w-8 h-8 text-emerald-900 mb-3 hover:scale-110 transition-transform duration-300" />
               <div className="text-3xl md:text-4xl font-black text-emerald-950 mb-1 hover:scale-110 transition-transform">254</div>
@@ -392,12 +391,13 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.problemTitle}</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.problemDesc}</p>
               <div className="space-y-6">
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-secondary/20 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0 border border-red-200"><Shield className="w-6 h-6 text-red-600" /></div>
+                {/* Mapeo de Color SDG Cards: accent -> CleanTech */}
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Shield className="w-6 h-6 text-emerald-700" /></div>
                   <div><h3 className="font-semibold mb-1 text-lg">{t.prob1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.prob1Desc}</p></div>
                 </div>
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-secondary/20 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 border border-gray-200"><Sun className="w-6 h-6 text-gray-600" /></div>
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Sun className="w-6 h-6 text-emerald-700" /></div>
                   <div><h3 className="font-semibold mb-1 text-lg">{t.prob2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.prob2Desc}</p></div>
                 </div>
               </div>
@@ -416,16 +416,17 @@ export default function Home() {
             {/* Left: Texto */}
             <div>
               <div className="text-center md:text-left max-w-3xl mx-auto mb-10 md:mb-0">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.solutionTitle}<span className="text-accent">{t.solutionTitleAccent}</span></h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.solutionTitle}<span className="text-emerald-600">{t.solutionTitleAccent}</span></h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.solutionDesc}</p>
                 
                 <div className="space-y-6">
+                  {/* Mapeo de Color Solution Icons: accent -> CleanTech */}
                   <div className="flex items-start gap-4 text-left">
-                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><Sun className="w-5 h-5 text-accent" /></div>
+                    <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Sun className="w-5 h-5 text-emerald-700" /></div>
                     <div><h3 className="font-bold mb-1 tracking-tight">{t.sol1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol1Desc}</p></div>
                   </div>
                   <div className="flex items-start gap-4 text-left">
-                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0"><Shield className="w-5 h-5 text-accent" /></div>
+                    <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Shield className="w-5 h-5 text-emerald-700" /></div>
                     <div><h3 className="font-bold mb-1 tracking-tight">{t.sol2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol2Desc}</p></div>
                   </div>
                 </div>
@@ -433,7 +434,7 @@ export default function Home() {
             </div>
             {/* Right: Imagen "Wow" de Ligereza y Transparencia */}
             <div className="flex justify-center order-first md:order-none">
-              <img src="/product-innovation.jpg" alt="Innovación en Policarbonato Solar Ligero" className="w-full max-w-md h-auto rounded-3xl shadow-2xl border border-accent/20 p-2 bg-white transition-all hover:scale-105" />
+              <img src="/product-innovation.jpg" alt="Innovación en Policarbonato Solar Ligero" className="w-full max-w-md h-auto rounded-3xl shadow-2xl border border-emerald-100 p-2 bg-white transition-all hover:scale-105" />
             </div>
           </div>
         </div>
@@ -450,8 +451,9 @@ export default function Home() {
               <ul className="space-y-4">
                 {[t.app1, t.app2, t.app3, t.app4].map((app, index) => (
                   <li key={index} className="flex items-center gap-3 p-3 bg-white rounded-lg border border-border hover:shadow-soft transition-smooth">
-                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold">{index + 1}</div>
-                    <span className="font-medium">{app}</span>
+                    {/* Mapeo de Color Applications Check: accent -> CleanTech */}
+                    <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">{index + 1}</div>
+                    <span className="font-medium text-gray-900">{app}</span>
                   </li>
                 ))}
               </ul>
@@ -465,35 +467,35 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT / DOWNLOAD ===== */}
-      <section id="contact" className="py-16 md:py-24 bg-foreground text-white border-t border-white/5">
+      <section id="contact" className="py-16 md:py-24 bg-emerald-950 text-white border-t border-emerald-900">
         <div className="container max-w-4xl grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/20 text-accent font-semibold text-xs mb-6 border border-accent/30">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900 text-emerald-300 font-semibold text-xs mb-6 border border-emerald-800">
               <Download className="w-3 h-3" /> {t.contactTag}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">{t.contactTitle}</h2>
-            <p className="text-gray-400 mb-8 leading-relaxed">{t.contactDesc}</p>
+            <p className="text-emerald-300 mb-8 leading-relaxed">{t.contactDesc}</p>
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-sm text-gray-300"><Zap className="w-5 h-5 text-accent" /> {t.contactList1}</div>
-              <div className="flex items-center gap-3 text-sm text-gray-300"><Shield className="w-5 h-5 text-accent" /> {t.contactList2}</div>
-              <div className="flex items-center gap-3 text-sm text-gray-300"><Building className="w-5 h-5 text-accent" /> {t.contactList3}</div>
+              <div className="flex items-center gap-3 text-sm text-emerald-200"><Zap className="w-5 h-5 text-orange-500" /> {t.contactList1}</div>
+              <div className="flex items-center gap-3 text-sm text-emerald-200"><Shield className="w-5 h-5 text-orange-500" /> {t.contactList2}</div>
+              <div className="flex items-center gap-3 text-sm text-emerald-200"><Building className="w-5 h-5 text-orange-500" /> {t.contactList3}</div>
             </div>
           </div>
           <div className="bg-white text-foreground p-8 rounded-2xl shadow-xl border border-white/10">
             <form onSubmit={handleFormSubmit} className="space-y-5">
               <div>
                 <label className="block text-sm font-semibold mb-1.5">{t.formLabelName}</label>
-                <Input name="name" placeholder={t.formPlaceholderName} value={formData.name} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-accent" />
+                <Input name="name" placeholder={t.formPlaceholderName} value={formData.name} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-emerald-600" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1.5">Email</label>
-                <Input name="email" type="email" placeholder="email@empresa.com" value={formData.email} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-accent" />
+                <Input name="email" type="email" placeholder="email@empresa.com" value={formData.email} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-emerald-600" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1.5">{t.formLabelOrg}</label>
-                <Input name="organization" placeholder={t.formPlaceholderOrg} value={formData.organization} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-accent" />
+                <Input name="organization" placeholder={t.formPlaceholderOrg} value={formData.organization} onChange={handleFormChange} required disabled={isSubmitting} className="bg-secondary/50 border-transparent focus:border-emerald-600" />
               </div>
-              <Button type="submit" disabled={isSubmitting} className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-6 rounded-xl shadow-lg shadow-accent/20 transition-smooth">
+              <Button type="submit" disabled={isSubmitting} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-6 rounded-xl shadow-lg shadow-emerald-200/20 transition-smooth">
                 {isSubmitting ? <><Loader2 className="w-5 h-5 animate-spin mr-2" />{t.formProcessing}</> : <><Download className="w-5 h-5 mr-2" />{t.formBtn}</>}
               </Button>
               <p className="text-xs text-center text-muted-foreground mt-4 leading-relaxed">{t.formDisclaimer}</p>
@@ -509,7 +511,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hd-logo_ac146515.png" alt="HD" className="h-8 w-auto opacity-90" />
-                <span className="font-bold text-xl tracking-tight">{t.brandName}</span>
+                <span className="font-bold text-xl tracking-wide">{t.brandName}</span>
               </div>
               <p className="text-sm text-gray-400 max-w-xs leading-relaxed">{t.footerCompanyDesc}</p>
             </div>
@@ -519,7 +521,8 @@ export default function Home() {
             </div>
             <div>
               <h4 className="font-semibold text-gray-200 mb-4">Contacto</h4>
-              <a href="mailto:hdfotovoltaica@gmail.com" className="text-sm text-gray-400 mb-2 hover:text-accent transition-colors block">
+              {/* Mapeo de Color Mail: accent -> Emerald CleanTech */}
+              <a href="mailto:hdfotovoltaica@gmail.com" className="text-sm text-gray-400 mb-2 hover:text-emerald-500 transition-smooth block">
                 hdfotovoltaica@gmail.com
               </a>
             </div>
