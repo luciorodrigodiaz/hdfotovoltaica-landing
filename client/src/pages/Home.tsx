@@ -302,7 +302,8 @@ export default function Home() {
       </section>
 
       {/* ===== GLOBAL RECOGNITION & METRICS (IMPACT & OFFICIAL LOGOS) ===== */}
-      <section ref={logosRef} className="bg-white py-12 border-b border-border">
+      {/* Mapeo de Spacing: py-12 -> py-24 + mb-12 para dar aire corporativo */}
+      <section ref={logosRef} className="bg-white py-24 mb-12 border-b border-border">
         <div className="container">
           <div className="text-center mb-10">
             <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-8">
