@@ -358,26 +358,26 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Contadores de Impacto con Íconos */}
+          {/* Contadores de Impacto con Íconos Mapeados a Color */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center border-t border-border/50 pt-8 mt-4">
             <div className="flex flex-col items-center justify-center">
-              <Layers className="w-8 h-8 text-accent/80 mb-3 hover:scale-110 transition-transform duration-300" />
-              <div className="text-3xl md:text-4xl font-black text-accent mb-1 hover:scale-110 transition-transform">254</div>
+              <Layers className="w-8 h-8 text-emerald-900 mb-3 hover:scale-110 transition-transform duration-300" />
+              <div className="text-3xl md:text-4xl font-black text-emerald-950 mb-1 hover:scale-110 transition-transform">254</div>
               <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric1}</div>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <Zap className="w-8 h-8 text-accent/80 mb-3 hover:scale-110 transition-transform duration-300" />
-              <div className="text-3xl md:text-4xl font-black text-accent mb-1 hover:scale-110 transition-transform">48.7<span className="text-2xl">kW</span></div>
+              <Zap className="w-8 h-8 text-orange-500 mb-3 hover:scale-110 transition-transform duration-300" />
+              <div className="text-3xl md:text-4xl font-black text-orange-600 mb-1 hover:scale-110 transition-transform">48.7<span className="text-2xl">kW</span></div>
               <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric2}</div>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <Leaf className="w-8 h-8 text-accent/80 mb-3 hover:scale-110 transition-transform duration-300" />
-              <div className="text-3xl md:text-4xl font-black text-accent mb-1 hover:scale-110 transition-transform">+115<span className="text-2xl">k</span></div>
+              <Leaf className="w-8 h-8 text-green-600 mb-3 hover:scale-110 transition-transform duration-300" />
+              <div className="text-3xl md:text-4xl font-black text-green-700 mb-1 hover:scale-110 transition-transform">+115<span className="text-2xl">k</span></div>
               <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric3}</div>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <Users className="w-8 h-8 text-accent/80 mb-3 hover:scale-110 transition-transform duration-300" />
-              <div className="text-3xl md:text-4xl font-black text-accent mb-1 hover:scale-110 transition-transform">+25</div>
+              <Users className="w-8 h-8 text-blue-600 mb-3 hover:scale-110 transition-transform duration-300" />
+              <div className="text-3xl md:text-4xl font-black text-blue-700 mb-1 hover:scale-110 transition-transform">+25</div>
               <div className="text-xs md:text-sm text-muted-foreground font-medium">{t.metric4}</div>
             </div>
           </div>
