@@ -285,6 +285,10 @@ export default function Home() {
 
       {/* ===== HERO ===== */}
       <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center bg-white" style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663280050483/jo9qH2yDgMpiW4axWL3Z6z/hero-brushstrokes-arcs-UusSkKShgANrGwL4KjVLTM.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        
+        {/* Capa de Transición: Fusión suave hacia el blanco de la siguiente sección */}
+        <div className="absolute bottom-0 left-0 w-full h-32 md:h-56 bg-gradient-to-t from-white to-transparent z-0 pointer-events-none"></div>
+
         <div className="relative z-10 container text-center max-w-4xl px-4 mt-[-5vh]">
           {/* Mapeo de Color Hero: accent -> Emerald CleanTech */}
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm">
