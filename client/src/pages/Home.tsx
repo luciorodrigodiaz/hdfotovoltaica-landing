@@ -61,7 +61,7 @@ export default function Home() {
         brandName: "Fotovoltaica",
         nav: ["El Problema", "Innovación", "Aplicaciones", "Contacto"],
         heroTag: "Foro CTI de la ONU - Nueva York 2026",
-        heroTitle: "INFRAESTRUCTURAS INTELIGENTES",
+        heroTitle: "INFRAESTRUCTURA INTELIGENTE",
         heroTitleAccent: "",
         heroSubtitle: "Transformando la industria y el agro en nodos de generación eléctrica rentable y eficiente.",
         heroBtnTech: "Acceder a la Documentación Técnica",
