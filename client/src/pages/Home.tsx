@@ -333,8 +333,8 @@ export default function Home() {
             {t.heroTitle}
           </h1>
           
-          {/* Subtítulo más grueso y oscuro */}
-          <p className="text-xl md:text-2xl mb-12 text-emerald-800 max-w-3xl mx-auto font-bold leading-relaxed">
+          {/* Cambia text-xl md:text-2xl por text-2xl md:text-3xl para probar el impacto */}
+          <p className="text-2xl md:text-3xl mb-10 text-emerald-900 max-w-3xl mx-auto font-medium leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
