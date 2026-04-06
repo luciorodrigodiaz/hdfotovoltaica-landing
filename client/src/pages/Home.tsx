@@ -144,12 +144,15 @@ export default function Home() {
         metric3: "kg CO₂eq Avoided",
         metric4: "Families & Businesses",
 
-        problemTitle: "The Urban Infrastructure Challenge",
-        problemDesc: "Millions of square meters of industrial and urban surfaces are wasted. Conventional energy generation solutions are not viable in all scenarios due to their weight, rigidity, and architectural limitations.",
-        prob1Title: "Weight and Rigidity (Glass)",
-        prob1Desc: "Weighing between 15-20 kg/m², they require costly structural reinforcements that many roofs cannot support.",
-        prob2Title: "Space Darkening",
-        prob2Desc: "Their opacity blocks natural light, forcing industries to increase the consumption of daytime artificial lighting.",
+        // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy EN INGLÉS) ---
+        problemTitle: "The Energy 'Hardware Gap'",
+        problemDesc: "Traditional solar panels are heavy, restrictive, and generate high emissions. HD Photovoltaics solves three critical barriers:",
+        prob1Title: "Structural Restriction (Weight)",
+        prob1Desc: "80% lighter solution (3.5 kg/m²). Allows immediate deployment without costly steel reinforcements.",
+        prob2Title: "Carbon Debt",
+        prob2Desc: "We use recycled polymers instead of glass and aluminum, reducing 300 kg CO₂eq per linear meter.",
+        prob3Title: "Slow Deployment",
+        prob3Desc: "'Plug-and-play' structural design that drastically reduces installation times and logistical costs.",
         
         solutionTitle: "The Innovation: ",
         solutionTitleAccent: "Semi-transparent Solar Polycarbonate",
@@ -438,7 +441,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             
             {/* Columna Izquierda: Textos */}
-            <div>
+            <div className="order-2 md:order-1">
               {/* Título unificado al color del Hero */}
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
                 {t.problemTitle}
@@ -449,46 +452,46 @@ export default function Home() {
               
               <div className="space-y-6">
                 {/* Punto 1: Peso */}
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
                     <Shield className="w-6 h-6 text-emerald-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1 text-lg text-emerald-950">{t.prob1Title}</h3>
+                    <h3 className="font-bold mb-1 text-lg text-emerald-950 tracking-tight">{t.prob1Title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{t.prob1Desc}</p>
                   </div>
                 </div>
                 
                 {/* Punto 2: Carbono */}
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
                     <Leaf className="w-6 h-6 text-emerald-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1 text-lg text-emerald-950">{t.prob2Title}</h3>
+                    <h3 className="font-bold mb-1 text-lg text-emerald-950 tracking-tight">{t.prob2Title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{t.prob2Desc}</p>
                   </div>
                 </div>
 
                 {/* Punto 3: Velocidad */}
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
                     <Zap className="w-6 h-6 text-emerald-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1 text-lg text-emerald-950">{t.prob3Title}</h3>
+                    <h3 className="font-bold mb-1 text-lg text-emerald-950 tracking-tight">{t.prob3Title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{t.prob3Desc}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Columna Derecha: Imagen */}
-            <div className="flex justify-center">
+            {/* Columna Derecha: Imagen (Con orden ajustado para móviles) */}
+            <div className="flex justify-center order-1 md:order-2 mb-8 md:mb-0">
               <img 
                 src="/product-problem.jpg" 
                 alt="Chapa Solar Fotovoltaica Integrada" 
-                className="w-full max-w-md h-auto rounded-3xl shadow-xl border border-border transition-all hover:-translate-y-2 hover:shadow-2xl" 
+                className="w-full max-w-md h-auto rounded-3xl shadow-xl border border-emerald-100 transition-all hover:scale-105" 
               />
             </div>
             
