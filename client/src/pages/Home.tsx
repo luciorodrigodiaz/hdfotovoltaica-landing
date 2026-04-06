@@ -75,15 +75,15 @@ export default function Home() {
         metric3: "kg CO₂eq Avoided",
         metric4: "Families & Businesses",
         
-        // --- SECCIÓN: EL PROBLEMA (Actualizado con Tríada de Barreras) ---
-        problemTitle: "Abordando la 'Brecha de Hardware' en la Transición Energética",
-        problemDesc: "Los paneles solares tradicionales son pesados, su fabricación genera altas emisiones y son estructuralmente restrictivos. HD Fotovoltaica aborda tres barreras fundamentales que frenan la descarbonización a escala global:",
-        prob1Title: "Restricción Estructural de Edificios",
-        prob1Desc: "La mayoría de los techos industriales no soportan los 25kg/m² de los sistemas convencionales. Nuestra solución es un 80% más ligera (3.5 kg/m²), permitiendo su despliegue inmediato sin costosos refuerzos de acero.",
-        prob2Title: "Alto Carbono en la 'Tecnología Limpia'",
-        prob2Desc: "La producción de aluminio y vidrio genera una deuda de carbono significativa. Sustituimos estos materiales por polímeros reciclados de origen local, reduciendo el carbono incorporado en 300 kg CO2eq por metro lineal.",
-        prob3Title: "Lentitud y Costo de Instalación",
-        prob3Desc: "Alcanzar los objetivos climáticos de 2030 requiere un aumento radical en la velocidad. Nuestro diseño estructural 'plug-and-play' reduce drásticamente los tiempos y costos de instalación, haciendo la energía accesible para todas las industrias.",
+        // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy) ---
+        problemTitle: "La 'Brecha de Hardware' Energética",
+        problemDesc: "Los paneles solares tradicionales son pesados, restrictivos y generan altas emisiones. HD Fotovoltaica resuelve tres barreras críticas:",
+        prob1Title: "Restricción Estructural (Peso)",
+        prob1Desc: "Solución 80% más ligera (3.5 kg/m²). Permite el despliegue inmediato sin costosos refuerzos de acero.",
+        prob2Title: "Deuda de Carbono",
+        prob2Desc: "Usamos polímeros reciclados en lugar de vidrio y aluminio, reduciendo 300 kg CO₂eq por metro lineal.",
+        prob3Title: "Lentitud de Despliegue",
+        prob3Desc: "Diseño estructural 'plug-and-play' que reduce drásticamente los tiempos de instalación y costos logísticos.",
         
         solutionTitle: "La Innovación: ",
         solutionTitleAccent: "Policarbonato Solar Semitransparente",
@@ -432,28 +432,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROBLEM ===== */}
+      {/* ===== PROBLEM (Versión Simple, 3 puntos, Z-Pattern) ===== */}
       <section id="problem" className="py-16 md:py-24 bg-white relative z-10">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            
+            {/* Columna Izquierda: Textos */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.problemTitle}</h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.problemDesc}</p>
+              {/* Título unificado al color del Hero */}
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
+                {t.problemTitle}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                {t.problemDesc}
+              </p>
+              
               <div className="space-y-6">
-                {/* Mapeo de Color SDG Cards: accent -> CleanTech */}
+                {/* Punto 1: Peso */}
                 <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Shield className="w-6 h-6 text-emerald-700" /></div>
-                  <div><h3 className="font-semibold mb-1 text-lg">{t.prob1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.prob1Desc}</p></div>
+                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                    <Shield className="w-6 h-6 text-emerald-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1 text-lg text-emerald-950">{t.prob1Title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t.prob1Desc}</p>
+                  </div>
                 </div>
+                
+                {/* Punto 2: Carbono */}
                 <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Sun className="w-6 h-6 text-emerald-700" /></div>
-                  <div><h3 className="font-semibold mb-1 text-lg">{t.prob2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.prob2Desc}</p></div>
+                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                    <Leaf className="w-6 h-6 text-emerald-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1 text-lg text-emerald-950">{t.prob2Title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t.prob2Desc}</p>
+                  </div>
+                </div>
+
+                {/* Punto 3: Velocidad */}
+                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                    <Zap className="w-6 h-6 text-emerald-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1 text-lg text-emerald-950">{t.prob3Title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{t.prob3Desc}</p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Columna Derecha: Imagen */}
             <div className="flex justify-center">
-              <img src="/product-problem.jpg" alt="Chapa Solar Fotovoltaica Integrada" className="w-full max-w-md h-auto rounded-3xl shadow-xl border border-border transition-all hover:-translate-y-2 hover:shadow-2xl" />
+              <img 
+                src="/product-problem.jpg" 
+                alt="Chapa Solar Fotovoltaica Integrada" 
+                className="w-full max-w-md h-auto rounded-3xl shadow-xl border border-border transition-all hover:-translate-y-2 hover:shadow-2xl" 
+              />
             </div>
+            
           </div>
         </div>
       </section>
