@@ -328,13 +328,13 @@ export default function Home() {
             {t.heroTag}
           </div>
           
-          {/* Título en Verde Inglés Profundo (emerald-950) en lugar de negro puro */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight text-emerald-950 selection:bg-emerald-200">
+          {/* Título rebalanceado: menos masivo (extrabold en vez de black) y tamaño controlado */}
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-emerald-950 selection:bg-emerald-200">
             {t.heroTitle}
           </h1>
           
-          {/* Subtítulo en un tono corporativo suavizado */}
-          <p className="text-lg md:text-xl mb-8 text-emerald-900/80 max-w-2xl mx-auto font-medium leading-relaxed">
+          {/* Subtítulo con mayor jerarquía: más grande, color sólido y caja más ancha */}
+          <p className="text-xl md:text-2xl mb-10 text-emerald-900 max-w-3xl mx-auto font-medium leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
