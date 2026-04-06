@@ -324,17 +324,17 @@ export default function Home() {
 
         <div className="relative z-10 container text-center max-w-4xl px-4 mt-[-5vh]">
           {/* Mapeo de Color Hero: Burbuja con borde emerald-700 y más margen inferior (mb-8) */}
-          <div className="inline-block mb-8 px-4 py-1.5 rounded-full bg-emerald-50 border-2 border-emerald-700 text-emerald-800 font-bold text-sm shadow-sm">
+          <div className="inline-block mb-16 px-4 py-1.5 rounded-full bg-emerald-50 border-2 border-emerald-700 text-emerald-800 font-bold text-sm shadow-sm">
             {t.heroTag}
           </div>
           
           {/* Título rebalanceado con más espacio inferior (mb-8) */}
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight text-emerald-950 selection:bg-emerald-200">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-16 leading-tight tracking-tight text-emerald-950 selection:bg-emerald-200">
             {t.heroTitle}
           </h1>
           
           {/* Subtítulo: font-semibold (más grueso), text-emerald-700, y más espacio inferior (mb-12) */}
-          <p className="text-xl md:text-2xl mb-12 text-emerald-700 max-w-3xl mx-auto font-semibold leading-relaxed">
+          <p className="text-xl md:text-2xl mb-20 text-emerald-700 max-w-3xl mx-auto font-semibold leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
