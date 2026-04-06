@@ -333,8 +333,8 @@ export default function Home() {
             {t.heroTitle}
           </h1>
           
-          {/* Subtítulo: font-semibold (más grueso), text-emerald-700, y más espacio inferior (mb-20) */}
-          <p className="text-xl md:text-2xl mb-20 text-emerald-700 max-w-3xl mx-auto font-bold leading-relaxed">
+          {/* Subtítulo: font-semibold (más grueso), text-emerald-800, y más espacio inferior (mb-20) */}
+          <p className="text-xl md:text-2xl mb-20 text-emerald-800 max-w-3xl mx-auto font-semibold leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
