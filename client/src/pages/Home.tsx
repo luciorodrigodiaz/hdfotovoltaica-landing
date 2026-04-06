@@ -63,7 +63,7 @@ export default function Home() {
         heroTag: "Foro CTI de la ONU - Nueva York 2026",
         heroTitle: "INFRAESTRUCTURA INTELIGENTE",
         heroTitleAccent: "",
-        heroSubtitle: "Transformando la industria y el agro en nodos de generación eléctrica rentable y eficiente.",
+        heroSubtitle: "Transformamos la industria y el agro en nodos de generación eléctrica rentable y eficiente.",
         heroBtnTech: "Acceder a la Documentación Técnica",
         heroBtnLearn: "Conocer la Tecnología",
         
@@ -323,18 +323,18 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-32 md:h-56 bg-gradient-to-t from-white to-transparent z-0 pointer-events-none"></div>
 
         <div className="relative z-10 container text-center max-w-4xl px-4 mt-[-5vh]">
-          {/* Mapeo de Color Hero: Burbuja con borde más grueso (border-2) */}
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-emerald-50 border-2 border-emerald-300 text-emerald-800 font-bold text-sm shadow-sm">
+          {/* Mapeo de Color Hero: Burbuja con borde emerald-700 y más margen inferior (mb-8) */}
+          <div className="inline-block mb-8 px-4 py-1.5 rounded-full bg-emerald-50 border-2 border-emerald-700 text-emerald-800 font-bold text-sm shadow-sm">
             {t.heroTag}
           </div>
           
-          {/* Título rebalanceado: menos masivo (extrabold en vez de black) y tamaño controlado */}
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-emerald-950 selection:bg-emerald-200">
+          {/* Título rebalanceado con más espacio inferior (mb-8) */}
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight text-emerald-950 selection:bg-emerald-200">
             {t.heroTitle}
           </h1>
           
-          {/* Subtítulo con mayor jerarquía: más grande, color sólido y caja más ancha */}
-          <p className="text-xl md:text-2xl mb-10 text-emerald-900 max-w-3xl mx-auto font-medium leading-relaxed">
+          {/* Subtítulo: font-semibold (más grueso), text-emerald-700, y más espacio inferior (mb-12) */}
+          <p className="text-xl md:text-2xl mb-12 text-emerald-700 max-w-3xl mx-auto font-semibold leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -353,8 +353,8 @@ export default function Home() {
       <section ref={logosRef} className="bg-white py-24 mb-12 border-b border-border relative z-10">
         <div className="container">
           <div className="text-center mb-16">
-            {/* Título más grande y en tono Emerald */}
-            <h3 className="text-base md:text-lg font-bold text-emerald-900/80 uppercase tracking-widest mb-12">
+            {/* Título más grande (text-lg md:text-xl) y en tono Emerald */}
+            <h3 className="text-lg md:text-xl font-bold text-emerald-900/80 uppercase tracking-widest mb-12">
               {t.awardsTitle}
             </h3>
             
