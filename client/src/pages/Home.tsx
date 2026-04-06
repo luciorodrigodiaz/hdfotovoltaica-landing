@@ -334,7 +334,7 @@ export default function Home() {
           </h1>
           
           {/* Cambia font-semibold por font-bold o font-extrabold */}
-          <p className="text-xl md:text-2xl mb-12 text-emerald-700 max-w-3xl mx-auto font-extrabold leading-relaxed">
+          <p className="text-xl md:text-2xl mb-12 text-emerald-700 max-w-3xl mx-auto font-bold leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
