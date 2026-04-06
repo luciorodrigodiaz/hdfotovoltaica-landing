@@ -333,8 +333,8 @@ export default function Home() {
             {t.heroTitle}
           </h1>
           
-          {/* Cambia font-semibold por font-bold o font-extrabold */}
-          <p className="text-xl md:text-2xl mb-12 text-emerald-700 max-w-3xl mx-auto font-bold leading-relaxed">
+          {/* Subtítulo más grueso y oscuro */}
+          <p className="text-xl md:text-2xl mb-12 text-emerald-800 max-w-3xl mx-auto font-bold leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -353,19 +353,19 @@ export default function Home() {
       <section ref={logosRef} className="bg-white pt-10 pb-24 mb-12 border-b border-border relative z-10">
         <div className="container">
           <div className="text-center mb-16">
-            {/* Ajusta text-lg (móvil) y md:text-xl (escritorio) para cambiar el tamaño */}
-            <h3 className="text-xl md:text-2xl font-bold text-emerald-900/80 uppercase tracking-widest mb-12">
+            {/* Título igualado en color al Hero (text-emerald-950) */}
+            <h3 className="text-xl md:text-2xl font-bold text-emerald-950 uppercase tracking-widest mb-12">
               {t.awardsTitle}
             </h3>
 
-            {/* Logos Oficiales - Tamaños aumentados (h-16 a h-20) */}
+            {/* Logos Oficiales con filtros de saturación y contraste */}
             <div className={`flex flex-wrap justify-center items-center gap-x-14 gap-y-10 max-w-6xl mx-auto transition-all duration-1000 ${logosOnScreen ? "grayscale-0 opacity-100" : "grayscale opacity-80"}`}>
               
               {/* Logo UNIDO */}
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/6/6f/UNIDO_Logo.svg" 
                 alt="UNIDO Global Call Winner" 
-                className="h-16 md:h-20 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-16 md:h-20 w-auto object-contain hover:scale-110 transition-transform saturate-150 contrast-125"
                 loading="lazy"
               />
               
@@ -373,15 +373,15 @@ export default function Home() {
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/f6/International_Renewable_Energy_Agency_Logo.png" 
                 alt="IRENA NewGen COP28 Award" 
-                className="h-14 md:h-16 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-14 md:h-16 w-auto object-contain hover:scale-110 transition-transform saturate-150 contrast-125"
                 loading="lazy"
               />
               
-              {/* Logo COP28 UAE (Mapeado a archivo local: client/public/logo-cop28.png) */}
+              {/* Logo COP28 UAE */}
               <img 
                 src="/logo-cop28.png" 
                 alt="COP28 Technology Presentation" 
-                className="h-16 md:h-20 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-16 md:h-20 w-auto object-contain hover:scale-110 transition-transform saturate-150 contrast-125"
                 loading="lazy"
               />
 
@@ -389,7 +389,7 @@ export default function Home() {
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/2/22/Enel_Group_logo.svg" 
                 alt="Enel Foundation Supported" 
-                className="h-10 md:h-14 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-10 md:h-14 w-auto object-contain hover:scale-110 transition-transform saturate-150 contrast-125"
                 loading="lazy"
               />
 
@@ -397,7 +397,7 @@ export default function Home() {
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/fa/IUCN_logo.svg" 
                 alt="IUCN Member / Partner" 
-                className="h-14 md:h-16 w-auto object-contain hover:scale-110 transition-transform"
+                className="h-14 md:h-16 w-auto object-contain hover:scale-110 transition-transform saturate-150 contrast-125"
                 loading="lazy"
               />
             </div>
