@@ -349,8 +349,8 @@ export default function Home() {
       </section>
 
       {/* ===== GLOBAL RECOGNITION & METRICS (IMPACT & OFFICIAL LOGOS) ===== */}
-      {/* Mapeo de Spacing: py-24 mb-12 para dar aire corporativo */}
-      <section ref={logosRef} className="bg-white py-24 mb-12 border-b border-border relative z-10">
+      {/* Cambia py-24 por pt-10 pb-24 (o pt-4 si lo quieres aún más pegado) */}
+      <section ref={logosRef} className="bg-white pt-10 pb-24 mb-12 border-b border-border relative z-10">
         <div className="container">
           <div className="text-center mb-16">
             {/* Ajusta text-lg (móvil) y md:text-xl (escritorio) para cambiar el tamaño */}
