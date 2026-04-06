@@ -333,8 +333,8 @@ export default function Home() {
             {t.heroTitle}
           </h1>
           
-          {/* Subtítulo: font-semibold (más grueso), text-emerald-800, y más espacio inferior (mb-20) */}
-          <p className="text-xl md:text-2xl mb-20 text-emerald-800 max-w-3xl mx-auto font-semibold leading-relaxed">
+          {/* Subtítulo: font-semibold (más grueso), text-emerald-750, y más espacio inferior (mb-20) */}
+          <p className="text-xl md:text-2xl mb-20 text-emerald-750 max-w-3xl mx-auto font-semibold leading-relaxed">
             {t.heroSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -353,11 +353,11 @@ export default function Home() {
       <section ref={logosRef} className="bg-white py-24 mb-12 border-b border-border relative z-10">
         <div className="container">
           <div className="text-center mb-16">
-            {/* Título más grande (text-lg md:text-xl) y en tono Emerald */}
-            <h3 className="text-lg md:text-xl font-bold text-emerald-900/80 uppercase tracking-widest mb-12">
+            {/* Ajusta text-lg (móvil) y md:text-xl (escritorio) para cambiar el tamaño */}
+            <h3 className="text-xl md:text-2xl font-bold text-emerald-900/80 uppercase tracking-widest mb-12">
               {t.awardsTitle}
             </h3>
-            
+
             {/* Logos Oficiales - Tamaños aumentados (h-16 a h-20) */}
             <div className={`flex flex-wrap justify-center items-center gap-x-14 gap-y-10 max-w-6xl mx-auto transition-all duration-1000 ${logosOnScreen ? "grayscale-0 opacity-100" : "grayscale opacity-80"}`}>
               
