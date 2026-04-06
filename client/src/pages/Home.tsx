@@ -75,12 +75,15 @@ export default function Home() {
         metric3: "kg CO₂eq Avoided",
         metric4: "Families & Businesses",
         
-        problemTitle: "El Desafío de la Infraestructura Urbana",
-        problemDesc: "Millones de metros cuadrados de superficies industriales y urbanas están desaprovechados. Las soluciones convencionales de generación energética no son viables en todos los escenarios debido a su peso, rigidez y limitaciones arquitectónicas",
-        prob1Title: "Peso y Rigidez (Vidrio)",
-        prob1Desc: "Pesan entre 15-20 kg/m², requiriendo refuerzos estructurales costosos que muchos techos no pueden soportar.",
-        prob2Title: "Oscurecimiento del Espacio",
-        prob2Desc: "Su opacidad bloquea la luz natural, forzando a las industrias a aumentar el consumo de iluminación artificial diurna.",
+        // --- SECCIÓN: EL PROBLEMA (Actualizado con Tríada de Barreras) ---
+        problemTitle: "Abordando la 'Brecha de Hardware' en la Transición Energética",
+        problemDesc: "Los paneles solares tradicionales son pesados, su fabricación genera altas emisiones y son estructuralmente restrictivos. HD Fotovoltaica aborda tres barreras fundamentales que frenan la descarbonización a escala global:",
+        prob1Title: "Restricción Estructural de Edificios",
+        prob1Desc: "La mayoría de los techos industriales no soportan los 25kg/m² de los sistemas convencionales. Nuestra solución es un 80% más ligera (3.5 kg/m²), permitiendo su despliegue inmediato sin costosos refuerzos de acero.",
+        prob2Title: "Alto Carbono en la 'Tecnología Limpia'",
+        prob2Desc: "La producción de aluminio y vidrio genera una deuda de carbono significativa. Sustituimos estos materiales por polímeros reciclados de origen local, reduciendo el carbono incorporado en 300 kg CO2eq por metro lineal.",
+        prob3Title: "Lentitud y Costo de Instalación",
+        prob3Desc: "Alcanzar los objetivos climáticos de 2030 requiere un aumento radical en la velocidad. Nuestro diseño estructural 'plug-and-play' reduce drásticamente los tiempos y costos de instalación, haciendo la energía accesible para todas las industrias.",
         
         solutionTitle: "La Innovación: ",
         solutionTitleAccent: "Policarbonato Solar Semitransparente",
@@ -429,28 +432,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROBLEM ===== */}
-      <section id="problem" className="py-16 md:py-24 bg-white relative z-10">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.problemTitle}</h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.problemDesc}</p>
-              <div className="space-y-6">
-                {/* Mapeo de Color SDG Cards: accent -> CleanTech */}
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Shield className="w-6 h-6 text-emerald-700" /></div>
-                  <div><h3 className="font-semibold mb-1 text-lg">{t.prob1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.prob1Desc}</p></div>
-                </div>
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Sun className="w-6 h-6 text-emerald-700" /></div>
-                  <div><h3 className="font-semibold mb-1 text-lg">{t.prob2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.prob2Desc}</p></div>
-                </div>
+      {/* ===== PROBLEM (Actualizado con Tríada de 3 Columnas) ===== */}
+      <section id="problem" className="py-24 bg-white relative z-10 border-b border-border">
+        <div className="container max-w-7xl">
+          
+          {/* Título unificado en Verde Inglés Profundo (emerald-950) */}
+          <div className="text-center mb-16 max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-emerald-950">
+              {t.problemTitle}
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {t.problemDesc}
+            </p>
+          </div>
+
+          {/* TRÍADA DE BARRERAS (3 Columnas) */}
+          <div className="grid md:grid-cols-3 gap-8 items-stretch">
+            
+            {/* Barrera 1: Peso (Icono: Escudo con borde potente) */}
+            <div className="bg-emerald-50 border border-emerald-100 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6 border-2 border-emerald-200 group-hover:scale-110 transition-transform">
+                <Shield className="w-8 h-8 text-emerald-700" />
               </div>
+              <h3 className="text-2xl font-bold mb-3 text-emerald-950 tracking-tight">
+                {t.prob1Title}
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed flex-grow">
+                {t.prob1Desc}
+              </p>
             </div>
-            <div className="flex justify-center">
-              <img src="/product-problem.jpg" alt="Chapa Solar Fotovoltaica Integrada" className="w-full max-w-md h-auto rounded-3xl shadow-xl border border-border transition-all hover:-translate-y-2 hover:shadow-2xl" />
+
+            {/* Barrera 2: Carbono (Icono: Hoja con borde potente) */}
+            <div className="bg-emerald-50 border border-emerald-100 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6 border-2 border-emerald-200 group-hover:scale-110 transition-transform">
+                <Leaf className="w-8 h-8 text-emerald-700" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-emerald-950 tracking-tight">
+                {t.prob2Title}
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed flex-grow">
+                {t.prob2Desc}
+              </p>
             </div>
+
+            {/* Barrera 3: Velocidad (Icono: Zap con borde potente) */}
+            <div className="bg-emerald-50 border border-emerald-100 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center mb-6 border-2 border-emerald-200 group-hover:scale-110 transition-transform">
+                <Zap className="w-8 h-8 text-emerald-700" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-emerald-950 tracking-tight">
+                {t.prob3Title}
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed flex-grow">
+                {t.prob3Desc}
+              </p>
+            </div>
+            
+          </div>
+
+          {/* Sección de Imagen (Se mantiene igual, movida abajo de las 3 columnas) */}
+          <div className="flex justify-center mt-20">
+            <img 
+              src="/product-problem.jpg" 
+              alt="Chapa Solar Fotovoltaica Integrada" 
+              className="w-full max-w-2xl h-auto rounded-3xl shadow-xl border border-border transition-all hover:-translate-y-2 hover:shadow-2xl" 
+            />
           </div>
         </div>
       </section>
