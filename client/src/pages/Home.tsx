@@ -480,19 +480,18 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Columna Derecha: Acordeón Interactivo de Tarjetas con Numeración Editorial */}
+            {/* Columna Derecha: Acordeón Interactivo de Tarjetas con Numeración y Hover */}
             <div className="md:col-span-7 space-y-5 mt-8 md:mt-0">
               
-              {/* Tarjeta 1: Peso (AHORA CON NÚMERO 1) */}
+              {/* Tarjeta 1: Peso */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 1 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
+                  onMouseEnter={() => setActiveProblem(1)}
                   onClick={() => setActiveProblem(activeProblem === 1 ? null : 1)}
                   className="w-full text-left p-6 md:p-8 flex items-center justify-between focus:outline-none"
                 >
                   <div className="flex items-center gap-5">
-                    {/* Contenedor del número con estilo simétrico al icono previo */}
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 1 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      {/* Número grande y bold */}
                       <span className="text-3xl font-extrabold tracking-tighter">1</span>
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 1 ? 'text-emerald-950' : 'text-gray-600'}`}>
@@ -508,16 +507,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Tarjeta 2: Carbono (AHORA CON NÚMERO 2) */}
+              {/* Tarjeta 2: Carbono */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 2 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
+                  onMouseEnter={() => setActiveProblem(2)}
                   onClick={() => setActiveProblem(activeProblem === 2 ? null : 2)}
                   className="w-full text-left p-6 md:p-8 flex items-center justify-between focus:outline-none"
                 >
                   <div className="flex items-center gap-5">
-                    {/* Contenedor del número secuencial */}
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 2 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      {/* Número grande y bold */}
                       <span className="text-3xl font-extrabold tracking-tighter">2</span>
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 2 ? 'text-emerald-950' : 'text-gray-600'}`}>
@@ -533,16 +531,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Tarjeta 3: Velocidad (AHORA CON NÚMERO 3) */}
+              {/* Tarjeta 3: Velocidad */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 3 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
+                  onMouseEnter={() => setActiveProblem(3)}
                   onClick={() => setActiveProblem(activeProblem === 3 ? null : 3)}
                   className="w-full text-left p-6 md:p-8 flex items-center justify-between focus:outline-none"
                 >
                   <div className="flex items-center gap-5">
-                    {/* Contenedor del número secuencial */}
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 3 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      {/* Número grande y bold */}
                       <span className="text-3xl font-extrabold tracking-tighter">3</span>
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 3 ? 'text-emerald-950' : 'text-gray-600'}`}>
@@ -592,12 +589,13 @@ export default function Home() {
                 {t.solutionDesc}
               </p>
               
-              {/* Contenedor del Acordeón de Innovación Unificado */}
+              {/* Contenedor del Acordeón de Innovación Unificado y con Hover */}
               <div className="space-y-5">
                 
                 {/* Tarjeta 1: Generación */}
                 <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeSolution === 1 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                   <button 
+                    onMouseEnter={() => setActiveSolution(1)}
                     onClick={() => setActiveSolution(activeSolution === 1 ? null : 1)}
                     className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
                   >
@@ -621,6 +619,7 @@ export default function Home() {
                 {/* Tarjeta 2: Ligereza */}
                 <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeSolution === 2 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                   <button 
+                    onMouseEnter={() => setActiveSolution(2)}
                     onClick={() => setActiveSolution(activeSolution === 2 ? null : 2)}
                     className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
                   >
@@ -644,6 +643,7 @@ export default function Home() {
                 {/* Tarjeta 3: Integración */}
                 <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeSolution === 3 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                   <button 
+                    onMouseEnter={() => setActiveSolution(3)}
                     onClick={() => setActiveSolution(activeSolution === 3 ? null : 3)}
                     className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
                   >
