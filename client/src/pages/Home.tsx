@@ -82,7 +82,7 @@ export default function Home() {
         
         // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy, TEXTO ACTUALIZADO) ---
         problemTag: "El Desafío Actual",
-        problemTitle: "La 'Brecha de Hardware' Energética",
+        problemTitle: "El Desafío",
         problemDesc: "Las soluciones convencionales de generación solar son pesadas, restrictivas y generan altas emisiones. HD Fotovoltaica resuelve tres barreras críticas:",
         prob1Title: "Restricción Estructural (Peso)",
         prob1Desc: "Solución 80% más ligera (3.5 kg/m²). Permite el despliegue inmediato sin costosos refuerzos de acero.",
@@ -156,7 +156,7 @@ export default function Home() {
 
         // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy EN INGLÉS, TEXTO ACTUALIZADO) ---
         problemTag: "The Current Challenge",
-        problemTitle: "The Energy 'Hardware Gap'",
+        problemTitle: "The Challenge",
         problemDesc: "Conventional solar generation solutions are heavy, restrictive, and generate high emissions. HD Photovoltaics solves three critical barriers:",
         prob1Title: "Structural Restriction (Weight)",
         prob1Desc: "80% lighter solution (3.5 kg/m²). Allows immediate deployment without costly steel reinforcements.",
