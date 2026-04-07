@@ -558,128 +558,116 @@ export default function Home() {
           {/* Elemento de acento visual sutil (cuadrícula técnica) */}
           <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
-            {/* Columna de Texto: Título, Subtítulo y Tarjetas (AHORA ACORDEÓN) */}
-            <div className="md:col-span-7">
-              {/* Nueva Etiqueta Dinámica */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start relative z-10">
+            
+            {/* Columna de Texto: Título Gigante + Línea + Acordeón Conectado */}
+            <div className="md:col-span-7 md:sticky md:top-32">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
                 {t.solutionTag}
               </div>
               
-              {/* Título unificado al color del Hero */}
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-none tracking-tighter text-emerald-950">
                 {t.solutionTitle}<span className="text-emerald-600">{t.solutionTitleAccent}</span>
               </h2>
-              <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl">
+
+              {/* Línea de acento simétrica */}
+              <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
+
+              <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed mb-10 max-w-2xl">
                 {t.solutionDesc}
               </p>
               
-              {/* Contenedor del Acordeón de Innovación */}
-              <div className="space-y-4">
+              {/* Contenedor del Acordeón de Innovación Unificado */}
+              <div className="space-y-5">
                 
                 {/* Tarjeta 1: Generación */}
-                <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeSolution === 1 ? 'border-emerald-300 ring-4 ring-emerald-50/80' : 'border-gray-200 hover:border-emerald-100'}`}>
+                <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeSolution === 1 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                   <button 
                     onClick={() => setActiveSolution(activeSolution === 1 ? null : 1)}
                     className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
                   >
                     <div className="flex items-center gap-5">
-                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 1 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
-                        <Sun className={`w-7 h-7 transition-colors duration-300 ${activeSolution === 1 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 1 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
+                        <Sun className="w-7 h-7" />
                       </div>
-                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 1 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 1 ? 'text-emerald-950' : 'text-gray-600'}`}>
                         {t.sol1Title}
                       </h3>
                     </div>
-                    <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeSolution === 1 ? 'rotate-180 text-emerald-600' : ''}`} />
+                    <ChevronDown className={`w-6 h-6 transform transition-transform duration-500 ${activeSolution === 1 ? 'rotate-180 text-emerald-600' : 'text-gray-300'}`} />
                   </button>
                   <div className={`transition-all duration-500 ease-in-out ${activeSolution === 1 ? 'max-h-48 opacity-100 pb-6 px-6' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-                    <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                    <p className="text-lg text-emerald-900/70 font-medium leading-relaxed md:pl-[76px]">
                       {t.sol1Desc}
                     </p>
                   </div>
                 </div>
                 
                 {/* Tarjeta 2: Ligereza */}
-                <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeSolution === 2 ? 'border-emerald-300 ring-4 ring-emerald-50/80' : 'border-gray-200 hover:border-emerald-100'}`}>
+                <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeSolution === 2 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                   <button 
                     onClick={() => setActiveSolution(activeSolution === 2 ? null : 2)}
                     className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
                   >
                     <div className="flex items-center gap-5">
-                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 2 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
-                        <Shield className={`w-7 h-7 transition-colors duration-300 ${activeSolution === 2 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 2 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
+                        <Shield className="w-7 h-7" />
                       </div>
-                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 2 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 2 ? 'text-emerald-950' : 'text-gray-600'}`}>
                         {t.sol2Title}
                       </h3>
                     </div>
-                    <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeSolution === 2 ? 'rotate-180 text-emerald-600' : ''}`} />
+                    <ChevronDown className={`w-6 h-6 transform transition-transform duration-500 ${activeSolution === 2 ? 'rotate-180 text-emerald-600' : 'text-gray-300'}`} />
                   </button>
                   <div className={`transition-all duration-500 ease-in-out ${activeSolution === 2 ? 'max-h-48 opacity-100 pb-6 px-6' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-                    <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                    <p className="text-lg text-emerald-900/70 font-medium leading-relaxed md:pl-[76px]">
                       {t.sol2Desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Tarjeta 3: Integración */}
-                <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeSolution === 3 ? 'border-emerald-300 ring-4 ring-emerald-50/80' : 'border-gray-200 hover:border-emerald-100'}`}>
+                <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeSolution === 3 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                   <button 
                     onClick={() => setActiveSolution(activeSolution === 3 ? null : 3)}
                     className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
                   >
                     <div className="flex items-center gap-5">
-                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 3 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
-                        <Building className={`w-7 h-7 transition-colors duration-300 ${activeSolution === 3 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 3 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
+                        <Building className="w-7 h-7" />
                       </div>
-                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 3 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 3 ? 'text-emerald-950' : 'text-gray-600'}`}>
                         {t.sol3Title}
                       </h3>
                     </div>
-                    <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeSolution === 3 ? 'rotate-180 text-emerald-600' : ''}`} />
+                    <ChevronDown className={`w-6 h-6 transform transition-transform duration-500 ${activeSolution === 3 ? 'rotate-180 text-emerald-600' : 'text-gray-300'}`} />
                   </button>
                   <div className={`transition-all duration-500 ease-in-out ${activeSolution === 3 ? 'max-h-48 opacity-100 pb-6 px-6' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-                    <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                    <p className="text-lg text-emerald-900/70 font-medium leading-relaxed md:pl-[76px]">
                       {t.sol3Desc}
                     </p>
                   </div>
                 </div>
-
               </div>
             </div>
 
-            {/* Columna de Imagen: Imagen Principal y ODS */}
-            <div className="md:col-span-5 flex flex-col items-center justify-center gap-8">
-              
-              {/* Imagen principal: "Wow" de Ligereza y Transparencia */}
-              <div className="flex justify-center w-full">
+            {/* Columna de Imagen y ODS: Se mantiene para cerrar el patrón visual */}
+            <div className="md:col-span-5 flex flex-col items-center justify-center gap-12 pt-12 md:pt-0">
+              <div className="relative w-full max-w-sm">
+                <div className="absolute -inset-4 bg-emerald-100/40 rounded-[3rem] blur-2xl -z-10"></div>
                 <img 
                   src="/product-innovation.jpg" 
                   alt="Innovación en Policarbonato Solar Ligero" 
-                  className="w-full max-w-sm h-auto rounded-3xl shadow-2xl border border-emerald-100 p-2 bg-white transition-all hover:scale-105" 
+                  className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-white p-2 bg-white/50 backdrop-blur-sm transition-all hover:scale-105 duration-500" 
                 />
               </div>
 
-              {/* ODS UNIFICADOS (Reposicionados debajo de la imagen) */}
-              <div ref={odsRef} className={`w-full flex flex-wrap items-center justify-center gap-6 md:gap-8 border-t border-gray-200/60 pt-8 transition-all duration-1000 ${odsOnScreen ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-50 scale-95"}`}>
-                <img 
-                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" 
-                  alt="SDG 7: Affordable and Clean Energy" 
-                  className="w-16 md:w-20 h-auto object-contain rounded-lg shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
-                />
-                <img 
-                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" 
-                  alt="SDG 9: Industry, Innovation and Infrastructure" 
-                  className="w-16 md:w-20 h-auto object-contain rounded-lg shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
-                />
-                <img 
-                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" 
-                  alt="SDG 11: Sustainable Cities and Communities" 
-                  className="w-16 md:w-20 h-auto object-contain rounded-lg shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
-                />
+              {/* ODS UNIFICADOS */}
+              <div ref={odsRef} className={`w-full flex flex-wrap items-center justify-center gap-6 border-t border-gray-200/60 pt-10 transition-all duration-1000 ${odsOnScreen ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-50 scale-95"}`}>
+                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" alt="SDG 7" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
+                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" alt="SDG 9" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
+                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" alt="SDG 11" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
               </div>
-              
             </div>
           </div>
         </div>
