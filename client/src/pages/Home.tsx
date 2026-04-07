@@ -33,6 +33,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", organization: "" });
+  const [activeProblem, setActiveProblem] = useState<number | null>(null);
 
   // Referencia para la sección de logos
   const logosRef = useRef<HTMLDivElement>(null);
@@ -439,56 +440,85 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROBLEM (Versión Centrada sin Imagen, Texto Actualizado) ===== */}
-      <section id="problem" className="py-16 md:py-24 bg-white relative z-10">
-        <div className="container max-w-4xl mx-auto">
+      {/* ===== PROBLEM (Bento Grid Interactivo & Contraste de Color) ===== */}
+      <section id="problem" className="py-24 bg-slate-50 relative z-10 border-y border-slate-200">
+        <div className="container max-w-6xl mx-auto">
           
-          {/* Encabezado centrado para mejor balance visual */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
+          {/* Título centrado con tono más sobrio */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight tracking-tight text-slate-900">
               {t.problemTitle}
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
               {t.problemDesc}
             </p>
           </div>
           
-          {/* Lista de 3 puntos en tarjetas */}
-          <div className="space-y-4">
-            {/* Punto 1: Peso */}
-            <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
-                <Shield className="w-7 h-7 text-emerald-700" />
+          {/* Bento Grid: 3 Columnas en Desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Tarjeta 1: Peso */}
+            <div 
+              onClick={() => setActiveProblem(activeProblem === 1 ? null : 1)}
+              className={`group p-8 rounded-3xl transition-all duration-500 cursor-pointer border ${activeProblem === 1 ? 'bg-white border-emerald-200 shadow-xl scale-105' : 'bg-white/50 border-slate-200 hover:border-emerald-100 hover:bg-white shadow-sm'}`}
+            >
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${activeProblem === 1 ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-emerald-100 group-hover:text-emerald-600'}`}>
+                <Shield className="w-7 h-7" />
               </div>
-              <div className="text-left">
-                <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.prob1Title}</h3>
-                <p className="text-base text-muted-foreground leading-relaxed">{t.prob1Desc}</p>
+              <h3 className="font-bold text-xl text-slate-900 mb-2 flex justify-between items-center">
+                {t.prob1Title}
+                <span className={`text-xs font-normal px-2 py-1 rounded-full border transition-all ${activeProblem === 1 ? 'opacity-0' : 'opacity-100 bg-slate-100'}`}>Ver más</span>
+              </h3>
+              <div className={`overflow-hidden transition-all duration-500 ${activeProblem === 1 ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                <p className="text-slate-600 leading-relaxed border-t border-emerald-50 pt-4">
+                  {t.prob1Desc}
+                </p>
               </div>
             </div>
             
-            {/* Punto 2: Carbono */}
-            <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
-                <Leaf className="w-7 h-7 text-emerald-700" />
+            {/* Tarjeta 2: Carbono */}
+            <div 
+              onClick={() => setActiveProblem(activeProblem === 2 ? null : 2)}
+              className={`group p-8 rounded-3xl transition-all duration-500 cursor-pointer border ${activeProblem === 2 ? 'bg-white border-emerald-200 shadow-xl scale-105' : 'bg-white/50 border-slate-200 hover:border-emerald-100 hover:bg-white shadow-sm'}`}
+            >
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${activeProblem === 2 ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-emerald-100 group-hover:text-emerald-600'}`}>
+                <Leaf className="w-7 h-7" />
               </div>
-              <div className="text-left">
-                <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.prob2Title}</h3>
-                <p className="text-base text-muted-foreground leading-relaxed">{t.prob2Desc}</p>
+              <h3 className="font-bold text-xl text-slate-900 mb-2 flex justify-between items-center">
+                {t.prob2Title}
+                <span className={`text-xs font-normal px-2 py-1 rounded-full border transition-all ${activeProblem === 2 ? 'opacity-0' : 'opacity-100 bg-slate-100'}`}>Ver más</span>
+              </h3>
+              <div className={`overflow-hidden transition-all duration-500 ${activeProblem === 2 ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                <p className="text-slate-600 leading-relaxed border-t border-emerald-50 pt-4">
+                  {t.prob2Desc}
+                </p>
               </div>
             </div>
 
-            {/* Punto 3: Velocidad */}
-            <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
-                <Zap className="w-7 h-7 text-emerald-700" />
+            {/* Tarjeta 3: Velocidad */}
+            <div 
+              onClick={() => setActiveProblem(activeProblem === 3 ? null : 3)}
+              className={`group p-8 rounded-3xl transition-all duration-500 cursor-pointer border ${activeProblem === 3 ? 'bg-white border-emerald-200 shadow-xl scale-105' : 'bg-white/50 border-slate-200 hover:border-emerald-100 hover:bg-white shadow-sm'}`}
+            >
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${activeProblem === 3 ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-emerald-100 group-hover:text-emerald-600'}`}>
+                <Zap className="w-7 h-7" />
               </div>
-              <div className="text-left">
-                <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.prob3Title}</h3>
-                <p className="text-base text-muted-foreground leading-relaxed">{t.prob3Desc}</p>
+              <h3 className="font-bold text-xl text-slate-900 mb-2 flex justify-between items-center">
+                {t.prob3Title}
+                <span className={`text-xs font-normal px-2 py-1 rounded-full border transition-all ${activeProblem === 3 ? 'opacity-0' : 'opacity-100 bg-slate-100'}`}>Ver más</span>
+              </h3>
+              <div className={`overflow-hidden transition-all duration-500 ${activeProblem === 3 ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                <p className="text-slate-600 leading-relaxed border-t border-emerald-50 pt-4">
+                  {t.prob3Desc}
+                </p>
               </div>
             </div>
+
           </div>
           
+          <div className="mt-12 text-center">
+            <p className="text-sm text-slate-400 font-medium italic">Haz clic en cada tarjeta para profundizar en el desafío.</p>
+          </div>
         </div>
       </section>
 
