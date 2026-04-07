@@ -440,7 +440,7 @@ export default function Home() {
         </div>
       </section>
 
-      {{/* ===== PROBLEM (Diseño Asimétrico Editorial + Acordeón) ===== */}
+      {/* ===== PROBLEM (Diseño Asimétrico Editorial + Acordeón) ===== */}
       <section id="problem" className="py-20 md:py-32 bg-gray-50/50 relative z-10 border-t border-gray-100">
         <div className="container max-w-7xl mx-auto">
           <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
