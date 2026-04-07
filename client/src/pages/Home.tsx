@@ -461,16 +461,14 @@ export default function Home() {
                 {t.problemTag}
               </div>
               
-              {/* Título Masivo para compensar la brevedad */}
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-none tracking-tighter text-emerald-950">
                 {t.problemTitle}
               </h2>
               
-              {/* Línea de acento para darle "cuerpo" al diseño */}
               <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
               
-              {/* Texto descriptivo con mayor tamaño y peso (text-xl a text-2xl) */}
-              <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed">
+              {/* AJUSTE: Texto en gris neutro, un poco más ligero para no competir con el titular y darle elegancia */}
+              <p className="text-lg md:text-xl text-gray-500 leading-relaxed">
                 {t.problemDesc}
               </p>
             </div>
