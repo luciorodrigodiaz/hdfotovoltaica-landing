@@ -435,112 +435,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROBLEM (Versión Simple, 3 puntos, Z-Pattern, OPTIMIZED FOR 2026 TECH STACK) ===== */}
-      <section id="problem" className="py-16 md:py-24 bg-white relative z-10">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            
-            {/* Columna Izquierda: Textos */}
-            <div className="order-2 md:order-1">
-              {/* Título unificado al color del Hero */}
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
-                {t.problemTitle}
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                {t.problemDesc}
-              </p>
-              
-              <div className="space-y-6">
-                {/* Punto 1: Peso */}
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
-                    <Shield className="w-6 h-6 text-emerald-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1 text-lg text-emerald-950 tracking-tight">{t.prob1Title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t.prob1Desc}</p>
-                  </div>
-                </div>
-                 
-                {/* Punto 2: Carbono */}
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
-                    <Leaf className="w-6 h-6 text-emerald-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1 text-lg text-emerald-950 tracking-tight">{t.prob2Title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t.prob2Desc}</p>
-                  </div>
-                </div>
+      {/* ===== PROBLEM (Versión Centrada sin Imagen) ===== */}
+      <section id="problem" className="py-16 md:py-24 bg-white relative z-10">
+        <div className="container max-w-4xl mx-auto">
+          
+          {/* Encabezado centrado para mejor balance visual */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
+              {t.problemTitle}
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t.problemDesc}
+            </p>
+          </div>
+          
+          {/* Lista de 3 puntos */}
+          <div className="space-y-4">
+            {/* Punto 1: Peso */}
+            <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
+              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                <Shield className="w-7 h-7 text-emerald-700" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.prob1Title}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{t.prob1Desc}</p>
+              </div>
+            </div>
+            
+            {/* Punto 2: Carbono */}
+            <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
+              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                <Leaf className="w-7 h-7 text-emerald-700" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.prob2Title}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{t.prob2Desc}</p>
+              </div>
+            </div>
 
-                {/* Punto 3: Velocidad */}
-                <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
-                  <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
-                    <Zap className="w-6 h-6 text-emerald-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1 text-lg text-emerald-950 tracking-tight">{t.prob3Title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t.prob3Desc}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Columna Derecha: Pattern de Diseño Visual (REEMPLAZO DE LA IMAGEN) */}
-            <div className="order-1 md:order-2 mb-12 md:mb-0 h-[400px] md:h-full flex items-center justify-center p-8 bg-secondary/30 rounded-3xl border border-emerald-100 relative overflow-hidden shadow-inner cursor-default group">
-              {/* Patrón de Fondo sutil (Pseudo-grid) */}
-              <div className="absolute inset-0 grid grid-cols-8 grid-rows-8 gap-px p-4 opacity-10">
-                {[...Array(64)].map((_, i) => (
-                  <div key={i} className="bg-emerald-900/50 rounded-sm hover:bg-emerald-700 hover:opacity-100 transition-opacity"></div>
-                ))}
-              </div>
-
-              {/* Composición Visual: Visualizando "La Brecha de Hardware" */}
-              <div className="relative w-full h-full flex flex-col justify-between items-center z-10 transition-transform duration-500 group-hover:scale-105">
-                
-                {/* Visualizando Barreras Estruturales e Ineficiencia (Tecnología Antigua Pesada) */}
-                <div className="flex w-full gap-8 h-1/3 mt-6">
-                  <div className="w-1/2 h-full bg-emerald-950 rounded-lg shadow-2xl flex items-center justify-center border border-emerald-900/50 relative overflow-hidden">
-                    <span className="text-4xl font-black text-emerald-800 opacity-20">[ WEIGHT ]</span>
-                    {/* Pseudo-peso */}
-                    <div className="absolute bottom-2 right-2 w-10 h-10 bg-black/40 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs border border-emerald-900">80%</div>
-                  </div>
-                  <div className="w-1/2 h-full bg-emerald-950 rounded-lg shadow-2xl flex items-center justify-center border border-emerald-900/50 relative overflow-hidden">
-                    <span className="text-4xl font-black text-emerald-800 opacity-20">[ CARBON ]</span>
-                    {/* Pseudo-carbono */}
-                    <div className="absolute bottom-2 right-2 w-10 h-10 bg-black/40 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xs border border-emerald-900">+300kg</div>
-                  </div>
-                </div>
-
-                {/* La representación literal de la "BRECHA" (Gap) con un toque de luz */}
-                <div className="flex w-full h-1/6 items-center justify-center">
-                  <div className="w-2 h-10 bg-orange-400 rounded-full blur-sm animate-pulse"></div>
-                  <div className="flex-1 h-px bg-gradient-to-r from-transparent via-emerald-700 to-transparent mx-4 opacity-30"></div>
-                  <div className="w-2 h-10 bg-orange-400 rounded-full blur-sm animate-pulse"></div>
-                </div>
-
-                {/* Visualizando Integración Eficiente (La contraparte) */}
-                <div className="flex w-full gap-8 h-1/3 mb-6 items-end">
-                  <div className="w-1/2 h-full bg-emerald-950 rounded-lg shadow-2xl flex items-center justify-center border border-emerald-900/50 relative overflow-hidden">
-                    {/* Pseudo-circuit nod */}
-                    <div className="absolute inset-0 grid grid-cols-4 gap-px opacity-10 p-2">
-                      <div className="bg-emerald-500 rounded-sm"></div> <div className="bg-emerald-500 rounded-sm"></div> <div className="bg-emerald-500 rounded-sm"></div> <div className="bg-emerald-500 rounded-sm"></div>
-                    </div>
-                    <span className="text-4xl font-black text-emerald-800 opacity-10">[ DEPLOY ]</span>
-                  </div>
-                  <div className="w-1/2 h-1/2 bg-white/5 rounded-full border border-white/10 flex items-center justify-center animate-pulse">
-                      <div className="w-16 h-16 rounded-full bg-orange-500/20 flex items-center justify-center">
-                        <div className="w-8 h-8 rounded-full bg-orange-500/40 blur-[2px]"></div>
-                      </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
+            {/* Punto 3: Velocidad */}
+            <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
+              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+                <Zap className="w-7 h-7 text-emerald-700" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.prob3Title}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{t.prob3Desc}</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
 
       {/* ===== SOLUTION / INNOVATION UNIFICADA & OPTIMIZADA ===== */}
       {/* Mapeo Spacing: Unificación + py-24 para dar aire corporativo */}
