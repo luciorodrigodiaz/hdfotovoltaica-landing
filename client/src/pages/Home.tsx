@@ -92,8 +92,8 @@ export default function Home() {
         prob3Desc: "Diseño estructural 'plug-and-play' que reduce drásticamente los tiempos de instalación y costos logísticos.",
         
         solutionTag: "Tecnología Base",
-        solutionTitle: "La Innovación: ",
-        solutionTitleAccent: "Policarbonato Solar Semitransparente",
+        solutionTitle: "La Innovación",
+        solutionTitleAccent: "",
         solutionDesc: "Hemos desarrollado una lámina multipropósito patentada que reemplaza a los materiales de construcción convencionales, integrando celdas fotovoltaicas directamente en el policarbonato.",
         sol1Title: "Generación Semitransparente",
         sol1Desc: "Permite hasta un 80% de transmisión de luz natural mientras captura la radiación solar para generar electricidad limpia.",
@@ -166,8 +166,8 @@ export default function Home() {
         prob3Desc: "'Plug-and-play' structural design that drastically reduces installation times and logistical costs.",
         
         solutionTag: "Core Technology",
-        solutionTitle: "The Innovation: ",
-        solutionTitleAccent: "Semi-transparent Solar Polycarbonate",
+        solutionTitle: "The Innovation",
+        solutionTitleAccent: "",
         solutionDesc: "We have developed a proprietary, custom-designed BIPV solution that simplifies installation by eliminating traditional mounting infrastructure.",
         sol1Title: "Semi-transparent Generation",
         sol1Desc: "Allows up to 80% of natural light transmission while capturing solar radiation to generate clean electricity.",
