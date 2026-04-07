@@ -453,7 +453,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Columna Derecha: Acordeón Interactivo de Tarjetas con Numeración Editorial */}
+      {/* ===== PROBLEM (Diseño Asimétrico Editorial + Acordeón) ===== */}
+      <section id="problem" className="py-20 md:py-32 bg-gray-50/50 relative z-10 border-t border-gray-100">
+        <div className="container max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
+            
+            {/* Columna Izquierda: Título Fijo (Sticky) con Diseño Editorial */}
+            <div className="md:col-span-5 md:sticky md:top-32">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
+                {t.problemTag}
+              </div>
+              
+              {/* Título Masivo para compensar la brevedad */}
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-none tracking-tighter text-emerald-950">
+                {t.problemTitle}
+              </h2>
+              
+              {/* Línea de acento para darle "cuerpo" al diseño */}
+              <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
+              
+              {/* Texto descriptivo con mayor tamaño y peso (text-xl a text-2xl) */}
+              <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed">
+                {t.problemDesc}
+              </p>
+            </div>
+            
+            {/* Columna Derecha: Acordeón Interactivo de Tarjetas con Numeración Editorial */}
             <div className="md:col-span-7 space-y-5 mt-8 md:mt-0">
               
               {/* Tarjeta 1: Peso (AHORA CON NÚMERO 1) */}
