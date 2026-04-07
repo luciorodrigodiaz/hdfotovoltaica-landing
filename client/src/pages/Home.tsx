@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, Layers, Users } from "lucide-react";
+import { Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, Layers, Users, Factory, Bus, Tractor } from "lucide-react";
 import { toast } from "sonner";
 
 /**
@@ -582,27 +582,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== APPLICATIONS ===== */}
-      <section id="applications" className="py-16 md:py-24 bg-white relative z-10">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">{t.appTitle}</h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.appDesc}</p>
-              <ul className="space-y-4">
-                {[t.app1, t.app2, t.app3, t.app4].map((app, index) => (
-                  <li key={index} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-border hover:bg-emerald-50 hover:border-emerald-200 hover:shadow-soft transition-smooth cursor-default">
-                    {/* Mapeo de Color Applications Check: CleanTech + Hover Effect unificado */}
-                    <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold flex-shrink-0">{index + 1}</div>
-                    <span className="font-medium text-gray-900 text-lg">{app}</span>
-                  </li>
-                ))}
-              </ul>
+      {/* ===== APPLICATIONS (Patrón Z y Feature Rows) ===== */}
+      <section id="applications" className="py-20 md:py-32 bg-white relative z-10">
+        <div className="container max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            {/* Columna Izquierda: Imagen del Producto (Movida aquí para el Patrón Z) */}
+            <div className="order-2 md:order-1 flex justify-center md:justify-end">
+              <div className="relative w-full max-w-md">
+                {/* Resplandor de fondo decorativo */}
+                <div className="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-xl -z-10 transition-all duration-500"></div>
+                <img 
+                  src="/product-applications.jpg" 
+                  alt="Aplicación de Chapa Solar Profesional" 
+                  className="w-full rounded-3xl shadow-2xl border border-gray-100 transition-all hover:-translate-y-2 hover:shadow-emerald-900/20 duration-500 relative z-10" 
+                />
+              </div>
             </div>
-            {/* Right Visual: Vista Angular Profesional */}
-            <div className="flex justify-center order-1 md:order-2">
-              <img src="/product-applications.jpg" alt="Aplicación de Chapa Solar Profesional" className="w-full max-w-md rounded-2xl shadow-xl border border-border transition-all hover:-translate-x-2 hover:shadow-2xl" />
+
+            {/* Columna Derecha: Contenido y Filas Interactivas */}
+            <div className="order-1 md:order-2">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-emerald-950">
+                {t.appTitle}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-xl">
+                {t.appDesc}
+              </p>
+              
+              <div className="space-y-4">
+                {/* Aplicación 1: Fábricas */}
+                <div className="group flex items-center gap-5 p-4 md:p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:bg-emerald-50 hover:border-emerald-200 hover:shadow-md transition-all duration-300 cursor-default">
+                  <div className="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-100 group-hover:bg-emerald-600 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                    <Factory className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 text-lg group-hover:text-emerald-950 transition-colors">{t.app1}</span>
+                </div>
+
+                {/* Aplicación 2: Transporte Público */}
+                <div className="group flex items-center gap-5 p-4 md:p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:bg-emerald-50 hover:border-emerald-200 hover:shadow-md transition-all duration-300 cursor-default">
+                  <div className="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-100 group-hover:bg-emerald-600 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                    <Bus className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 text-lg group-hover:text-emerald-950 transition-colors">{t.app2}</span>
+                </div>
+
+                {/* Aplicación 3: Agrivoltaica */}
+                <div className="group flex items-center gap-5 p-4 md:p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:bg-emerald-50 hover:border-emerald-200 hover:shadow-md transition-all duration-300 cursor-default">
+                  <div className="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-100 group-hover:bg-emerald-600 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                    <Tractor className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 text-lg group-hover:text-emerald-950 transition-colors">{t.app3}</span>
+                </div>
+
+                {/* Aplicación 4: Comercial */}
+                <div className="group flex items-center gap-5 p-4 md:p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:bg-emerald-50 hover:border-emerald-200 hover:shadow-md transition-all duration-300 cursor-default">
+                  <div className="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-100 group-hover:bg-emerald-600 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                    <Building className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="font-semibold text-gray-800 text-lg group-hover:text-emerald-950 transition-colors">{t.app4}</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
