@@ -92,6 +92,8 @@ export default function Home() {
         sol1Desc: "Permite hasta un 80% de transmisión de luz natural mientras captura la radiación solar para generar electricidad limpia.",
         sol2Title: "Ligereza y Resistencia",
         sol2Desc: "Extremadamente ligero (solo 3.5 kg/m²) y flexible. Resiste altos impactos y clima severo, superando ampliamente al vidrio tradicional.",
+        sol3Title: "Integración Arquitectónica",
+        sol3Desc: "Diseño versátil que se adapta a fachadas, claraboyas y techos industriales, eliminando la necesidad de estructuras de montaje adicionales.",
         
         appTitle: "Aplicaciones Estratégicas",
         appDesc: "Nuestra tecnología está diseñada para adaptarse a los sectores que más requieren eficiencia espacial y energética.",
@@ -161,6 +163,8 @@ export default function Home() {
         sol1Desc: "Allows up to 80% of natural light transmission while capturing solar radiation to generate clean electricity.",
         sol2Title: "Lightness and Resistance",
         sol2Desc: "Extremely lightweight (only 3.5 kg/m²) and flexible. Resists high impacts and severe weather, vastly outperforming traditional glass.",
+        sol3Title: "Architectural Integration",
+        sol3Desc: "Versatile design that adapts to facades, skylights, and industrial roofs, eliminating the need for additional mounting structures.",
         
         appTitle: "Strategic Applications",
         appDesc: "Our technology is designed to adapt to the sectors that most require spatial and energetic efficiency.",
@@ -488,13 +492,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== INNOVATION / SOLUTION (Versión Refinada con Tarjetas) ===== */}
+      {/* ===== INNOVATION / SOLUTION (Versión Refinada con 3 Tarjetas) ===== */}
       <section id="solution" className="py-24 bg-secondary/30 relative z-0 border-y border-emerald-100">
         <div className="container max-w-7xl mx-auto">
           {/* Elemento de acento visual sutil (cuadrícula técnica) */}
           <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
             {/* Columna de Texto: Título, Subtítulo y Tarjetas */}
             <div className="md:col-span-7">
               {/* Título unificado al color del Hero */}
@@ -528,30 +532,23 @@ export default function Home() {
                     <p className="text-base text-muted-foreground leading-relaxed">{t.sol2Desc}</p>
                   </div>
                 </div>
+
+                {/* Tarjeta 3: Integración Arquitectónica */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 md:p-8 bg-white rounded-3xl border border-border/50 hover:bg-emerald-50 hover:border-emerald-100 transition-smooth cursor-default shadow-sm hover:shadow-lg">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-inner">
+                    <Building className="w-8 h-8 text-emerald-700" />
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.sol3Title}</h3>
+                    <p className="text-base text-muted-foreground leading-relaxed">{t.sol3Desc}</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Columna de Imagen: Imagen Principal y ODS (Reordenado en Desktop) */}
-            <div className="md:col-span-5 flex flex-col items-center">
-              {/* ODS UNIFICADOS (Auto-activación por Scroll) */}
-              <div ref={odsRef} className={`flex flex-wrap items-center justify-center gap-6 md:gap-8 mb-10 border-b border-gray-200/50 pb-10 transition-all duration-1000 ${odsOnScreen ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-50 scale-95"}`}>
-                <img 
-                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" 
-                  alt="SDG 7: Affordable and Clean Energy" 
-                  className="w-20 md:w-24 h-auto object-contain rounded-xl shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
-                />
-                <img 
-                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" 
-                  alt="SDG 9: Industry, Innovation and Infrastructure" 
-                  className="w-20 md:w-24 h-auto object-contain rounded-xl shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
-                />
-                <img 
-                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" 
-                  alt="SDG 11: Sustainable Cities and Communities" 
-                  className="w-20 md:w-24 h-auto object-contain rounded-xl shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
-                />
-              </div>
-
+            {/* Columna de Imagen: Imagen Principal y ODS */}
+            <div className="md:col-span-5 flex flex-col items-center justify-center gap-8">
+              
               {/* Imagen principal: "Wow" de Ligereza y Transparencia */}
               <div className="flex justify-center w-full">
                 <img 
@@ -560,6 +557,26 @@ export default function Home() {
                   className="w-full max-w-sm h-auto rounded-3xl shadow-2xl border border-emerald-100 p-2 bg-white transition-all hover:scale-105" 
                 />
               </div>
+
+              {/* ODS UNIFICADOS (Reposicionados debajo de la imagen) */}
+              <div ref={odsRef} className={`w-full flex flex-wrap items-center justify-center gap-6 md:gap-8 border-t border-gray-200/60 pt-8 transition-all duration-1000 ${odsOnScreen ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-50 scale-95"}`}>
+                <img 
+                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" 
+                  alt="SDG 7: Affordable and Clean Energy" 
+                  className="w-16 md:w-20 h-auto object-contain rounded-lg shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
+                />
+                <img 
+                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" 
+                  alt="SDG 9: Industry, Innovation and Infrastructure" 
+                  className="w-16 md:w-20 h-auto object-contain rounded-lg shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
+                />
+                <img 
+                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" 
+                  alt="SDG 11: Sustainable Cities and Communities" 
+                  className="w-16 md:w-20 h-auto object-contain rounded-lg shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
+                />
+              </div>
+              
             </div>
           </div>
         </div>
