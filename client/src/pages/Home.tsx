@@ -488,53 +488,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SOLUTION / INNOVATION UNIFICADA & OPTIMIZADA ===== */}
-      {/* Mapeo Spacing: Unificación + py-24 para dar aire corporativo */}
-      <section id="solution" className="py-24 bg-secondary/30 relative z-0">
-        <div className="container">
-          
-          {/* ODS UNIFICADOS (Auto-activación por Scroll) */}
-          <div ref={odsRef} className={`flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-16 border-b border-gray-200/50 pb-16 transition-all duration-1000 ${odsOnScreen ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-50 scale-95"}`}>
-            <img 
-              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" 
-              alt="SDG 7: Affordable and Clean Energy" 
-              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
-            />
-            <img 
-              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" 
-              alt="SDG 9: Industry, Innovation and Infrastructure" 
-              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
-            />
-            <img 
-              src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" 
-              alt="SDG 11: Sustainable Cities and Communities" 
-              className="w-24 md:w-32 h-auto object-contain rounded-xl shadow-md hover:scale-105 hover:shadow-xl transition-all duration-500 cursor-default" 
-            />
-          </div>
+      {/* ===== INNOVATION / SOLUTION (Versión Refinada con Tarjetas) ===== */}
+      <section id="solution" className="py-24 bg-secondary/30 relative z-0 border-y border-emerald-100">
+        <div className="container max-w-7xl mx-auto">
+          {/* Elemento de acento visual sutil (cuadrícula técnica) */}
+          <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mt-[-4rem]">
-            {/* Left: Texto */}
-            <div>
-              <div className="text-center md:text-left max-w-3xl mx-auto mb-10 md:mb-0">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">{t.solutionTitle}<span className="text-emerald-600">{t.solutionTitleAccent}</span></h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.solutionDesc}</p>
-                
-                <div className="space-y-4">
-                  {/* Mapeo de Color Solution Icons: CleanTech + Hover Effect unificado */}
-                  <div className="flex items-start gap-4 text-left p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
-                    <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Sun className="w-6 h-6 text-emerald-700" /></div>
-                    <div><h3 className="font-bold mb-1 text-lg tracking-tight">{t.sol1Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol1Desc}</p></div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start relative z-10">
+            {/* Columna de Texto: Título, Subtítulo y Tarjetas */}
+            <div className="md:col-span-7">
+              {/* Título unificado al color del Hero */}
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
+                {t.solutionTitle}<span className="text-emerald-600">{t.solutionTitleAccent}</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl">
+                {t.solutionDesc}
+              </p>
+              
+              {/* Contenedor de las Tarjetas de Beneficio */}
+              <div className="space-y-6">
+                {/* Tarjeta 1: Generación Semitransparente */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 md:p-8 bg-white rounded-3xl border border-border/50 hover:bg-emerald-50 hover:border-emerald-100 transition-smooth cursor-default shadow-sm hover:shadow-lg">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-inner">
+                    <Sun className="w-8 h-8 text-emerald-700" />
                   </div>
-                  <div className="flex items-start gap-4 text-left p-4 rounded-xl hover:bg-emerald-50 transition-smooth cursor-default">
-                    <div className="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200"><Shield className="w-6 h-6 text-emerald-700" /></div>
-                    <div><h3 className="font-bold mb-1 text-lg tracking-tight">{t.sol2Title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{t.sol2Desc}</p></div>
+                  <div className="flex-grow">
+                    <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.sol1Title}</h3>
+                    <p className="text-base text-muted-foreground leading-relaxed">{t.sol1Desc}</p>
+                  </div>
+                </div>
+                
+                {/* Tarjeta 2: Ligereza y Resistencia */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 md:p-8 bg-white rounded-3xl border border-border/50 hover:bg-emerald-50 hover:border-emerald-100 transition-smooth cursor-default shadow-sm hover:shadow-lg">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-inner">
+                    <Shield className="w-8 h-8 text-emerald-700" />
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.sol2Title}</h3>
+                    <p className="text-base text-muted-foreground leading-relaxed">{t.sol2Desc}</p>
                   </div>
                 </div>
               </div>
             </div>
-            {/* Right: Imagen "Wow" de Ligereza y Transparencia */}
-            <div className="flex justify-center order-first md:order-none">
-              <img src="/product-innovation.jpg" alt="Innovación en Policarbonato Solar Ligero" className="w-full max-w-md h-auto rounded-3xl shadow-2xl border border-emerald-100 p-2 bg-white transition-all hover:scale-105" />
+
+            {/* Columna de Imagen: Imagen Principal y ODS (Reordenado en Desktop) */}
+            <div className="md:col-span-5 flex flex-col items-center">
+              {/* ODS UNIFICADOS (Auto-activación por Scroll) */}
+              <div ref={odsRef} className={`flex flex-wrap items-center justify-center gap-6 md:gap-8 mb-10 border-b border-gray-200/50 pb-10 transition-all duration-1000 ${odsOnScreen ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-50 scale-95"}`}>
+                <img 
+                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" 
+                  alt="SDG 7: Affordable and Clean Energy" 
+                  className="w-20 md:w-24 h-auto object-contain rounded-xl shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
+                />
+                <img 
+                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" 
+                  alt="SDG 9: Industry, Innovation and Infrastructure" 
+                  className="w-20 md:w-24 h-auto object-contain rounded-xl shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
+                />
+                <img 
+                  src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" 
+                  alt="SDG 11: Sustainable Cities and Communities" 
+                  className="w-20 md:w-24 h-auto object-contain rounded-xl shadow hover:scale-110 hover:shadow-lg transition-all duration-500 cursor-default" 
+                />
+              </div>
+
+              {/* Imagen principal: "Wow" de Ligereza y Transparencia */}
+              <div className="flex justify-center w-full">
+                <img 
+                  src="/product-innovation.jpg" 
+                  alt="Innovación en Policarbonato Solar Ligero" 
+                  className="w-full max-w-sm h-auto rounded-3xl shadow-2xl border border-emerald-100 p-2 bg-white transition-all hover:scale-105" 
+                />
+              </div>
             </div>
           </div>
         </div>
