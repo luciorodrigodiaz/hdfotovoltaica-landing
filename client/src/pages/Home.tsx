@@ -709,8 +709,8 @@ export default function Home() {
             {/* Columna Derecha: Contenido y Filas Interactivas */}
             <div className="order-1 md:order-2">
               
-              {/* Título Masivo ajustado para entrar en una sola línea (text-4xl en móvil, text-6xl md+) */}
-              <h2 className="text-4xl md:text-6xl font-extrabold mb-4 leading-none tracking-tightest text-emerald-950 whitespace-nowrap overflow-hidden text-ellipsis">
+              {/* Título adaptado para entrar en una sola línea sin cortarse */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
                 {t.appTitle}
               </h2>
 
