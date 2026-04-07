@@ -458,8 +458,6 @@ export default function Home() {
             {/* Columna Izquierda: Título Fijo (Sticky) */}
             <div className="md:col-span-5 md:sticky md:top-32">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
                 {t.problemTag}
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
