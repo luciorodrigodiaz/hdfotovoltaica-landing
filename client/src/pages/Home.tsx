@@ -33,7 +33,11 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", organization: "" });
-  const [activeProblem, setActiveProblem] = useState<number | null>(1);
+
+  // NUEVO: Estado para controlar qué tarjeta del Problema está abierta
+  const [activeProblem, setActiveProblem] = useState<number | null>(1); 
+  // NUEVO: Estado para controlar el acordeón de Innovación
+  const [activeSolution, setActiveSolution] = useState<number | null>(1);
 
   // Referencia para la sección de logos
   const logosRef = useRef<HTMLDivElement>(null);
@@ -77,6 +81,7 @@ export default function Home() {
         metric4: "Families & Businesses",
         
         // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy, TEXTO ACTUALIZADO) ---
+        problemTag: "El Desafío Actual",
         problemTitle: "La 'Brecha de Hardware' Energética",
         problemDesc: "Las soluciones convencionales de generación solar son pesadas, restrictivas y generan altas emisiones. HD Fotovoltaica resuelve tres barreras críticas:",
         prob1Title: "Restricción Estructural (Peso)",
@@ -86,6 +91,7 @@ export default function Home() {
         prob3Title: "Lentitud de Despliegue",
         prob3Desc: "Diseño estructural 'plug-and-play' que reduce drásticamente los tiempos de instalación y costos logísticos.",
         
+        solutionTag: "Tecnología Base",
         solutionTitle: "La Innovación: ",
         solutionTitleAccent: "Policarbonato Solar Semitransparente",
         solutionDesc: "Hemos desarrollado una lámina multipropósito patentada que reemplaza a los materiales de construcción convencionales, integrando celdas fotovoltaicas directamente en el policarbonato.",
@@ -96,6 +102,7 @@ export default function Home() {
         sol3Title: "Integración Arquitectónica",
         sol3Desc: "Diseño versátil que se adapta a fachadas, claraboyas y techos industriales, eliminando la necesidad de estructuras de montaje adicionales.",
         
+        appTag: "Casos de Uso",
         appTitle: "Aplicaciones Estratégicas",
         appDesc: "Nuestra tecnología está diseñada para adaptarse a los sectores que más requieren eficiencia espacial y energética.",
         app1: "Claraboyas y Techos de Fábricas / Puertos",
@@ -148,6 +155,7 @@ export default function Home() {
         metric4: "Families & Businesses",
 
         // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy EN INGLÉS, TEXTO ACTUALIZADO) ---
+        problemTag: "The Current Challenge",
         problemTitle: "The Energy 'Hardware Gap'",
         problemDesc: "Conventional solar generation solutions are heavy, restrictive, and generate high emissions. HD Photovoltaics solves three critical barriers:",
         prob1Title: "Structural Restriction (Weight)",
@@ -157,6 +165,7 @@ export default function Home() {
         prob3Title: "Slow Deployment",
         prob3Desc: "'Plug-and-play' structural design that drastically reduces installation times and logistical costs.",
         
+        solutionTag: "Core Technology",
         solutionTitle: "The Innovation: ",
         solutionTitleAccent: "Semi-transparent Solar Polycarbonate",
         solutionDesc: "We have developed a proprietary, custom-designed BIPV solution that simplifies installation by eliminating traditional mounting infrastructure.",
@@ -167,6 +176,7 @@ export default function Home() {
         sol3Title: "Architectural Integration",
         sol3Desc: "Versatile design that adapts to facades, skylights, and industrial roofs, eliminating the need for additional mounting structures.",
         
+        appTag: "Use Cases",
         appTitle: "Strategic Applications",
         appDesc: "Our technology is designed to adapt to the sectors that most require spatial and energetic efficiency.",
         app1: "Skylights and Factory / Port Roofs",
@@ -450,6 +460,9 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
                 El Desafío Actual
               </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
+                {t.problemTag}
+              </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
                 {t.problemTitle}
               </h2>
@@ -542,8 +555,13 @@ export default function Home() {
           <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
-            {/* Columna de Texto: Título, Subtítulo y Tarjetas */}
+            {/* Columna de Texto: Título, Subtítulo y Tarjetas (AHORA ACORDEÓN) */}
             <div className="md:col-span-7">
+              {/* Nueva Etiqueta Dinámica */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
+                {t.solutionTag}
+              </div>
+              
               {/* Título unificado al color del Hero */}
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
                 {t.solutionTitle}<span className="text-emerald-600">{t.solutionTitleAccent}</span>
@@ -552,40 +570,78 @@ export default function Home() {
                 {t.solutionDesc}
               </p>
               
-              {/* Contenedor de las Tarjetas de Beneficio */}
-              <div className="space-y-6">
-                {/* Tarjeta 1: Generación Semitransparente */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 md:p-8 bg-white rounded-3xl border border-border/50 hover:bg-emerald-50 hover:border-emerald-100 transition-smooth cursor-default shadow-sm hover:shadow-lg">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-inner">
-                    <Sun className="w-8 h-8 text-emerald-700" />
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.sol1Title}</h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">{t.sol1Desc}</p>
+              {/* Contenedor del Acordeón de Innovación */}
+              <div className="space-y-4">
+                
+                {/* Tarjeta 1: Generación */}
+                <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeSolution === 1 ? 'border-emerald-300 ring-4 ring-emerald-50/80' : 'border-gray-200 hover:border-emerald-100'}`}>
+                  <button 
+                    onClick={() => setActiveSolution(activeSolution === 1 ? null : 1)}
+                    className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
+                  >
+                    <div className="flex items-center gap-5">
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 1 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
+                        <Sun className={`w-7 h-7 transition-colors duration-300 ${activeSolution === 1 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                      </div>
+                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 1 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                        {t.sol1Title}
+                      </h3>
+                    </div>
+                    <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeSolution === 1 ? 'rotate-180 text-emerald-600' : ''}`} />
+                  </button>
+                  <div className={`transition-all duration-500 ease-in-out ${activeSolution === 1 ? 'max-h-48 opacity-100 pb-6 px-6' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+                    <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                      {t.sol1Desc}
+                    </p>
                   </div>
                 </div>
                 
-                {/* Tarjeta 2: Ligereza y Resistencia */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 md:p-8 bg-white rounded-3xl border border-border/50 hover:bg-emerald-50 hover:border-emerald-100 transition-smooth cursor-default shadow-sm hover:shadow-lg">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-inner">
-                    <Shield className="w-8 h-8 text-emerald-700" />
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.sol2Title}</h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">{t.sol2Desc}</p>
+                {/* Tarjeta 2: Ligereza */}
+                <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeSolution === 2 ? 'border-emerald-300 ring-4 ring-emerald-50/80' : 'border-gray-200 hover:border-emerald-100'}`}>
+                  <button 
+                    onClick={() => setActiveSolution(activeSolution === 2 ? null : 2)}
+                    className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
+                  >
+                    <div className="flex items-center gap-5">
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 2 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
+                        <Shield className={`w-7 h-7 transition-colors duration-300 ${activeSolution === 2 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                      </div>
+                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 2 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                        {t.sol2Title}
+                      </h3>
+                    </div>
+                    <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeSolution === 2 ? 'rotate-180 text-emerald-600' : ''}`} />
+                  </button>
+                  <div className={`transition-all duration-500 ease-in-out ${activeSolution === 2 ? 'max-h-48 opacity-100 pb-6 px-6' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+                    <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                      {t.sol2Desc}
+                    </p>
                   </div>
                 </div>
 
-                {/* Tarjeta 3: Integración Arquitectónica */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 md:p-8 bg-white rounded-3xl border border-border/50 hover:bg-emerald-50 hover:border-emerald-100 transition-smooth cursor-default shadow-sm hover:shadow-lg">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-inner">
-                    <Building className="w-8 h-8 text-emerald-700" />
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="font-bold mb-2 text-xl text-emerald-950 tracking-tight">{t.sol3Title}</h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">{t.sol3Desc}</p>
+                {/* Tarjeta 3: Integración */}
+                <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeSolution === 3 ? 'border-emerald-300 ring-4 ring-emerald-50/80' : 'border-gray-200 hover:border-emerald-100'}`}>
+                  <button 
+                    onClick={() => setActiveSolution(activeSolution === 3 ? null : 3)}
+                    className="w-full text-left p-6 flex items-center justify-between focus:outline-none"
+                  >
+                    <div className="flex items-center gap-5">
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeSolution === 3 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
+                        <Building className={`w-7 h-7 transition-colors duration-300 ${activeSolution === 3 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                      </div>
+                      <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeSolution === 3 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                        {t.sol3Title}
+                      </h3>
+                    </div>
+                    <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeSolution === 3 ? 'rotate-180 text-emerald-600' : ''}`} />
+                  </button>
+                  <div className={`transition-all duration-500 ease-in-out ${activeSolution === 3 ? 'max-h-48 opacity-100 pb-6 px-6' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+                    <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                      {t.sol3Desc}
+                    </p>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -645,6 +701,9 @@ export default function Home() {
 
             {/* Columna Derecha: Contenido y Filas Interactivas */}
             <div className="order-1 md:order-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
+                {t.appTag}
+              </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-emerald-950">
                 {t.appTitle}
               </h2>
