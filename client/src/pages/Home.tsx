@@ -106,7 +106,7 @@ export default function Home() {
         sol3Desc: "Diseño versátil que se adapta a fachadas, claraboyas y techos industriales, eliminando la necesidad de estructuras de montaje adicionales.",
         
         appTag: "Casos de Uso",
-        appTitle: "Aplicaciones Estratégicas",
+        appTitle: "Aplicaciones",
         appDesc: "Nuestra tecnología está diseñada para adaptarse a los sectores que más requieren eficiencia espacial y energética.",
         app1: "Claraboyas y Techos de Fábricas / Puertos",
         app2: "Paradas de Transporte Público Inteligente",
@@ -180,7 +180,7 @@ export default function Home() {
         sol3Desc: "Versatile design that adapts to facades, skylights, and industrial roofs, eliminating the need for additional mounting structures.",
         
         appTag: "Use Cases",
-        appTitle: "Strategic Applications",
+        appTitle: "Applications",
         appDesc: "Our technology is designed to adapt to the sectors that most require spatial and energetic efficiency.",
         app1: "Skylights and Factory / Port Roofs",
         app2: "Smart Public Transport Stops",
@@ -709,8 +709,8 @@ export default function Home() {
             {/* Columna Derecha: Contenido y Filas Interactivas */}
             <div className="order-1 md:order-2">
               
-              {/* Título adaptado para entrar en una sola línea sin cortarse */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
+              {/* Título Masivo recuperado */}
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
                 {t.appTitle}
               </h2>
 
