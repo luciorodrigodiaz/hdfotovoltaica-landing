@@ -1,7 +1,11 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, Layers, Users, Factory, Bus, Tractor, ChevronDown } from "lucide-react";
+import { 
+  Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, 
+  Layers, Users, Factory, Bus, Tractor, ChevronDown,
+  Weight, CloudFog, Timer // <--- Agrega estos tres
+} from "lucide-react";
 import { toast } from "sonner";
 
 /**
@@ -475,10 +479,10 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Columna Derecha: Acordeón Interactivo de Tarjetas */}
+            {/* Columna Derecha: Acordeón Interactivo de Tarjetas con Iconos Temáticos */}
             <div className="md:col-span-7 space-y-5 mt-8 md:mt-0">
               
-              {/* Tarjeta 1: Peso */}
+              {/* Tarjeta 1: Peso (Weight Icon) */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 1 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
                   onClick={() => setActiveProblem(activeProblem === 1 ? null : 1)}
@@ -486,7 +490,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-5">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 1 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      <Shield className="w-7 h-7" />
+                      <Weight className="w-7 h-7" />
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 1 ? 'text-emerald-950' : 'text-gray-600'}`}>
                       {t.prob1Title}
@@ -501,7 +505,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Tarjeta 2: Carbono */}
+              {/* Tarjeta 2: Carbono (CloudFog Icon) */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 2 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
                   onClick={() => setActiveProblem(activeProblem === 2 ? null : 2)}
@@ -509,7 +513,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-5">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 2 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      <Leaf className="w-7 h-7" />
+                      <CloudFog className="w-7 h-7" />
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 2 ? 'text-emerald-950' : 'text-gray-600'}`}>
                       {t.prob2Title}
@@ -524,7 +528,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Tarjeta 3: Velocidad */}
+              {/* Tarjeta 3: Despliegue (Timer Icon) */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 3 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
                   onClick={() => setActiveProblem(activeProblem === 3 ? null : 3)}
@@ -532,7 +536,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-5">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 3 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      <Zap className="w-7 h-7" />
+                      <Timer className="w-7 h-7" />
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 3 ? 'text-emerald-950' : 'text-gray-600'}`}>
                       {t.prob3Title}
