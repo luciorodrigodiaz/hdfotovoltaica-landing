@@ -75,9 +75,9 @@ export default function Home() {
         metric3: "kg CO₂eq Avoided",
         metric4: "Families & Businesses",
         
-        // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy) ---
+        // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy, TEXTO ACTUALIZADO) ---
         problemTitle: "La 'Brecha de Hardware' Energética",
-        problemDesc: "Los paneles solares tradicionales son pesados, restrictivos y generan altas emisiones. HD Fotovoltaica resuelve tres barreras críticas:",
+        problemDesc: "Las soluciones convencionales de generación solar son pesadas, restrictivas y generan altas emisiones. HD Fotovoltaica resuelve tres barreras críticas:",
         prob1Title: "Restricción Estructural (Peso)",
         prob1Desc: "Solución 80% más ligera (3.5 kg/m²). Permite el despliegue inmediato sin costosos refuerzos de acero.",
         prob2Title: "Deuda de Carbono",
@@ -144,9 +144,9 @@ export default function Home() {
         metric3: "kg CO₂eq Avoided",
         metric4: "Families & Businesses",
 
-        // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy EN INGLÉS) ---
+        // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy EN INGLÉS, TEXTO ACTUALIZADO) ---
         problemTitle: "The Energy 'Hardware Gap'",
-        problemDesc: "Traditional solar panels are heavy, restrictive, and generate high emissions. HD Photovoltaics solves three critical barriers:",
+        problemDesc: "Conventional solar generation solutions are heavy, restrictive, and generate high emissions. HD Photovoltaics solves three critical barriers:",
         prob1Title: "Structural Restriction (Weight)",
         prob1Desc: "80% lighter solution (3.5 kg/m²). Allows immediate deployment without costly steel reinforcements.",
         prob2Title: "Carbon Debt",
@@ -435,7 +435,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROBLEM (Versión Centrada sin Imagen) ===== */}
+      {/* ===== PROBLEM (Versión Centrada sin Imagen, Texto Actualizado) ===== */}
       <section id="problem" className="py-16 md:py-24 bg-white relative z-10">
         <div className="container max-w-4xl mx-auto">
           
@@ -449,11 +449,11 @@ export default function Home() {
             </p>
           </div>
           
-          {/* Lista de 3 puntos */}
+          {/* Lista de 3 puntos en tarjetas */}
           <div className="space-y-4">
             {/* Punto 1: Peso */}
             <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
                 <Shield className="w-7 h-7 text-emerald-700" />
               </div>
               <div className="text-left">
@@ -464,7 +464,7 @@ export default function Home() {
             
             {/* Punto 2: Carbono */}
             <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
                 <Leaf className="w-7 h-7 text-emerald-700" />
               </div>
               <div className="text-left">
@@ -475,7 +475,7 @@ export default function Home() {
 
             {/* Punto 3: Velocidad */}
             <div className="flex items-start gap-5 p-5 md:p-6 rounded-2xl hover:bg-emerald-50 transition-smooth cursor-default border border-transparent hover:border-emerald-100 shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200">
+              <div className="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 border border-emerald-200 shadow-sm">
                 <Zap className="w-7 h-7 text-emerald-700" />
               </div>
               <div className="text-left">
