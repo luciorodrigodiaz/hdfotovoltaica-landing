@@ -479,10 +479,10 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Columna Derecha: Acordeón Interactivo de Tarjetas con Iconos Temáticos */}
+            {/* Columna Derecha: Acordeón Interactivo de Tarjetas */}
             <div className="md:col-span-7 space-y-5 mt-8 md:mt-0">
               
-              {/* Tarjeta 1: Peso (Weight Icon) */}
+              {/* Tarjeta 1: Peso (AHORA CON ICONO WEIGHT) */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 1 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
                   onClick={() => setActiveProblem(activeProblem === 1 ? null : 1)}
@@ -505,7 +505,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Tarjeta 2: Carbono (CloudFog Icon) */}
+              {/* Tarjeta 2: Carbono (AHORA CON ICONO CLOUDFOG) */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 2 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
                   onClick={() => setActiveProblem(activeProblem === 2 ? null : 2)}
@@ -528,7 +528,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Tarjeta 3: Despliegue (Timer Icon) */}
+              {/* Tarjeta 3: Velocidad (AHORA CON ICONO TIMER) */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 3 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
                   onClick={() => setActiveProblem(activeProblem === 3 ? null : 3)}
