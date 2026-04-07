@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { 
   Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, 
   Layers, Users, Factory, Bus, Tractor, ChevronDown,
-  Weight, CloudFog, Timer // <--- Agrega estos tres
+  Scale, CloudFog, Timer // <--- 'Scale' reemplaza a 'Weight'
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -482,7 +482,7 @@ export default function Home() {
             {/* Columna Derecha: Acordeón Interactivo de Tarjetas */}
             <div className="md:col-span-7 space-y-5 mt-8 md:mt-0">
               
-              {/* Tarjeta 1: Peso (AHORA CON ICONO WEIGHT) */}
+              {/* Tarjeta 1: Peso (AHORA CON ICONO SCALE) */}
               <div className={`bg-white rounded-2xl transition-all duration-400 overflow-hidden ${activeProblem === 1 ? 'border border-emerald-100 border-l-8 border-l-emerald-600 shadow-2xl shadow-emerald-900/10 scale-[1.02] -ml-2' : 'border border-gray-200 border-l-4 border-l-transparent hover:border-emerald-200 shadow-sm hover:shadow-md'}`}>
                 <button 
                   onClick={() => setActiveProblem(activeProblem === 1 ? null : 1)}
@@ -490,7 +490,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-5">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 1 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      <Weight className="w-7 h-7" />
+                      <Scale className="w-7 h-7" /> {/* <--- Nuevo icono de balanza */}
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 1 ? 'text-emerald-950' : 'text-gray-600'}`}>
                       {t.prob1Title}
