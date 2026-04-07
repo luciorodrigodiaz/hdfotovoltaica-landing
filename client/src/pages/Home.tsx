@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, Layers, Users, Factory, Bus, Tractor } from "lucide-react";
+import { Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, Layers, Users, Factory, Bus, Tractor, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 
 /**
@@ -33,7 +33,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", organization: "" });
-  const [activeProblem, setActiveProblem] = useState<number | null>(null);
+  const [activeProblem, setActiveProblem] = useState<number | null>(1);
 
   // Referencia para la sección de logos
   const logosRef = useRef<HTMLDivElement>(null);
@@ -440,84 +440,97 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROBLEM (Bento Grid Interactivo & Contraste de Color) ===== */}
-      <section id="problem" className="py-24 bg-slate-50 relative z-10 border-y border-slate-200">
-        <div className="container max-w-6xl mx-auto">
-          
-          {/* Título centrado con tono más sobrio */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight tracking-tight text-slate-900">
-              {t.problemTitle}
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-              {t.problemDesc}
-            </p>
-          </div>
-          
-          {/* Bento Grid: 3 Columnas en Desktop */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {{/* ===== PROBLEM (Diseño Asimétrico Editorial + Acordeón) ===== */}
+      <section id="problem" className="py-20 md:py-32 bg-gray-50/50 relative z-10 border-t border-gray-100">
+        <div className="container max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
             
-            {/* Tarjeta 1: Peso */}
-            <div 
-              onClick={() => setActiveProblem(activeProblem === 1 ? null : 1)}
-              className={`group p-8 rounded-3xl transition-all duration-500 cursor-pointer border ${activeProblem === 1 ? 'bg-white border-emerald-200 shadow-xl scale-105' : 'bg-white/50 border-slate-200 hover:border-emerald-100 hover:bg-white shadow-sm'}`}
-            >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${activeProblem === 1 ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-emerald-100 group-hover:text-emerald-600'}`}>
-                <Shield className="w-7 h-7" />
+            {/* Columna Izquierda: Título Fijo (Sticky) */}
+            <div className="md:col-span-5 md:sticky md:top-32">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
+                El Desafío Actual
               </div>
-              <h3 className="font-bold text-xl text-slate-900 mb-2 flex justify-between items-center">
-                {t.prob1Title}
-                <span className={`text-xs font-normal px-2 py-1 rounded-full border transition-all ${activeProblem === 1 ? 'opacity-0' : 'opacity-100 bg-slate-100'}`}>Ver más</span>
-              </h3>
-              <div className={`overflow-hidden transition-all duration-500 ${activeProblem === 1 ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                <p className="text-slate-600 leading-relaxed border-t border-emerald-50 pt-4">
-                  {t.prob1Desc}
-                </p>
-              </div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight tracking-tight text-emerald-950">
+                {t.problemTitle}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t.problemDesc}
+              </p>
             </div>
             
-            {/* Tarjeta 2: Carbono */}
-            <div 
-              onClick={() => setActiveProblem(activeProblem === 2 ? null : 2)}
-              className={`group p-8 rounded-3xl transition-all duration-500 cursor-pointer border ${activeProblem === 2 ? 'bg-white border-emerald-200 shadow-xl scale-105' : 'bg-white/50 border-slate-200 hover:border-emerald-100 hover:bg-white shadow-sm'}`}
-            >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${activeProblem === 2 ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-emerald-100 group-hover:text-emerald-600'}`}>
-                <Leaf className="w-7 h-7" />
+            {/* Columna Derecha: Acordeón Interactivo de Tarjetas */}
+            <div className="md:col-span-7 space-y-4">
+              
+              {/* Tarjeta 1: Peso */}
+              <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeProblem === 1 ? 'border-emerald-200 ring-4 ring-emerald-50/50' : 'border-gray-200'}`}>
+                <button 
+                  onClick={() => setActiveProblem(activeProblem === 1 ? null : 1)}
+                  className="w-full text-left p-6 md:p-8 flex items-center justify-between focus:outline-none"
+                >
+                  <div className="flex items-center gap-5">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 1 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
+                      <Shield className={`w-7 h-7 transition-colors duration-300 ${activeProblem === 1 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                    </div>
+                    <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 1 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                      {t.prob1Title}
+                    </h3>
+                  </div>
+                  <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeProblem === 1 ? 'rotate-180 text-emerald-600' : ''}`} />
+                </button>
+                <div className={`transition-all duration-500 ease-in-out ${activeProblem === 1 ? 'max-h-48 opacity-100 pb-8 px-6 md:px-8' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+                  <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                    {t.prob1Desc}
+                  </p>
+                </div>
               </div>
-              <h3 className="font-bold text-xl text-slate-900 mb-2 flex justify-between items-center">
-                {t.prob2Title}
-                <span className={`text-xs font-normal px-2 py-1 rounded-full border transition-all ${activeProblem === 2 ? 'opacity-0' : 'opacity-100 bg-slate-100'}`}>Ver más</span>
-              </h3>
-              <div className={`overflow-hidden transition-all duration-500 ${activeProblem === 2 ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                <p className="text-slate-600 leading-relaxed border-t border-emerald-50 pt-4">
-                  {t.prob2Desc}
-                </p>
-              </div>
-            </div>
 
-            {/* Tarjeta 3: Velocidad */}
-            <div 
-              onClick={() => setActiveProblem(activeProblem === 3 ? null : 3)}
-              className={`group p-8 rounded-3xl transition-all duration-500 cursor-pointer border ${activeProblem === 3 ? 'bg-white border-emerald-200 shadow-xl scale-105' : 'bg-white/50 border-slate-200 hover:border-emerald-100 hover:bg-white shadow-sm'}`}
-            >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${activeProblem === 3 ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-500 group-hover:bg-emerald-100 group-hover:text-emerald-600'}`}>
-                <Zap className="w-7 h-7" />
+              {/* Tarjeta 2: Carbono */}
+              <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeProblem === 2 ? 'border-emerald-200 ring-4 ring-emerald-50/50' : 'border-gray-200'}`}>
+                <button 
+                  onClick={() => setActiveProblem(activeProblem === 2 ? null : 2)}
+                  className="w-full text-left p-6 md:p-8 flex items-center justify-between focus:outline-none"
+                >
+                  <div className="flex items-center gap-5">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 2 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
+                      <Leaf className={`w-7 h-7 transition-colors duration-300 ${activeProblem === 2 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                    </div>
+                    <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 2 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                      {t.prob2Title}
+                    </h3>
+                  </div>
+                  <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeProblem === 2 ? 'rotate-180 text-emerald-600' : ''}`} />
+                </button>
+                <div className={`transition-all duration-500 ease-in-out ${activeProblem === 2 ? 'max-h-48 opacity-100 pb-8 px-6 md:px-8' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+                  <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                    {t.prob2Desc}
+                  </p>
+                </div>
               </div>
-              <h3 className="font-bold text-xl text-slate-900 mb-2 flex justify-between items-center">
-                {t.prob3Title}
-                <span className={`text-xs font-normal px-2 py-1 rounded-full border transition-all ${activeProblem === 3 ? 'opacity-0' : 'opacity-100 bg-slate-100'}`}>Ver más</span>
-              </h3>
-              <div className={`overflow-hidden transition-all duration-500 ${activeProblem === 3 ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                <p className="text-slate-600 leading-relaxed border-t border-emerald-50 pt-4">
-                  {t.prob3Desc}
-                </p>
-              </div>
-            </div>
 
-          </div>
-          
-          <div className="mt-12 text-center">
-            <p className="text-sm text-slate-400 font-medium italic">Haz clic en cada tarjeta para profundizar en el desafío.</p>
+              {/* Tarjeta 3: Velocidad */}
+              <div className={`bg-white rounded-3xl border transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md ${activeProblem === 3 ? 'border-emerald-200 ring-4 ring-emerald-50/50' : 'border-gray-200'}`}>
+                <button 
+                  onClick={() => setActiveProblem(activeProblem === 3 ? null : 3)}
+                  className="w-full text-left p-6 md:p-8 flex items-center justify-between focus:outline-none"
+                >
+                  <div className="flex items-center gap-5">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 3 ? 'bg-emerald-100 border border-emerald-200' : 'bg-gray-50 border border-gray-100'}`}>
+                      <Zap className={`w-7 h-7 transition-colors duration-300 ${activeProblem === 3 ? 'text-emerald-700' : 'text-gray-400'}`} />
+                    </div>
+                    <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 3 ? 'text-emerald-950' : 'text-gray-700'}`}>
+                      {t.prob3Title}
+                    </h3>
+                  </div>
+                  <ChevronDown className={`w-6 h-6 text-gray-400 transform transition-transform duration-500 ${activeProblem === 3 ? 'rotate-180 text-emerald-600' : ''}`} />
+                </button>
+                <div className={`transition-all duration-500 ease-in-out ${activeProblem === 3 ? 'max-h-48 opacity-100 pb-8 px-6 md:px-8' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+                  <p className="text-base text-muted-foreground leading-relaxed md:pl-[76px]">
+                    {t.prob3Desc}
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
