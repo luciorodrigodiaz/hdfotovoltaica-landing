@@ -466,8 +466,8 @@ export default function Home() {
                 {t.problemTitle}
               </h2>
 
-              {/* Globo (Tag) debajo del título */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-8 tracking-widest uppercase shadow-sm">
+              {/* Globo (Tag) actualizado: estilo simétrico a Innovación con acento Emerald */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-bold text-[10px] mb-8 tracking-widest uppercase shadow-sm">
                 {t.problemTag}
               </div>
               
@@ -709,8 +709,8 @@ export default function Home() {
             {/* Columna Derecha: Contenido y Filas Interactivas */}
             <div className="order-1 md:order-2">
               
-              {/* Título Masivo Arriba (Actualizado a diseño editorial) */}
-              <h2 className="text-5xl md:text-6xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
+              {/* Título Masivo ajustado para entrar en una sola línea (text-4xl en móvil, text-6xl md+) */}
+              <h2 className="text-4xl md:text-6xl font-extrabold mb-4 leading-none tracking-tightest text-emerald-950 whitespace-nowrap overflow-hidden text-ellipsis">
                 {t.appTitle}
               </h2>
 
