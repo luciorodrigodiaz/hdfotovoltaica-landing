@@ -35,9 +35,9 @@ export default function Home() {
   const [formData, setFormData] = useState({ name: "", email: "", organization: "" });
 
   // NUEVO: Estado para controlar qué tarjeta del Problema está abierta
-  const [activeProblem, setActiveProblem] = useState<number | null>(1); 
+  const [activeProblem, setActiveProblem] = useState<number | null>(null); 
   // NUEVO: Estado para controlar el acordeón de Innovación
-  const [activeSolution, setActiveSolution] = useState<number | null>(1);
+  const [activeSolution, setActiveSolution] = useState<number | null>(null);
 
   // Referencia para la sección de logos
   const logosRef = useRef<HTMLDivElement>(null);
