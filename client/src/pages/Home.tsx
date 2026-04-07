@@ -460,19 +460,21 @@ export default function Home() {
             
             {/* Columna Izquierda: Título Fijo (Sticky) con Diseño Editorial */}
             <div className="md:col-span-5 md:sticky md:top-32">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
-                {t.problemTag}
-              </div>
               
-              {/* Título Masivo para compensar la brevedad */}
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-none tracking-tighter text-emerald-950">
+              {/* Título Masivo Arriba */}
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
                 {t.problemTitle}
               </h2>
+
+              {/* Globo (Tag) debajo del título */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-500 font-bold text-[10px] mb-8 tracking-widest uppercase shadow-sm">
+                {t.problemTag}
+              </div>
               
               {/* Línea de acento para darle "cuerpo" al diseño */}
               <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
               
-              {/* Texto descriptivo con mayor tamaño y peso (text-xl a text-2xl) */}
+              {/* Texto descriptivo con mayor tamaño y peso */}
               <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed">
                 {t.problemDesc}
               </p>
@@ -571,17 +573,21 @@ export default function Home() {
             
             {/* Columna de Texto: Título Gigante + Línea + Acordeón Conectado */}
             <div className="md:col-span-7 md:sticky md:top-32">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
-                {t.solutionTag}
-              </div>
               
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-none tracking-tighter text-emerald-950">
+              {/* Título Masivo Arriba */}
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
                 {t.solutionTitle}<span className="text-emerald-600">{t.solutionTitleAccent}</span>
               </h2>
+
+              {/* Globo (Tag) debajo del título */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-bold text-[10px] mb-8 tracking-widest uppercase shadow-sm">
+                {t.solutionTag}
+              </div>
 
               {/* Línea de acento simétrica */}
               <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
 
+              {/* Texto descriptivo con mayor tamaño y peso */}
               <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed mb-10 max-w-2xl">
                 {t.solutionDesc}
               </p>
@@ -702,13 +708,22 @@ export default function Home() {
 
             {/* Columna Derecha: Contenido y Filas Interactivas */}
             <div className="order-1 md:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-[10px] mb-6 tracking-widest uppercase shadow-sm">
-                {t.appTag}
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-emerald-950">
+              
+              {/* Título Masivo Arriba (Actualizado a diseño editorial) */}
+              <h2 className="text-5xl md:text-6xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
                 {t.appTitle}
               </h2>
-              <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-xl">
+
+              {/* Globo (Tag) debajo del título */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-[10px] mb-8 tracking-widest uppercase shadow-sm">
+                {t.appTag}
+              </div>
+              
+              {/* Línea de acento (Añadida para simetría total) */}
+              <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
+
+              {/* Texto descriptivo con mayor tamaño y peso */}
+              <p className="text-xl text-emerald-900/80 font-medium mb-10 leading-relaxed max-w-xl">
                 {t.appDesc}
               </p>
               
