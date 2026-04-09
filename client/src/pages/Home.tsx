@@ -132,7 +132,7 @@ export default function Home() {
         app4: "Fachadas de Edificios Comerciales",
 
         contactTag: "Descarga Inmediata",
-        contactTitle: "Accede a la Documentación Técnica",
+        contactTitle: "Descarga el Brochure Oficial",
         contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre cómo nuestra tecnología reduce la huella de carbono, conoce nuestras métricas de impacto y explora los reconocimientos globales.",
         contactList1: "Reducción de huella de carbono",
         contactList2: "Métricas de impacto climático y social",
@@ -164,7 +164,7 @@ export default function Home() {
         heroTitle: "SMART INFRASTRUCTURES",
         heroTitleAccent: "", 
         heroSubtitle: "Transforming industry and agriculture into profitable and efficient nodes of power generation.",
-        heroBtnTech: "Access Technical Documentation",
+        heroBtnTech: "Download the Official Brochure",
         heroBtnLearn: "Discover the Technology",
         
         trustBar: ["SDG 7: Affordable Energy", "SDG 9: Industry & Infrastructure", "SDG 11: Sustainable Cities"],
@@ -207,7 +207,7 @@ export default function Home() {
         app4: "Commercial Building Facades",
 
         contactTag: "Instant Download",
-        contactTitle: "Access Technical Documentation",
+        contactTitle: "Download the Official Brochure",
         contactDesc: "Complete the form to download our official brochure. Discover how our technology reduces the carbon footprint, review our impact metrics, and explore the global recognitions.",
         contactList1: "Carbon footprint reduction",
         contactList2: "Climate & social impact metrics",
