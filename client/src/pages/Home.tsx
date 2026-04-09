@@ -114,7 +114,7 @@ export default function Home() {
         solutionTag: "Tecnología Base",
         solutionTitle: "La Innovación",
         solutionTitleAccent: "",
-        solutionDesc: "Nuestra tecnología patentada permite construir y generar energía en un solo paso. A través de material compuesto(composite) de policarbonato o metalicas con integración fotovoltaica (BIPV), hemos creado un material híbrido que reemplaza a los materiales convencionales. Esta solución disruptiva no solo ofrece aislamiento y resistencia estructural, sino que transforma cualquier superficie en una matriz energética inteligente sin necesidad de añadir componentes externos.",
+        solutionDesc: "Nuestra tecnología patentada permite construir y generar energía en un solo paso. A través de material compuesto (composite) de policarbonato o metálicas con integración fotovoltaica (BIPV), hemos creado un material híbrido que reemplaza a los materiales convencionales. Esta solución disruptiva no solo ofrece aislamiento y resistencia estructural, sino que transforma cualquier superficie en una matriz energética inteligente sin necesidad de añadir componentes externos.",
         appVideoCaption: "Hemos desarrollado una lámina multipropósito patentada que reemplaza a los materiales de construcción convencionales, integrando celdas fotovoltaicas directamente en el policarbonato.",
         sol1Title: "Generación Semitransparente",
         sol1Desc: "Permite hasta un 80% de transmisión de luz natural mientras captura la radiación solar para generar electricidad limpia.",
@@ -189,7 +189,7 @@ export default function Home() {
         solutionTag: "Core Technology",
         solutionTitle: "The Innovation",
         solutionTitleAccent: "",
-        solutionDesc: "Construction and energy in a single step. Our patented technology integrates photovoltaic cells into polycarbonate or metal panels, creating a hybrid material that replaces traditional ones. It isolates, protects, and transforms any structure into a smart energy matrix without additional components.",
+        solutionDesc: "Our patented technology allows you to build and generate energy in a single step. Through composite materials of polycarbonate or metal with building-integrated photovoltaics (BIPV), we have created a hybrid material that replaces conventional ones. This disruptive solution not only offers insulation and structural resistance but also transforms any surface into a smart energy matrix without the need for external components.",
         appVideoCaption: "We have developed a proprietary, custom-designed BIPV solution that simplifies installation by eliminating traditional mounting infrastructure.",
         sol1Title: "Semi-transparent Generation",
         sol1Desc: "Allows up to 80% of natural light transmission while capturing solar radiation to generate clean electricity.",
@@ -685,8 +685,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Columna de Imagen y ODS: Se mantiene para cerrar el patrón visual */}
-            <div className="md:col-span-5 flex flex-col items-center justify-center gap-12 pt-12 md:pt-0">
+            {/* Columna de Imagen y ODS: Bajada al nivel del párrafo */}
+            <div className="md:col-span-5 flex flex-col items-center justify-center gap-12 pt-12 md:pt-0 md:mt-[210px] lg:mt-[220px]">
               {/* Carrusel Dinámico Minimalista */}
               <div className="relative w-full max-w-sm aspect-[4/5] group">
                 <div className="absolute -inset-4 bg-emerald-100/40 rounded-[3rem] blur-2xl -z-10 transition-all duration-500 group-hover:bg-emerald-200/60"></div>
