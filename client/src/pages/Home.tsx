@@ -747,7 +747,12 @@ export default function Home() {
                 />
               </div>
 
-              {/* Contenedor del Video 2 (NUEVO) */}
+              {/* Texto de Caption actuando como separador central */}
+              <p className="w-full max-w-lg text-emerald-900/70 text-[15px] font-medium leading-relaxed text-center px-4 md:px-2">
+                {t.appVideoCaption}
+              </p>
+
+              {/* Contenedor del Video 2 */}
               <div className="relative w-full max-w-lg">
                 <div className="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-xl -z-10 transition-all duration-500 delay-100"></div>
                 <video 
@@ -760,10 +765,6 @@ export default function Home() {
                 />
               </div>
               
-              {/* Texto antiguo de Innovación reubicado como Caption */}
-              <p className="w-full max-w-lg text-emerald-900/70 text-[15px] font-medium leading-relaxed text-center px-4 md:px-2">
-                {t.appVideoCaption}
-              </p>
             </div>
 
             {/* Columna Derecha: Contenido y Filas Interactivas */}
