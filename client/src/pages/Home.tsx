@@ -96,9 +96,9 @@ export default function Home() {
 
         awardsTitle: "Reconocimiento Global e Impacto",
         metric1: "Unidades Instaladas",
-        metric2: "Capacidad Installed",
-        metric3: "kg CO₂eq Avoided",
-        metric4: "Families & Businesses",
+        metric2: "Capacidad Instalada",
+        metric3: "kg CO₂eq Evitados",
+        metric4: "Familias y Empresas",
         
         // --- SECCIÓN: EL PROBLEMA (Versión Micro-Copy, TEXTO ACTUALIZADO) ---
         problemTag: "El Desafío Actual",
