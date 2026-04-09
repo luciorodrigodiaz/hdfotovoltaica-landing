@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { 
   Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, 
   Layers, Users, Factory, Bus, Tractor, ChevronDown,
-  Scale, Cloud, Timer // <-- ÍCONOS NUEVOS AGREGADOS AQUÍ
+  Scale, Cloud, Timer, Award // <-- ÍCONO "Award" AGREGADO AQUÍ
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -133,10 +133,10 @@ export default function Home() {
 
         contactTag: "Descarga Inmediata",
         contactTitle: "Accede a la Documentación Técnica",
-        contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre las especificaciones técnicas, métricas de rendimiento y detalles de integración de nuestra tecnología presentado en el Foro CTI de la ONU.",
-        contactList1: "Fichas técnicas de rendimiento",
-        contactList2: "Certificaciones de resistencia",
-        contactList3: "Guía de integración arquitectónica",
+        contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre cómo nuestra tecnología reduce la huella de carbono, conoce nuestras métricas de impacto y explora los reconocimientos globales",
+        contactList1: "Reducción de huella de carbono",
+        contactList2: "Métricas de impacto climático y social",
+        contactList3: "Premios y reconocimientos globales",
         
         formLabelName: "Nombre Completo",
         formPlaceholderName: "Ej. Laura Gómez",
@@ -208,10 +208,10 @@ export default function Home() {
 
         contactTag: "Instant Download",
         contactTitle: "Access Technical Documentation",
-        contactDesc: "Complete the form to download our official brochure. Discover the technical specifications, performance metrics, and integration details of our technology presented at the UN STI Forum.",
-        contactList1: "Performance data sheets",
-        contactList2: "Resistance certifications",
-        contactList3: "Architectural integration guide",
+        contactDesc: "Complete the form to download our official brochure. Discover how our technology reduces the carbon footprint, review our impact metrics, and explore the global recognitions.",
+        contactList1: "Carbon footprint reduction",
+        contactList2: "Climate & social impact metrics",
+        contactList3: "Global awards and recognitions",
         
         formLabelName: "Full Name",
         formPlaceholderName: "e.g. Laura Gomez",
@@ -861,9 +861,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">{t.contactTitle}</h2>
             <p className="text-emerald-300 mb-8 leading-relaxed">{t.contactDesc}</p>
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-sm text-emerald-200"><Zap className="w-5 h-5 text-orange-500" /> {t.contactList1}</div>
-              <div className="flex items-center gap-3 text-sm text-emerald-200"><Shield className="w-5 h-5 text-orange-500" /> {t.contactList2}</div>
-              <div className="flex items-center gap-3 text-sm text-emerald-200"><Building className="w-5 h-5 text-orange-500" /> {t.contactList3}</div>
+              <div className="flex items-center gap-3 text-sm text-emerald-200"><Cloud className="w-5 h-5 text-orange-500" /> {t.contactList1}</div>
+              <div className="flex items-center gap-3 text-sm text-emerald-200"><Users className="w-5 h-5 text-orange-500" /> {t.contactList2}</div>
+              <div className="flex items-center gap-3 text-sm text-emerald-200"><Award className="w-5 h-5 text-orange-500" /> {t.contactList3}</div>
             </div>
           </div>
           <div className="bg-white text-foreground p-8 rounded-2xl shadow-xl border border-white/10">
