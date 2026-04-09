@@ -48,8 +48,7 @@ export default function Home() {
   const productImages = useMemo(() => [
     "/product-innov-1.jpg", 
     "/product-innov-2.jpg", 
-    "/product-innov-3.jpg", 
-    "/product-innov-4.jpg"
+    "/product-innov-3.jpg"
   ], []);
 
   useEffect(() => {
