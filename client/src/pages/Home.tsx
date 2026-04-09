@@ -728,7 +728,8 @@ export default function Home() {
       {/* ===== APPLICATIONS (Patrón Z y Feature Rows) ===== */}
       <section id="applications" className="py-20 md:py-32 bg-white relative z-10">
         <div className="container max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Cambié items-center a items-start para que ambas columnas comiencen desde arriba */}
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
             
             {/* Columna Izquierda: Galería Vertical de Videos y Caption */}
             <div className="order-2 md:order-1 flex flex-col justify-start items-center md:items-end gap-8">
@@ -764,10 +765,9 @@ export default function Home() {
                 {t.appVideoCaption}
               </p>
             </div>
-            </div>
 
             {/* Columna Derecha: Contenido y Filas Interactivas */}
-            <div className="order-1 md:order-2">
+            <div className="order-1 md:order-2 sticky top-32">
               
               {/* Título Masivo recuperado */}
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
@@ -779,10 +779,10 @@ export default function Home() {
                 {t.appTag}
               </div>
               
-              {/* Línea de acento (Añadida para simetría total) */}
+              {/* Línea de acento */}
               <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
 
-              {/* Texto descriptivo con mayor tamaño y peso */}
+              {/* Texto descriptivo */}
               <p className="text-xl text-emerald-900/80 font-medium mb-10 leading-relaxed max-w-xl">
                 {t.appDesc}
               </p>
