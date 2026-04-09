@@ -730,27 +730,40 @@ export default function Home() {
         <div className="container max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            {/* Columna Izquierda: Video Render de Nave Industrial y Caption */}
-            <div className="order-2 md:order-1 flex justify-center md:justify-end">
-              <div className="w-full max-w-lg flex flex-col items-center">
-                {/* Contenedor del video */}
-                <div className="relative w-full">
-                  <div className="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-xl -z-10 transition-all duration-500"></div>
-                  <video 
-                    src="/render.mp4" 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    className="w-full object-cover rounded-3xl shadow-2xl border border-gray-100 transition-all hover:-translate-y-2 hover:shadow-emerald-900/20 duration-500 relative z-10 aspect-video" 
-                  />
-                </div>
-                
-                {/* Texto antiguo de Innovación reubicado como Caption */}
-                <p className="mt-8 text-emerald-900/70 text-[15px] font-medium leading-relaxed text-center px-4 md:px-2">
-                  {t.appVideoCaption}
-                </p>
+            {/* Columna Izquierda: Galería Vertical de Videos y Caption */}
+            <div className="order-2 md:order-1 flex flex-col justify-start items-center md:items-end gap-8">
+              
+              {/* Contenedor del Video 1 */}
+              <div className="relative w-full max-w-lg">
+                <div className="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-xl -z-10 transition-all duration-500"></div>
+                <video 
+                  src="/render.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full object-cover rounded-3xl shadow-2xl border border-gray-100 transition-all hover:-translate-y-2 hover:shadow-emerald-900/20 duration-500 relative z-10 aspect-video" 
+                />
               </div>
+
+              {/* Contenedor del Video 2 (NUEVO) */}
+              <div className="relative w-full max-w-lg">
+                <div className="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-xl -z-10 transition-all duration-500 delay-100"></div>
+                <video 
+                  src="/render-2.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full object-cover rounded-3xl shadow-2xl border border-gray-100 transition-all hover:-translate-y-2 hover:shadow-emerald-900/20 duration-500 relative z-10 aspect-video" 
+                />
+              </div>
+              
+              {/* Texto antiguo de Innovación reubicado como Caption */}
+              <p className="w-full max-w-lg text-emerald-900/70 text-[15px] font-medium leading-relaxed text-center px-4 md:px-2">
+                {t.appVideoCaption}
+              </p>
+            </div>
             </div>
 
             {/* Columna Derecha: Contenido y Filas Interactivas */}
