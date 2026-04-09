@@ -114,7 +114,7 @@ export default function Home() {
         solutionTag: "Tecnología Base",
         solutionTitle: "La Innovación",
         solutionTitleAccent: "",
-        solutionDesc: "Construcción y energía en un solo paso. Nuestra tecnología patentada integra celdas fotovoltaicas en paneles de policarbonato o metal, creando un material híbrido que reemplaza a los tradicionales. Aísla, protege y transforma cualquier estructura en una matriz energética inteligente sin componentes adicionales.",
+        solutionDesc: "Nuestra tecnología patentada permite construir y generar energía en un solo paso. A través de material compuesto(composite) de policarbonato o metalicas con integración fotovoltaica (BIPV), hemos creado un material híbrido que reemplaza a los materiales convencionales. Esta solución disruptiva no solo ofrece aislamiento y resistencia estructural, sino que transforma cualquier superficie en una matriz energética inteligente sin necesidad de añadir componentes externos.",
         appVideoCaption: "Hemos desarrollado una lámina multipropósito patentada que reemplaza a los materiales de construcción convencionales, integrando celdas fotovoltaicas directamente en el policarbonato.",
         sol1Title: "Generación Semitransparente",
         sol1Desc: "Permite hasta un 80% de transmisión de luz natural mientras captura la radiación solar para generar electricidad limpia.",
