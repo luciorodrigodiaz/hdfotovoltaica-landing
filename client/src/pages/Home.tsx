@@ -42,9 +42,6 @@ export default function Home() {
   // NUEVO: Estado para controlar el acordeón de Innovación
   const [activeSolution, setActiveSolution] = useState<number | null>(1);
 
-// NUEVO: Estado para controlar el acordeón de Innovación
-  const [activeSolution, setActiveSolution] = useState<number | null>(1);
-
   // --- NUEVO BLOQUE: Lógica del Carrusel de Producto ---
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const productImages = useMemo(() => [
