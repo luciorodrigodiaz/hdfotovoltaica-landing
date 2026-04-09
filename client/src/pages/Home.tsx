@@ -767,7 +767,7 @@ export default function Home() {
             </div>
 
             {/* Columna Derecha: Contenido y Filas Interactivas */}
-            <div className="order-1 md:order-2 sticky top-32">
+            <div className="order-1 md:order-2 md:sticky md:top-32">
               
               {/* Título Masivo recuperado */}
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
