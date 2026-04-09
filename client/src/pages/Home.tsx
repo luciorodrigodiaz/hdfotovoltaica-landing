@@ -89,7 +89,7 @@ export default function Home() {
         heroTitle: "INFRAESTRUCTURA INTELIGENTE",
         heroTitleAccent: "",
         heroSubtitle: "Transformamos la industria y el agro en nodos de generación eléctrica rentable y eficiente.",
-        heroBtnTech: "Acceder a la Documentación Técnica",
+        heroBtnTech: "Descargar el Brochure Oficial",
         heroBtnLearn: "Conocer la Tecnología",
         
         trustBar: ["ODS 7: Energía Asequible", "ODS 9: Industria e Infraestructura", "ODS 11: Ciudades Sostenibles"],
