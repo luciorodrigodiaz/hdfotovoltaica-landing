@@ -42,6 +42,26 @@ export default function Home() {
   // NUEVO: Estado para controlar el acordeón de Innovación
   const [activeSolution, setActiveSolution] = useState<number | null>(1);
 
+// NUEVO: Estado para controlar el acordeón de Innovación
+  const [activeSolution, setActiveSolution] = useState<number | null>(1);
+
+  // --- NUEVO BLOQUE: Lógica del Carrusel de Producto ---
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const productImages = useMemo(() => [
+    "/product-innov-1.jpg", 
+    "/product-innov-2.jpg", 
+    "/product-innov-3.jpg", 
+    "/product-innov-4.jpg"
+  ], []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
+    }, 4000); // Cambia de foto automáticamente cada 4 segundos
+    return () => clearInterval(interval);
+  }, [productImages]);
+  // ---------------------------------------------------
+
   // Referencia para la sección de logos
   const logosRef = useRef<HTMLDivElement>(null);
   // Detectar si la sección está en pantalla
@@ -668,13 +688,31 @@ export default function Home() {
 
             {/* Columna de Imagen y ODS: Se mantiene para cerrar el patrón visual */}
             <div className="md:col-span-5 flex flex-col items-center justify-center gap-12 pt-12 md:pt-0">
-              <div className="relative w-full max-w-sm">
-                <div className="absolute -inset-4 bg-emerald-100/40 rounded-[3rem] blur-2xl -z-10"></div>
-                <img 
-                  src="/product-innovation.jpg" 
-                  alt="Innovación en Policarbonato Solar Ligero" 
-                  className="w-full h-auto rounded-[2.5rem] shadow-2xl border border-white p-2 bg-white/50 backdrop-blur-sm transition-all hover:scale-105 duration-500" 
-                />
+              {/* Carrusel Dinámico Minimalista */}
+              <div className="relative w-full max-w-sm aspect-[4/5] group">
+                <div className="absolute -inset-4 bg-emerald-100/40 rounded-[3rem] blur-2xl -z-10 transition-all duration-500 group-hover:bg-emerald-200/60"></div>
+                
+                {/* Mapeo de las 4 imágenes superpuestas */}
+                {productImages.map((src, idx) => (
+                  <img 
+                    key={src}
+                    src={src} 
+                    alt={`Panel HD Fotovoltaica - Detalle ${idx + 1}`} 
+                    className={`absolute inset-0 w-full h-full object-cover rounded-[2.5rem] shadow-2xl border border-white p-2 bg-white/50 backdrop-blur-sm transition-opacity duration-1000 ease-in-out ${currentImageIndex === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                  />
+                ))}
+
+                {/* Controles: Indicadores de Puntos Inferiores */}
+                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+                  {productImages.map((_, idx) => (
+                    <button 
+                      key={idx} 
+                      onClick={() => setCurrentImageIndex(idx)}
+                      className={`h-2 rounded-full transition-all duration-300 shadow-sm ${currentImageIndex === idx ? 'bg-emerald-600 w-6' : 'bg-white hover:bg-emerald-200 w-2'}`}
+                      aria-label={`Ver imagen ${idx + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
 
               {/* ODS UNIFICADOS */}
