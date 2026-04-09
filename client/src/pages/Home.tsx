@@ -738,7 +738,7 @@ export default function Home() {
               <div className="relative w-full max-w-lg">
                 <div className="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-xl -z-10 transition-all duration-500"></div>
                 <video 
-                  src="/render.mp4" 
+                  src="/render-1.mp4" 
                   autoPlay 
                   loop 
                   muted 
