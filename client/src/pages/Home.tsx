@@ -133,7 +133,7 @@ export default function Home() {
 
         contactTag: "Descarga Inmediata",
         contactTitle: "Accede a la Documentación Técnica",
-        contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre cómo nuestra tecnología reduce la huella de carbono, conoce nuestras métricas de impacto y explora los reconocimientos globales",
+        contactDesc: "Completa el formulario para descargar nuestro brochure oficial. Descubre cómo nuestra tecnología reduce la huella de carbono, conoce nuestras métricas de impacto y explora los reconocimientos globales.",
         contactList1: "Reducción de huella de carbono",
         contactList2: "Métricas de impacto climático y social",
         contactList3: "Premios y reconocimientos globales",
