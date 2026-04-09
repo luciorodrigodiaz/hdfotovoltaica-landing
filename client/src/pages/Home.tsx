@@ -687,7 +687,7 @@ export default function Home() {
 
             {/* Columna de Imagen y ODS: Bajada al nivel del párrafo */}
             <div className="md:col-span-5 flex flex-col items-center justify-center gap-12 pt-12 md:pt-0 md:mt-[210px] lg:mt-[220px]">
-              {/* Carrusel Dinámico Minimalista */}
+              {/* Carrusel Dinámico Minimalista con Navegación Táctil */}
               <div className="relative w-full max-w-sm aspect-[4/5] group">
                 <div className="absolute -inset-4 bg-emerald-100/40 rounded-[3rem] blur-2xl -z-10 transition-all duration-500 group-hover:bg-emerald-200/60"></div>
                 
@@ -701,13 +701,37 @@ export default function Home() {
                   />
                 ))}
 
+                {/* Zonas de clic transparentes (Izquierda y Derecha) */}
+                <button 
+                  onClick={() => setCurrentImageIndex((prev) => prev === 0 ? productImages.length - 1 : prev - 1)}
+                  className="absolute top-0 left-0 w-1/3 h-full z-20 flex items-center justify-start px-4 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none"
+                  aria-label="Imagen anterior"
+                >
+                  <div className="w-8 h-8 rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/30 shadow-md">
+                    <ChevronDown className="w-5 h-5 rotate-90" />
+                  </div>
+                </button>
+
+                <button 
+                  onClick={() => setCurrentImageIndex((prev) => (prev + 1) % productImages.length)}
+                  className="absolute top-0 right-0 w-1/3 h-full z-20 flex items-center justify-end px-4 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none"
+                  aria-label="Siguiente imagen"
+                >
+                  <div className="w-8 h-8 rounded-full bg-black/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/30 shadow-md">
+                    <ChevronDown className="w-5 h-5 -rotate-90" />
+                  </div>
+                </button>
+
                 {/* Controles: Indicadores de Puntos Inferiores */}
                 <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
                   {productImages.map((_, idx) => (
                     <button 
                       key={idx} 
-                      onClick={() => setCurrentImageIndex(idx)}
-                      className={`h-2 rounded-full transition-all duration-300 shadow-sm ${currentImageIndex === idx ? 'bg-emerald-600 w-6' : 'bg-white hover:bg-emerald-200 w-2'}`}
+                      onClick={(e) => {
+                        e.stopPropagation(); // Evita clics duplicados
+                        setCurrentImageIndex(idx);
+                      }}
+                      className={`h-2 rounded-full transition-all duration-300 shadow-sm relative z-30 ${currentImageIndex === idx ? 'bg-emerald-600 w-6' : 'bg-white hover:bg-emerald-200 w-2'}`}
                       aria-label={`Ver imagen ${idx + 1}`}
                     />
                   ))}
