@@ -115,6 +115,7 @@ export default function Home() {
         solutionTitle: "La Innovación",
         solutionTitleAccent: "",
         solutionDesc: "Construcción y energía en un solo paso. Nuestra tecnología patentada integra celdas fotovoltaicas en paneles de policarbonato o metal, creando un material híbrido que reemplaza a los tradicionales. Aísla, protege y transforma cualquier estructura en una matriz energética inteligente sin componentes adicionales.",
+        appVideoCaption: "Hemos desarrollado una lámina multipropósito patentada que reemplaza a los materiales de construcción convencionales, integrando celdas fotovoltaicas directamente en el policarbonato.",
         sol1Title: "Generación Semitransparente",
         sol1Desc: "Permite hasta un 80% de transmisión de luz natural mientras captura la radiación solar para generar electricidad limpia.",
         sol2Title: "Ligereza y Resistencia",
@@ -188,7 +189,8 @@ export default function Home() {
         solutionTag: "Core Technology",
         solutionTitle: "The Innovation",
         solutionTitleAccent: "",
-        solutionDesc: "We have developed a proprietary, custom-designed BIPV solution that simplifies installation by eliminating traditional mounting infrastructure.",
+        solutionDesc: "Construction and energy in a single step. Our patented technology integrates photovoltaic cells into polycarbonate or metal panels, creating a hybrid material that replaces traditional ones. It isolates, protects, and transforms any structure into a smart energy matrix without additional components.",
+        appVideoCaption: "We have developed a proprietary, custom-designed BIPV solution that simplifies installation by eliminating traditional mounting infrastructure.",
         sol1Title: "Semi-transparent Generation",
         sol1Desc: "Allows up to 80% of natural light transmission while capturing solar radiation to generate clean electricity.",
         sol2Title: "Lightness and Resistance",
@@ -728,21 +730,26 @@ export default function Home() {
         <div className="container max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            {/* Columna Izquierda: Video Render de Nave Industrial (Patrón Z) */}
+            {/* Columna Izquierda: Video Render de Nave Industrial y Caption */}
             <div className="order-2 md:order-1 flex justify-center md:justify-end">
-              <div className="relative w-full max-w-lg">
-                {/* Resplandor de fondo decorativo */}
-                <div className="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-xl -z-10 transition-all duration-500"></div>
+              <div className="w-full max-w-lg flex flex-col items-center">
+                {/* Contenedor del video */}
+                <div className="relative w-full">
+                  <div className="absolute -inset-4 bg-emerald-100/60 rounded-[3rem] blur-xl -z-10 transition-all duration-500"></div>
+                  <video 
+                    src="/render.mp4" 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full object-cover rounded-3xl shadow-2xl border border-gray-100 transition-all hover:-translate-y-2 hover:shadow-emerald-900/20 duration-500 relative z-10 aspect-video" 
+                  />
+                </div>
                 
-                {/* Etiqueta Video optimizada para Landing Pages (Auto-play silencioso) */}
-                <video 
-                  src="/render.mp4" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  className="w-full object-cover rounded-3xl shadow-2xl border border-gray-100 transition-all hover:-translate-y-2 hover:shadow-emerald-900/20 duration-500 relative z-10 aspect-video" 
-                />
+                {/* Texto antiguo de Innovación reubicado como Caption */}
+                <p className="mt-8 text-emerald-900/70 text-[15px] font-medium leading-relaxed text-center px-4 md:px-2">
+                  {t.appVideoCaption}
+                </p>
               </div>
             </div>
 
