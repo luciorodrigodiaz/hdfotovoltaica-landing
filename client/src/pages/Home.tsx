@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { 
   Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, 
-  Layers, Users, Factory, Bus, Tractor, ChevronDown
+  Layers, Users, Factory, Bus, Tractor, ChevronDown,
+  Scale, Cloud, Timer // <-- ÍCONOS NUEVOS AGREGADOS AQUÍ
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -54,7 +55,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
-    }, 4000); // Cambia de foto automáticamente cada 4 segundos
+    }, 7000); // Cambia de foto automáticamente cada 7 segundos
     return () => clearInterval(interval);
   }, [productImages]);
   // ---------------------------------------------------
@@ -509,7 +510,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-5">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 1 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      <span className="text-3xl font-extrabold tracking-tighter">1</span>
+                      <Scale className="w-7 h-7" />
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 1 ? 'text-emerald-950' : 'text-gray-600'}`}>
                       {t.prob1Title}
@@ -533,7 +534,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-5">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 2 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      <span className="text-3xl font-extrabold tracking-tighter">2</span>
+                      <Cloud className="w-7 h-7" />
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 2 ? 'text-emerald-950' : 'text-gray-600'}`}>
                       {t.prob2Title}
@@ -557,7 +558,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-5">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${activeProblem === 3 ? 'bg-emerald-600 text-white shadow-inner' : 'bg-gray-50 border border-gray-100 text-gray-400'}`}>
-                      <span className="text-3xl font-extrabold tracking-tighter">3</span>
+                      <Timer className="w-7 h-7" />
                     </div>
                     <h3 className={`font-bold text-xl tracking-tight transition-colors duration-300 ${activeProblem === 3 ? 'text-emerald-950' : 'text-gray-600'}`}>
                       {t.prob3Title}
