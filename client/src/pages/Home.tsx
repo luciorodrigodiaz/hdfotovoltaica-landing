@@ -76,8 +76,8 @@ export default function Home() {
     return "ES";
   });
 
-  // Tu llave oficial para hdfotovoltaica@gmail.com
-  const WEB3FORMS_ACCESS_KEY = "7d4a77ef-c085-48f6-9845-9fd4c85ee9b5";
+  // Tu llave oficial para info@hdfotovoltaica.com
+  const WEB3FORMS_ACCESS_KEY = "f7a4415b-80f9-4543-b80e-d76d8fb83f41";
 
   // Diccionario Completo de Traducciones con Métricas
   const t = useMemo(() => {
@@ -907,8 +907,8 @@ export default function Home() {
             <div>
               <h4 className="font-semibold text-gray-200 mb-4">Contacto</h4>
               {/* Mapeo de Color Mail: accent -> Emerald CleanTech */}
-              <a href="mailto:hdfotovoltaica@gmail.com" className="text-sm text-gray-400 mb-2 hover:text-emerald-500 transition-smooth block">
-                hdfotovoltaica@gmail.com
+              <a href="mailto:info@hdfotovoltaica.com" className="text-sm text-gray-400 mb-2 hover:text-emerald-500 transition-smooth block">
+                info@hdfotovoltaica.com
               </a>
             </div>
           </div>
