@@ -478,7 +478,7 @@ export default function Home() {
           <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
             
             {/* Columna Izquierda: Título Fijo (Sticky) con Diseño Editorial */}
-            <div className="md:col-span-5 md:sticky md:top-32">
+            <div className="md:col-span-5 md:sticky md:top-24 md:-mt-6"> {/* <-- Modificado: top-24 y -mt-6 para levantar visualmente el bloque */}
               
               {/* Título Masivo Arriba */}
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
@@ -494,9 +494,20 @@ export default function Home() {
               <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
               
               {/* Texto descriptivo con mayor tamaño y peso */}
-              <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed">
+              <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed mb-8"> {/* <-- Modificado: añadido mb-8 para darle aire a la imagen */}
                 {t.problemDesc}
               </p>
+
+              {/* --- NUEVA IMAGEN AGREGADA --- */}
+              <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-emerald-900/5 border border-emerald-100/50 bg-white">
+                <img 
+                  src="/imagen-desafio.jpg" /* <-- ATENCIÓN: CAMBIA ESTO POR EL NOMBRE EXACTO DE TU IMAGEN */
+                  alt="HD Fotovoltaica - El Desafío" 
+                  className="w-full h-auto max-h-[300px] object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              {/* ----------------------------- */}
+
             </div>
             
             {/* Columna Derecha: Acordeón Interactivo de Tarjetas con Numeración y Hover */}
