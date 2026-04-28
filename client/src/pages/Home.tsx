@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { 
   Menu, X, Globe, Download, Shield, Sun, Building, Zap, Leaf, Loader2, 
   Layers, Users, Factory, Bus, Tractor, ChevronDown,
-  Scale, Cloud, Timer, Award // <-- ÍCONO "Award" AGREGADO AQUÍ
+  Scale, Cloud, Timer, Award
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -48,7 +48,8 @@ export default function Home() {
   const productImages = useMemo(() => [
     "/product-innov-1.jpg", 
     "/product-innov-2.jpg", 
-    "/product-innov-3.jpg"
+    "/product-innov-3.jpg",
+    "/product-innov-4.jpg" // <-- CUARTA IMAGEN AGREGADA AQUÍ
   ], []);
 
   useEffect(() => {
@@ -64,7 +65,7 @@ export default function Home() {
   // Detectar si la sección está en pantalla
   const logosOnScreen = useOnScreen(logosRef, "-10% 0px"); // Margen de error para mobiles
 
-// NUEVO: Referencia exclusiva para que los ODS se activen al scrollear
+  // NUEVO: Referencia exclusiva para que los ODS se activen al scrollear
   const odsRef = useRef<HTMLDivElement>(null);
   const odsOnScreen = useOnScreen(odsRef, "-20% 0px"); // -20% hace que se active cuando llega bien al centro
 
@@ -162,7 +163,7 @@ export default function Home() {
         nav: ["The Problem", "Innovation", "Applications", "Contact"],
         heroTag: "UN STI Forum - New York 2026",
         heroTitle: "SMART INFRASTRUCTURES",
-        heroTitleAccent: "", 
+        heroTitleAccent: "", 
         heroSubtitle: "Transforming industry and agriculture into profitable and efficient nodes of power generation.",
         heroBtnTech: "Download the Official Brochure",
         heroBtnLearn: "Discover the Technology",
@@ -478,7 +479,7 @@ export default function Home() {
           <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
             
             {/* Columna Izquierda: Título Fijo (Sticky) con Diseño Editorial */}
-            <div className="md:col-span-5 md:sticky md:top-24 md:-mt-6"> {/* <-- Modificado: top-24 y -mt-6 para levantar visualmente el bloque */}
+            <div className="md:col-span-5 md:sticky md:top-32">
               
               {/* Título Masivo Arriba */}
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-none tracking-tighter text-emerald-950">
@@ -494,20 +495,9 @@ export default function Home() {
               <div className="w-16 h-1.5 bg-emerald-600 rounded-full mb-8"></div>
               
               {/* Texto descriptivo con mayor tamaño y peso */}
-              <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed mb-8"> {/* <-- Modificado: añadido mb-8 para darle aire a la imagen */}
+              <p className="text-xl md:text-2xl text-emerald-900/80 font-medium leading-relaxed">
                 {t.problemDesc}
               </p>
-
-              {/* --- NUEVA IMAGEN AGREGADA --- */}
-              <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-emerald-900/5 border border-emerald-100/50 bg-white">
-                <img 
-                  src="/imagen-desafio.jpg" /* <-- ATENCIÓN: CAMBIA ESTO POR EL NOMBRE EXACTO DE TU IMAGEN */
-                  alt="HD Fotovoltaica - El Desafío" 
-                  className="w-full h-auto max-h-[300px] object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              {/* ----------------------------- */}
-
             </div>
             
             {/* Columna Derecha: Acordeón Interactivo de Tarjetas con Numeración y Hover */}
