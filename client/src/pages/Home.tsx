@@ -739,19 +739,19 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* ODS UNIFICADOS */}
-              <div ref={odsRef} className={`w-full flex flex-wrap items-center justify-center gap-6 border-t border-gray-200/60 pt-10 transition-all duration-1000 ${odsOnScreen ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-50 scale-95"}`}>
-                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" alt="SDG 7" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
-                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" alt="SDG 9" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
-                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" alt="SDG 11" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+{/* ODS UNIFICADOS */}
+              <div ref={odsRef} className={`w-full flex flex-wrap items-center justify-center gap-6 border-t border-gray-200/60 pt-10 transition-all duration-1000 ${odsOnScreen ? "grayscale-0 opacity-100 scale-100" : "grayscale opacity-50 scale-95"}`}>
+                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" alt="SDG 7" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
+                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" alt="SDG 9" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
+                <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" alt="SDG 11" className="w-16 md:w-20 h-auto rounded-lg shadow-md hover:scale-110 transition-all" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* ===== APPLICATIONS (Patrón Z y Feature Rows) ===== */}
-      <section id="applications" className="py-20 md:py-32 bg-white relative z-10">
+      {/* ===== APPLICATIONS (Patrón Z y Feature Rows) ===== */}
+      <section id="applications" className="py-20 md:py-32 bg-white relative z-10">
         <div className="container max-w-7xl mx-auto">
           {/* Cambié items-center a items-start para que ambas columnas comiencen desde arriba */}
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
